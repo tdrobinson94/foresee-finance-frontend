@@ -65,7 +65,7 @@
         background-color: black;
       }
       .log-in{
-        font-size: 17px;
+        font-size: 15px;
         border: none;
         border-radius: 30px;
         padding: 5px 10px;
@@ -88,6 +88,48 @@
       .sign-up:hover{
         background-color: #00B0FF;
         transition: all .2s ease-in-out;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 600px){
+  .container{
+    .home-page{
+      .slogan{
+        font-size: 21px;
+        .sign-up{
+          font-size: 12px;
+          padding: 5px 10px;
+        }
+        .log-in{
+          font-size: 12px;
+        }
+        span{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 300px){
+  .container{
+    .home-page{
+      .slogan{
+        top: 35%;
+        font-size: 17px;
+        .sign-up{
+          font-size: 10px;
+          padding: 5px 10px;
+        }
+        .log-in{
+          font-size: 10px;
+        }
+        span{
+          font-size: 12px;
+        }
       }
     }
   }
