@@ -3,7 +3,7 @@ $hamburger-padding-y                       : 15px !default;
 $hamburger-layer-width                     : 40px !default;
 $hamburger-layer-height                    : 4px !default;
 $hamburger-layer-spacing                   : 6px !default;
-$hamburger-layer-color                     : white !default;
+$hamburger-layer-color                     : black !default;
 $hamburger-layer-border-radius             : 4px !default;
 $hamburger-hover-opacity                   : 0.7 !default;
 $hamburger-hover-transition-duration       : 0.15s !default;
@@ -33,19 +33,26 @@ $hamburger-hover-transition-timing-function: linear !default;
         position: fixed;
         top: 0px;
         left: 0px;
-        padding-top: 60px;
+        padding-top: 80px;
         overflow-x: hidden;
         width: 0px;
         height: 100%;
         transition: .7s;
-        background: #37474F;
+        background: white;
         // text-align: center;
         a{
           width: 100%;
           padding: 20px;
-          color: white;
+          color: black;
           display: block;
           text-decoration: none;
+          transition: all .2s ease-in-out;
+        }
+        a:hover{
+          background-color: #00B0FF;
+          color: white;
+          border-left: 5px solid #00E676;
+          transition: all .2s ease-in-out;
         }
       }
       .display{

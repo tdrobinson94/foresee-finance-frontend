@@ -13,6 +13,12 @@ function config($stateProvider, $urlRouterProvider){
     controller: 'HomeController as vm'
   })
 
+  .state('root.calendar', {
+    url: '/calendar',
+    templateUrl: 'templates/calendar.tpl.html',
+    controller: 'CalendarController as vm'
+  })
+
   $urlRouterProvider.otherwise('/home');
 }
 
