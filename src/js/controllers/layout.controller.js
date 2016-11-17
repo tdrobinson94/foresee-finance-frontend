@@ -11,6 +11,12 @@ function LayoutController(){
       $('.container').toggleClass('push');
     });
   };
+
+  $('.link').on('click', () => {
+    $('.hamburger').toggleClass('is-active');
+    $('.links').toggleClass('display');
+    $('.container').toggleClass('push');
+  })
 }
 
 LayoutController.$inject = ['$state', '$rootScope'];
