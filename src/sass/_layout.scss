@@ -3,7 +3,7 @@ $hamburger-padding-y                       : 15px !default;
 $hamburger-layer-width                     : 40px !default;
 $hamburger-layer-height                    : 4px !default;
 $hamburger-layer-spacing                   : 6px !default;
-$hamburger-layer-color                     : black !default;
+$hamburger-layer-color                     : #37474F !default;
 $hamburger-layer-border-radius             : 4px !default;
 $hamburger-hover-opacity                   : 0.7 !default;
 $hamburger-hover-transition-duration       : 0.15s !default;
@@ -15,6 +15,7 @@ $hamburger-hover-transition-timing-function: linear !default;
   height: 100%;
   width: 100%;
   transition: .7s;
+  background: #37474F;
   .navbar{
     position: fixed;
     left: 0px;
@@ -43,7 +44,7 @@ $hamburger-hover-transition-timing-function: linear !default;
         a{
           width: 100%;
           padding: 20px;
-          color: black;
+          color: #37474F;
           display: block;
           text-decoration: none;
           transition: all .2s ease-in-out;

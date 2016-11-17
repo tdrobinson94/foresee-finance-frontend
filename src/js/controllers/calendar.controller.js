@@ -5,6 +5,7 @@ import _ from 'lodash';
 
 function CalendarController($scope){
 
+
 }
 
 CalendarController.$inject = ['$scope'];
