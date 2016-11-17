@@ -134,3 +134,13 @@
     }
   }
 }
+
+@media screen and (max-height: 200px){
+  .container{
+    .home-page{
+      .slogan{
+        font-size: 12px;
+      }
+    }
+  }
+}
