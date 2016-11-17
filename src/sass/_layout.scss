@@ -82,3 +82,17 @@ $hamburger-hover-transition-timing-function: linear !default;
     }
   }
 }
+
+@media screen and (max-height: 300px){
+  .container{
+    .navbar{
+      .nav-button{
+        .links{
+          a{
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}
