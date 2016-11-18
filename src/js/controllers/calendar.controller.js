@@ -113,7 +113,7 @@ $('.month-selector, .year-selector').on('change', function(event){
     //  console.log($('.num-date').html());
     })
     if($('.num-container').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 80}, 250);
     } else{
       $('body').animate({scrollTop: '0px'}, 250);
     }
@@ -154,9 +154,10 @@ $('.month-selector, .year-selector').on('change', function(event){
   renderPrevMonthDays();
 
 })
+$('.month-selector').change();
+
 }
 
-$('.month-selector').change();
 
 CalendarController.$inject = ['$scope'];
 
