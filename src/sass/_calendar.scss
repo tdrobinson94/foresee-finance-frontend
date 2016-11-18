@@ -192,7 +192,7 @@
     font-size: 50px;
     background: transparent;
     border: none;
-    opacity: .2;
+    opacity: .1;
     z-index: 2;
     transition: all .2s ease-in-out;
   }
@@ -203,7 +203,7 @@
     font-size: 50px;
     background: transparent;
     border: none;
-    opacity: .2;
+    opacity: .1;
     z-index: 2;
     transition: all .2s ease-in-out;
   }
@@ -217,7 +217,7 @@
 @media screen and (max-width: 600px){
   .calendar-page{
     .button{
-      font-size: 35px;
+      font-size: 45px;
     }
   }
 }
