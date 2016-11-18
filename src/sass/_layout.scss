@@ -15,7 +15,7 @@ $hamburger-hover-transition-timing-function: linear !default;
   height: 100%;
   width: 100%;
   transition: .7s;
-  background: #37474F;
+  // background: #37474F;
   .navbar{
     position: fixed;
     left: 0px;
@@ -39,13 +39,12 @@ $hamburger-hover-transition-timing-function: linear !default;
         width: 0px;
         height: 100%;
         transition: .7s;
-        background: black;
+        background: #37474F;
         // text-align: center;
-        opacity: .8;
         a{
           width: 100%;
           padding: 20px;
-          color: #37474F;
+          color: black;
           display: block;
           text-decoration: none;
           transition: all .2s ease-in-out;
