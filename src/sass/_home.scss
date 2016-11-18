@@ -13,17 +13,14 @@
     // box-shadow: 0 4px 10px 0 black;
     .title{
       position: fixed;
-      top: 0px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 50px;
+      top: 3px;
       font-size: 40px;
       font-style: italic;
       font-family: monospace;
       font-weight: bold;
       z-index: 0;
+      margin-left: 70px;
+      color: white;
     }
     .background-image{
       width: 100%;
