@@ -5,12 +5,10 @@ import _ from 'lodash';
 
 function CalendarController($scope){
 
-  // let vm = this;
-  // // vm.next = next;
-  // // vm.prev = prev;
-  // // vm.current = current;
-  // // vm.accounts = [];
-  // // vm.accountData = [];
+  let vm = this;
+  vm.next = next;
+  vm.prev = prev;
+  // vm.current = current;
 
   let clock = new Date();
   let month = clock.getMonth();
@@ -155,6 +153,50 @@ $('.month-selector, .year-selector').on('change', function(event){
 
 })
 $('.month-selector').change();
+
+function prev(){
+  if($(document).find('#year').val() <= (year - 5)){
+    $(document).find('#year').val(year - 5).change()
+    $(document).find('#month').val(0).change()
+  } else {
+    if($('#month').val() == null || $('#month').val() == 0){
+      $(document).find('#month').val(11).change()
+      $(document).find('#year').val(Number($(document).find('#year').val()) - 1).change()
+    } else {
+      $(document).find('#month').val(Number($(document).find('#month').val()) - 1).change();
+    }
+  }
+  if($('.num-container').hasClass('day_background_color') === true){
+    $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
+  } else{
+    $('body').animate({scrollTop: '0px'}, 250);
+  }
+}
+
+// function current(){
+//   $(document).find('#month').val(month).change()
+//   $(document).find('#year').val(year).change()
+//   $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+// }
+
+function next(){
+  if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
+    $(document).find('#year').val(year + 5).change()
+    $(document).find('#month').val(11).change()
+  } else {
+    if($(document).find('#month').val() == null || $(document).find('#month').val() == 11){
+      $(document).find('#month').val(0).change()
+      $(document).find('#year').val(Number($(document).find('#year').val()) + 1).change()
+    } else {
+      $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
+    }
+  }
+  if($('.num-container').hasClass('day_background_color') === true){
+    $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
+  } else{
+    $('body').animate({scrollTop: '0px'}, 250);
+  }
+}
 
 }
 

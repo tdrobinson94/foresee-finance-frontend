@@ -1,3 +1,11 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+
 .calendar-page{
   width: 100%;
   height: 100%;
@@ -177,5 +185,39 @@
   }
   .dead_month_color{
     opacity: .3;
+  }
+  .prev{
+    position: fixed;
+    top: 50%;
+    font-size: 50px;
+    background: transparent;
+    border: none;
+    opacity: .2;
+    z-index: 2;
+    transition: all .2s ease-in-out;
+  }
+  .next{
+    position: fixed;
+    top: 50%;
+    right: 0px;
+    font-size: 50px;
+    background: transparent;
+    border: none;
+    opacity: .2;
+    z-index: 2;
+    transition: all .2s ease-in-out;
+  }
+  .button:hover{
+    color: #00B0FF;
+    opacity: 10;
+    transition: all .2s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .calendar-page{
+    .button{
+      font-size: 35px;
+    }
   }
 }
