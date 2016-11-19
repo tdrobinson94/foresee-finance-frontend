@@ -29,6 +29,13 @@ $hamburger-hover-transition-timing-function: linear !default;
       .hamburger{
         outline: 0;
         z-index: 2;
+        display: flex;
+        align-items: center;
+        .hamburger-label{
+          margin-left: 5px;
+          color: white;
+          z-index: 2;
+        }
       }
       .links{
         position: fixed;
