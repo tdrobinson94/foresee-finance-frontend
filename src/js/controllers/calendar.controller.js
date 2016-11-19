@@ -110,11 +110,14 @@ $('.month-selector, .year-selector').on('change', function(event){
      }
     //  console.log($('.num-date').html());
     })
-    if($('.num-container').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
-    } else{
-      $('body').animate({scrollTop: '0px'}, 250);
+    function scrollDay(){
+      if($('.num-container').hasClass('day_background_color') === true){
+        $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
+      } else{
+        $('body').animate({scrollTop: '0px'}, 250);
+      }
     }
+    window.setTimeout(scrollDay, 500);
   };
   function renderPrevMonthDays(){
     MONTHS[1].days = Number($(document).find('#year').val()) % 4 == 0 ? 29 : 28
@@ -166,11 +169,14 @@ function prev(){
       $(document).find('#month').val(Number($(document).find('#month').val()) - 1).change();
     }
   }
-  if($('.num-container').hasClass('day_background_color') === true){
-    $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
-  } else{
-    $('body').animate({scrollTop: '0px'}, 250);
+  function scrollDay(){
+    if($('.num-container').hasClass('day_background_color') === true){
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
+    } else{
+      $('body').animate({scrollTop: '0px'}, 250);
+    }
   }
+  window.setTimeout(scrollDay, 500);
 }
 
 // function current(){
@@ -191,11 +197,14 @@ function next(){
       $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
     }
   }
-  if($('.num-container').hasClass('day_background_color') === true){
-    $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
-  } else{
-    $('body').animate({scrollTop: '0px'}, 250);
+  function scrollDay(){
+    if($('.num-container').hasClass('day_background_color') === true){
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
+    } else{
+      $('body').animate({scrollTop: '0px'}, 250);
+    }
   }
+  window.setTimeout(scrollDay, 500);
 }
 
 }
