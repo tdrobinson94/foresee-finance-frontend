@@ -15,7 +15,7 @@
       position: fixed;
       font-size: 40px;
       font-style: italic;
-      // font-family: monospace;
+      font-family: monospace;
       font-weight: bold;
       z-index: 0;
       width: 100%;
@@ -45,6 +45,7 @@
       font-size: 29px;
       font-weight: bold;
       text-shadow: 1px 1px #263238;
+      font-family: monospace;
       .sign-up{
         background-color: #00E676;
         font-size: 15px;
@@ -75,7 +76,7 @@
         // outline: none;
         background-color: #00B0FF;
         color: white;
-        opacity: .9;
+        // opacity: .9;
       }
       .log-in:hover{
         // opacity: .6;

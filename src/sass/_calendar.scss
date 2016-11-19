@@ -220,5 +220,28 @@
     .button{
       font-size: 45px;
     }
+    .calendar-container{
+      .days{
+        // height: 90px;
+        .num-box{
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 450px){
+  .calendar-page{
+    .button{
+    }
+    .calendar-container{
+      .days{
+        height: 90px;
+        .num-box{
+
+        }
+      }
+    }
   }
 }
