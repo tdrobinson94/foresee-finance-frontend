@@ -112,9 +112,9 @@ $('.month-selector, .year-selector').on('change', function(event){
     })
     function scrollDay(){
       if($('.num-container').hasClass('day_background_color') === true){
-        $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
+        $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 500);
       } else{
-        $('body').animate({scrollTop: '0px'}, 250);
+        $('body').animate({scrollTop: '0px'}, 500);
       }
     }
     window.setTimeout(scrollDay, 500);
@@ -171,9 +171,9 @@ function prev(){
   }
   function scrollDay(){
     if($('.num-container').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 500);
     } else{
-      $('body').animate({scrollTop: '0px'}, 250);
+      $('body').animate({scrollTop: '0px'}, 500);
     }
   }
   window.setTimeout(scrollDay, 500);
@@ -182,7 +182,7 @@ function prev(){
 // function current(){
 //   $(document).find('#month').val(month).change()
 //   $(document).find('#year').val(year).change()
-//   $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+//   $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 500);
 // }
 
 function next(){
@@ -199,9 +199,9 @@ function next(){
   }
   function scrollDay(){
     if($('.num-container').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 250);
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 500);
     } else{
-      $('body').animate({scrollTop: '0px'}, 250);
+      $('body').animate({scrollTop: '0px'}, 500);
     }
   }
   window.setTimeout(scrollDay, 500);
