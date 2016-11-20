@@ -94,7 +94,7 @@
         position: relative;
         transition: all .2s ease-in-out;
         outline: none;
-        // overflow-y: scroll;
+        overflow-y: scroll;
         .plus-button{
           visibility: hidden;
           position: absolute;
@@ -150,19 +150,11 @@
             color: white;
           }
         }
-        .beginning_balance{
-          color: white;
+        span{
+          display: block;
           font-size: 11px;
-          position: absolute;
-          top: 30px;
-          left: 2px;
-        }
-        .ending_balance{
           color: white;
-          font-size: 11px;
-          position: absolute;
-          bottom: 5px;
-          left: 2px;
+          margin-left: 2px;
         }
         .num-date{
           display: none;
@@ -196,6 +188,10 @@
     opacity: .3;
     z-index: 2;
     transition: all .2s ease-in-out;
+  }
+  .hide-button{
+    display: none;
+    // transition: all .2s ease-in-out;
   }
   .next{
     position: fixed;

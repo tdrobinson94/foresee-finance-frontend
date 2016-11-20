@@ -1,0 +1,25 @@
+<div class="login-page">
+  <div class="green-bar">
+    <span class="title">Fore$ee</span>
+    <span class="title2">Personal Financing</span>
+  </div>
+  <div class="form-box">
+    <div class="options"><a href="/#/sign-up">Sign Up</a> | <a href="/#/login">Log In</a></div>
+    <form id="addAccountForm" class="loginForm" ng-submit="vm.login(user)">
+      <span>Log In</span>
+      <h2>
+        Forecast Your Spending and be Prepared for the Future.
+      </h2>
+      <div>
+        Sign in to see your data.
+      </div>
+      <div class="incorrectInput"></div>
+      <input type="text" class="usernameInput login_input" placeholder="Username" name="username" ng-model="user.username" required><br />
+      <input type="password" class="passwordInput login_input" placeholder="Password" ng-model="user.password" required><br />
+      <button class="log-in">Log-in</button>
+    </form>
+    <div class="loading_spinner" ng-show="vm.loadingIndicator">
+      <img src="images/green_loading_indicator.gif" alt="Loading..." /><br />
+    </div>
+  </div>
+</div>

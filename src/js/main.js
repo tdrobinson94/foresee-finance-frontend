@@ -15,6 +15,7 @@ import {CalendarService} from './services/calendar.service';
 import {CalendarController} from './controllers/calendar.controller';
 import {HomeController} from './controllers/home.controller';
 import {LayoutController} from './controllers/layout.controller';
+import { LoginController } from './controllers/login.controller';
 
 angular
   .module('app', ['ui.router', 'ngMaterial', 'ngCookies'])
@@ -23,7 +24,7 @@ angular
   .controller('CalendarController', CalendarController)
   .controller('HomeController', HomeController)
   .controller('LayoutController', LayoutController)
-
+  .controller('LoginController', LoginController)
 
 
 ;

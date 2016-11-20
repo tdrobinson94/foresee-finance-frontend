@@ -8,7 +8,7 @@ function CalendarController($scope){
   let vm = this;
   vm.next = next;
   vm.prev = prev;
-  // vm.current = current;
+  vm.current = current;
 
   let clock = new Date();
   let month = clock.getMonth();
@@ -177,13 +177,24 @@ function prev(){
     }
   }
   window.setTimeout(scrollDay, 500);
+  // displayCurrent();
 }
 
-// function current(){
-//   $(document).find('#month').val(month).change()
-//   $(document).find('#year').val(year).change()
-//   $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 500);
+function current(){
+  $(document).find('#month').val(month).change()
+  $(document).find('#year').val(year).change()
+  $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 500);
+  // displayCurrent();
+}
+// function displayCurrent() {
+//   if($('.num-container').hasClass('day_background_color') === true){
+//     $('.current-box').addClass('hide-button');
+//   } else if ($('.num-container').hasClass('day_background_color') === false) {
+//     $('.current-box').removeClass('hide-button');
+//   }
 // }
+
+// displayCurrent();
 
 function next(){
   if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
@@ -205,6 +216,7 @@ function next(){
     }
   }
   window.setTimeout(scrollDay, 500);
+  // displayCurrent();
 }
 
 }

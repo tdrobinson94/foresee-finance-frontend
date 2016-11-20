@@ -15,7 +15,6 @@
       position: fixed;
       font-size: 40px;
       font-style: italic;
-      font-family: monospace;
       font-weight: bold;
       z-index: 0;
       width: 100%;
@@ -23,6 +22,15 @@
       justify-content: center;
       align-items: center;
       height: 54px;
+      color: white;
+    }
+    .title2{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 50px;
+      letter-spacing: 5px;
       color: white;
     }
     .background-image{
@@ -36,7 +44,7 @@
       z-index: -2;
     }
     .slogan{
-      height: 50%;
+      // height: 50%;
       width: 100%;
       position: fixed;
       top: 40%;
@@ -45,7 +53,6 @@
       font-size: 29px;
       font-weight: bold;
       text-shadow: 1px 1px #263238;
-      font-family: monospace;
       .sign-up{
         background-color: #00E676;
         font-size: 15px;
@@ -116,11 +123,14 @@
   }
 }
 
-@media screen and (max-height: 300px){
+@media screen and (max-height: 400px){
   .container{
     .home-page{
       .title{
         font-size: 30px;
+      }
+      .title2{
+        font-size: 15px;
       }
       .slogan{
         top: 35%;
@@ -143,6 +153,12 @@
 @media screen and (max-height: 200px){
   .container{
     .home-page{
+      .title{
+        font-size: 20px;
+      }
+      .title2{
+        font-size: 10px;
+      }
       .slogan{
         font-size: 12px;
       }
