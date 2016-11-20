@@ -145,3 +145,28 @@
     }
   }
 }
+
+@media screen and (max-width: 600px){
+  .container{
+    .login-page{
+      .green-bar{
+        .title{
+        }
+        .title2{
+
+        }
+      }
+      .form-box{
+        .options{
+          width: 90%;
+        }
+        .addAccountForm{
+          width: 90%;
+        }
+        .loginForm{
+          width: 90%;
+        }
+      }
+    }
+  }
+}
