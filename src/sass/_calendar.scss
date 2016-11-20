@@ -82,7 +82,7 @@
     top: 80px;
     .days{
       width: 100%;
-      height: 25%;
+      height: 150px;
       overflow: auto;
       .num-box{
         box-sizing: border-box;
@@ -222,7 +222,7 @@
     }
     .calendar-container{
       .days{
-        // height: 90px;
+        height: 115px;
         .num-box{
 
         }
@@ -231,13 +231,13 @@
   }
 }
 
-@media screen and (max-height: 450px){
+@media screen and (max-width: 400px){
   .calendar-page{
     .button{
     }
     .calendar-container{
       .days{
-        height: 90px;
+        height: 102px;
         .num-box{
 
         }
