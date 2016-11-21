@@ -76,16 +76,16 @@ $('.month-selector, .year-selector').on('change', function(event){
          let newMonth = '0' + nextMonth
          if ((dayIndex - monthDays) < 10){
            let newDayIndex = '0' + (dayIndex - monthDays)
-           day.find('.num-date').html(currentYear + '-' + newMonth + '-' + newDayIndex);
+           day.find('.num-date').html(newMonth + '/' + newDayIndex);
          } else {
-           day.find('.num-date').html(currentYear + '-' + newMonth + '-' + (dayIndex - monthDays));
+           day.find('.num-date').html(newMonth + '/' + (dayIndex - monthDays));
          }
        } else {
          if ((dayIndex - monthDays) < 10){
            let newDayIndex = '0' + (dayIndex - monthDays)
-           day.find('.num-date').html(currentYear + '-' + nextMonth + '-' + newDayIndex);
+           day.find('.num-date').html(nextMonth + '/' + newDayIndex);
          } else {
-           day.find('.num-date').html(currentYear + '-' + nextMonth + '-' + (dayIndex - monthDays));
+           day.find('.num-date').html(nextMonth + '/' + (dayIndex - monthDays));
          }
        }
      } else {
@@ -95,20 +95,19 @@ $('.month-selector, .year-selector').on('change', function(event){
          let newMonth = '0' + thisMonth
          if(dayIndex < 10){
            let newDays = '0' + dayIndex
-           day.find('.num-date').html(currentYear + '-' + newMonth + '-' + newDays)
+           day.find('.num-date').html(newMonth + '/' + newDays)
          } else{
-           day.find('.num-date').html(currentYear + '-' + newMonth + '-' + (dayIndex));
+           day.find('.num-date').html(newMonth + '/' + (dayIndex));
          }
        } else {
          if(dayIndex < 10){
            let newDays = '0' + dayIndex
-           day.find('.num-date').html(currentYear + '-' + thisMonth + '-' + newDays)
+           day.find('.num-date').html(thisMonth + '/' + newDays)
          } else{
-           day.find('.num-date').html(currentYear + '-' + thisMonth + '-' + (dayIndex));
+           day.find('.num-date').html(thisMonth + '/' + (dayIndex));
          }
        }
      }
-    //  console.log($('.num-date').html());
     })
     function scrollDay(){
       if($('.num-container').hasClass('day_background_color') === true){
@@ -138,10 +137,9 @@ $('.month-selector, .year-selector').on('change', function(event){
         }
         if(prevMonth < 10){
           let newMonth = '0' + prevMonth
-          day.find('.num-date').html(currentYear + '-' + newMonth + '-' + (prevDays[dayIndex]));
-          // day.find('.num-box').data(currentYear + '-' + newMonth + '-' + (prevDays[dayIndex]));
+          day.find('.num-date').html(newMonth + '/' + (prevDays[dayIndex]));
         } else {
-          day.find('.num-date').html(currentYear + '-' + prevMonth + '-' + (prevDays[dayIndex]));
+          day.find('.num-date').html(prevMonth + '/' + (prevDays[dayIndex]));
         }
 
         day.find('.num').parent().addClass("dead_month_color");
@@ -149,7 +147,6 @@ $('.month-selector, .year-selector').on('change', function(event){
       }
     })
   }
-
 
   renderMonth();
   renderPrevMonthDays();
@@ -177,24 +174,13 @@ function prev(){
     }
   }
   window.setTimeout(scrollDay, 500);
-  // displayCurrent();
 }
 
 function current(){
   $(document).find('#month').val(month).change()
   $(document).find('#year').val(year).change()
   $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 500);
-  // displayCurrent();
 }
-// function displayCurrent() {
-//   if($('.num-container').hasClass('day_background_color') === true){
-//     $('.current-box').addClass('hide-button');
-//   } else if ($('.num-container').hasClass('day_background_color') === false) {
-//     $('.current-box').removeClass('hide-button');
-//   }
-// }
-
-// displayCurrent();
 
 function next(){
   if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
@@ -216,7 +202,6 @@ function next(){
     }
   }
   window.setTimeout(scrollDay, 500);
-  // displayCurrent();
 }
 
 }

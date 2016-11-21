@@ -83,7 +83,7 @@
     .days{
       width: 100%;
       height: 150px;
-      overflow: auto;
+      overflow: none;
       .num-box{
         box-sizing: border-box;
         float: left;
@@ -94,44 +94,19 @@
         position: relative;
         transition: all .2s ease-in-out;
         outline: none;
-        overflow-y: scroll;
-        .plus-button{
-          visibility: hidden;
-          position: absolute;
-          bottom: 0px;
-          right: 0px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: #00E676;
-          font-size: 25px;
-          background-color: transparent;
-          border: none;
-          // outline: none;
-          transition: opacity .2s ease-in-out;
-        }
-        .plus-button:hover{
-          opacity: .5;
-          transition: all .2s ease-in-out;
-        }
-        .minus-button{
-          position: absolute;
-          bottom: 0px;
-          left: 0px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          visibility: hidden;
-          color: #F44336;
-          font-size: 25px;
-          background-color: transparent;
-          border: none;
-          // outline: none;
-          transition: opacity .2s ease-in-out;
-        }
-        .minus-button:hover{
-          opacity: .5;
-          transition: all .2s ease-in-out;
+        .shade{
+          width: 100%;
+          height: 0px;
+          background: black;
+          opacity: .4;
+          transition: all .5s ease-in-out;
+          // overflow-y: scroll;
+          .num-date{
+            display: none;
+            padding: 3px;
+            color: #00E676;
+            font-size: 12;
+          }
         }
         .num-container{
           float: right;
@@ -150,24 +125,18 @@
             color: white;
           }
         }
-        span{
-          display: block;
-          font-size: 11px;
-          color: white;
-          margin-left: 2px;
-        }
-        .num-date{
-          display: none;
-        }
       }
       .num-box:hover{
-        opacity: .8;
-        transition: all .2s ease-in-out;
-        .plus-button{
-          visibility: visible;
+        .shade{
+          height: 100%;
+          transition: all .5s ease-in-out;
+          .num-date{
+            display: block;
+            text-align: center;
+          }
         }
-        .minus-button{
-          visibility: visible;
+        .num-container{
+          display: none;
         }
       }
     }
@@ -188,10 +157,6 @@
     opacity: .3;
     z-index: 2;
     transition: all .2s ease-in-out;
-  }
-  .hide-button{
-    display: none;
-    // transition: all .2s ease-in-out;
   }
   .next{
     position: fixed;
@@ -220,7 +185,18 @@
       .days{
         height: 115px;
         .num-box{
-
+          .shade{
+            .num-date{
+              font-size: 10px;
+            }
+          }
+          .num-container{
+            width: 10px;
+            height: 10px;
+            .num{
+              font-size: 10px;
+            }
+          }
         }
       }
     }
@@ -235,7 +211,6 @@
       .days{
         height: 102px;
         .num-box{
-
         }
       }
     }
