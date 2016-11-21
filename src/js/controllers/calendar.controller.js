@@ -116,7 +116,7 @@ $('.month-selector, .year-selector').on('change', function(event){
         $('body').animate({scrollTop: '0px'}, 500);
       }
     }
-    window.setTimeout(scrollDay, 1000);
+    window.setTimeout(scrollDay, 250);
   };
   function renderPrevMonthDays(){
     MONTHS[1].days = Number($(document).find('#year').val()) % 4 == 0 ? 29 : 28
@@ -173,7 +173,7 @@ function prev(){
       $('body').animate({scrollTop: '0px'}, 500);
     }
   }
-  window.setTimeout(scrollDay, 500);
+  window.setTimeout(scrollDay, 250);
 }
 
 function current(){
@@ -201,7 +201,7 @@ function next(){
       $('body').animate({scrollTop: '0px'}, 500);
     }
   }
-  window.setTimeout(scrollDay, 500);
+  window.setTimeout(scrollDay, 250);
 }
 
 }
