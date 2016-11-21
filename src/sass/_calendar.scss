@@ -103,9 +103,11 @@
           // overflow-y: scroll;
           .num-date{
             display: none;
-            padding: 3px;
             color: white;
             font-size: 12px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
           }
         }
         .num-container{
@@ -131,8 +133,7 @@
           height: 100%;
           transition: all .5s ease-in-out;
           .num-date{
-            display: block;
-            text-align: center;
+            display: inline;
           }
         }
         .num-container{
