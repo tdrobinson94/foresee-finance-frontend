@@ -45,7 +45,7 @@
         animation: mymove 5s infinite;
       }
       @keyframes mymove{
-        50% {transform: scale(1.2)}
+        50% {transform: scale(1)}
       }
     }
     .background-image{
@@ -68,6 +68,7 @@
       font-size: 29px;
       font-weight: bold;
       text-shadow: 1px 1px #263238;
+      z-index: 2;
       .sign-up{
         background-color: #00E676;
         font-size: 15px;
@@ -112,6 +113,50 @@
       .sign-up:hover{
         background-color: #00B0FF;
         transition: all .2s ease-in-out;
+      }
+    }
+    .square-container{
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0px;
+      z-index: 1;
+      opacity: .6;
+      .square1{
+        border: 4px solid #00e676;
+        border-radius: 100%;
+        height: 250px;
+        width: 250px;
+        transform: rotate(180deg);
+        animation: spin 4s infinite;
+        color: #00e676;
+        font-size: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px;
+      }
+      .square2{
+        border: 4px solid #00b0ff;
+        border-radius: 100%;
+        height: 250px;
+        width: 250px;
+        animation: spinner 5s infinite;
+        color: #00b0ff;
+        font-size: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px;
+      }
+      @keyframes spinner{
+        50% {transform: rotate(720deg)}
+      }
+      @keyframes spin{
+        50% {transform: rotate(360deg)}
       }
     }
   }
