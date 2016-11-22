@@ -97,13 +97,12 @@
         .shade{
           width: 100%;
           height: 0px;
-          background: black;
-          opacity: .4;
+          background: rgba(0, 0, 0, 0.4);
           transition: all .5s ease-in-out;
           // overflow-y: scroll;
           .num-date{
             display: none;
-            color: white;
+            color: #00E676;
             font-size: 12px;
             position: absolute;
             right: 10px;
