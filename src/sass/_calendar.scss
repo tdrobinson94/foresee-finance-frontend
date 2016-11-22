@@ -92,7 +92,7 @@
         border: 1px solid #455A64;
         background-color: #37474F;
         position: relative;
-        transition: all .2s ease-in-out;
+        transition: all .5s ease-in-out;
         outline: none;
         .shade{
           width: 100%;
@@ -129,12 +129,13 @@
         }
       }
       .num-box:hover{
+        transition: all .5s ease-in-out;
         .shade{
           height: 100%;
-          transition: all .5s ease-in-out;
           .num-date{
             display: inline;
           }
+          transition: all .5s ease-in-out;
         }
         .num-container{
           display: none;
