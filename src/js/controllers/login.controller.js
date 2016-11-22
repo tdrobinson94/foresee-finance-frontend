@@ -2,7 +2,6 @@ import $ from 'jquery';
 
 function LoginController(){
 
-
 }
 
 
