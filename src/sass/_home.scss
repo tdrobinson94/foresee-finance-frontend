@@ -128,37 +128,56 @@
       z-index: 1;
       opacity: .6;
       .square1{
-        border: 4px solid #00e676;
-        border-radius: 100%;
-        height: 250px;
-        width: 250px;
+        border: 4px solid #00b0ff;
+        height: 50px;
+        width: 50px;
         transform: rotate(180deg);
         animation: spin 4s infinite;
         color: #00e676;
-        font-size: 250px;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 50px;
+        // position: fixed;
+        // top: 20%;
       }
       .square2{
-        border: 4px solid #00b0ff;
-        border-radius: 100%;
-        height: 250px;
-        width: 250px;
-        animation: spinner 5s infinite;
+        border: 4px solid #00e676;
+        height: 50px;
+        width: 50px;
+        animation: spinner 7s infinite;
         color: #00b0ff;
-        font-size: 250px;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 50px;
+        // position: fixed;
+        // bottom: 10%;
+      }
+      .square3{
+        border: 4px solid #00b0ff;
+        height: 50px;
+        width: 50px;
+        animation: spin 6s infinite;
+        color: #00b0ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px;
+        // position: fixed;
+        // top: 10%;
+      }
+      .square2:hover{
+        animation: spinner 3s infinite;
       }
       @keyframes spinner{
         50% {transform: rotate(720deg)}
       }
       @keyframes spin{
-        50% {transform: rotate(360deg)};
+        50% {transform: rotate(360deg)}
+      }
+      @keyframes slow{
+        50% {transform: rotatate(180deg)}
       }
     }
   }
@@ -183,14 +202,15 @@
       }
       .square-container{
         .square1{
-          height: 150px;
-          width: 150px;
-          font-size: 150px;
+          height: 50px;
+          width: 50px;
         }
         .square2{
-          height: 150px;
-          width: 150px;
-          font-size: 150px;
+          height: 50px;
+          width: 50px;
+        }
+        .square3{
+
         }
       }
     }
