@@ -167,9 +167,9 @@
         // position: fixed;
         // top: 10%;
       }
-      .square2:hover{
-        animation: spinner 3s infinite;
-      }
+      // .square2:hover{
+      //   animation: spinner 3s infinite;
+      // }
       @keyframes spinner{
         50% {transform: rotate(720deg)}
       }
@@ -202,15 +202,16 @@
       }
       .square-container{
         .square1{
-          height: 50px;
+          height: 25px;
           width: 50px;
         }
         .square2{
-          height: 50px;
+          height: 25px;
           width: 50px;
         }
         .square3{
-
+          height: 25px;
+          width: 50px;
         }
       }
     }
