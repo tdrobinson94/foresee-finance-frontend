@@ -101,12 +101,35 @@
           transition: all  .5s ease-in-out;
           // overflow-y: scroll;
           .num-date{
-            display: none;
+            visibility: hidden;
             color: #00E676;
             font-size: 12px;
             position: absolute;
             right: 10px;
             top: 10px;
+            // transition: visibility .3s ease-in-out;
+          }
+          .button-box{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            visibility: hidden;
+            // height: 0px;
+            // border-top: 1px solid white;
+            .expense{
+              position: absolute;
+              bottom: 5px;
+              left: 5px;
+              color: #F44336;
+              font-size: 20px;
+            }
+            .income{
+              position: absolute;
+              bottom: 5px;
+              right: 5px;
+              color: #00E676;
+              font-size: 20px;
+            }
           }
         }
         .num-container{
@@ -132,9 +155,19 @@
         .shade{
           height: 100%;
           .num-date{
-            display: inline;
+            visibility: visible;
+            transition: visibility .5s ease-in-out;
           }
-          transition: all .5s ease-in-out;
+          .button-box{
+            visibility: visible;
+            height: auto;
+            .expense{
+              visibility: visible;
+            }
+            .income{
+              visibility: visible;
+            }
+          }
         }
         .num-container{
           display: none;
