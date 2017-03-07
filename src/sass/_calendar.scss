@@ -158,16 +158,16 @@
             visibility: visible;
             transition: visibility .5s ease-in-out;
           }
-        //   .button-box{
-        //     visibility: visible;
-        //     height: auto;
-        //     .expense{
-        //       visibility: visible;
-        //     }
-        //     .income{
-        //       visibility: visible;
-        //     }
-        //   }
+          .button-box{
+            visibility: visible;
+            height: auto;
+            .expense{
+              visibility: visible;
+            }
+            .income{
+              visibility: visible;
+            }
+          }
         }
         .num-container{
           display: none;
@@ -226,6 +226,9 @@
             .num-date{
               font-size: 10px;
             }
+            .button-box{
+                display: none;
+            }
           }
           .num-container{
             width: 10px;
@@ -238,14 +241,34 @@
       }
       .cur_trans_box{
           display: block;
-          height: 50%;
+          height: 100px;
           width: 100%;
-        //   border: 1px solid red;
-          span{
+          .trans_act{
               display: block;
-            //   width: 100%;
               text-align: center;
               margin: 5px;
+          }
+          .button-box{
+            position: relative;
+            top: 25px;
+            width: 100%;
+            visibility: visible;
+            // height: 0px;
+            // border-top: 1px solid white;
+            .expense{
+              position: absolute;
+              bottom: 5px;
+              left: 5px;
+              color: #F44336;
+              font-size: 40px;
+            }
+            .income{
+              position: absolute;
+              bottom: 5px;
+              right: 5px;
+              color: #00E676;
+              font-size: 40px;
+            }
           }
       }
     }
@@ -263,6 +286,20 @@
     .calendar-container{
       .days{
         .num-box{
+            .shade{
+                .num-date{
+                    right: 5px;
+                    top: 5px;
+                    font-size: 8px;
+                }
+            }
+            .num-container{
+                width: 5px;
+                height: 5px;
+                .num{
+                    font-size: 8px;
+                }
+            }
         }
       }
     }
