@@ -220,14 +220,11 @@
     }
     .calendar-container{
       .days{
-        height: 50px;
+        height: 115px;
         .num-box{
           .shade{
             .num-date{
               font-size: 10px;
-            }
-            .button-box{
-                display: none;
             }
           }
           .num-container{
@@ -237,6 +234,41 @@
               font-size: 10px;
             }
           }
+        }
+      }
+    }
+    .button{
+        position: fixed;
+        top: 35%;
+    }
+  }
+}
+
+@media screen and (max-width: 400px){
+  .calendar-page{
+    .button{
+    }
+    .calendar-container{
+      .days{
+          height: 50px;
+        .num-box{
+            .shade{
+                .num-date{
+                    right: 5px;
+                    top: 5px;
+                    font-size: 8px;
+                }
+                .button-box{
+                    display: none;
+                }
+            }
+            .num-container{
+                width: 5px;
+                height: 5px;
+                .num{
+                    font-size: 8px;
+                }
+            }
         }
       }
       .cur_trans_box{
@@ -270,37 +302,6 @@
               font-size: 40px;
             }
           }
-      }
-    }
-    .button{
-        position: fixed;
-        top: 35%;
-    }
-  }
-}
-
-@media screen and (max-width: 400px){
-  .calendar-page{
-    .button{
-    }
-    .calendar-container{
-      .days{
-        .num-box{
-            .shade{
-                .num-date{
-                    right: 5px;
-                    top: 5px;
-                    font-size: 8px;
-                }
-            }
-            .num-container{
-                width: 5px;
-                height: 5px;
-                .num{
-                    font-size: 8px;
-                }
-            }
-        }
       }
     }
   }
