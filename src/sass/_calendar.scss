@@ -109,65 +109,6 @@
             top: 10px;
             // transition: visibility .3s ease-in-out;
           }
-          .shade-content{
-              width: 100%;
-              height: 65%;
-              opacity: .8;
-              span{
-                  width: 100%;
-                  font-size: 12px;
-                  color: #00B0FF;
-                  display: block;
-                  text-align: center;
-              }
-              .beg-bal{
-                  visibility: hidden;
-              }
-              .end-bal{
-                  position: absolute;
-                  bottom: 10%;
-                  text-align: center;
-              }
-              .transactions{
-                  visibility: hidden;
-                  .exp-button{
-                      color: red;
-                  }
-                  .inc-button{
-                      color: #00E676;
-                  }
-                  button{
-                      background: transparent;
-                      border: none;
-                      border-radius: 5px;
-                      padding: 0px;
-                      font-size: 9px;
-                      text-decoration: underline;
-                  }
-              }
-          }
-          .button-box{
-            position: absolute;
-            bottom: 0px;
-            width: 100%;
-            visibility: hidden;
-            // height: 0px;
-            // border-top: 1px solid white;
-            .expense{
-              position: absolute;
-              bottom: 5px;
-              left: 5px;
-              color: #F44336;
-              font-size: 20px;
-            }
-            .income{
-              position: absolute;
-              bottom: 5px;
-              right: 5px;
-              color: #00E676;
-              font-size: 20px;
-            }
-          }
         }
         .num-container{
           float: right;
@@ -194,62 +135,6 @@
           .num-date{
             visibility: visible;
             transition: visibility .5s ease-in-out;
-          }
-          .shade-content{
-              width: 100%;
-              height: 75%;
-              position: relative;
-              top: 15%;
-              visibility: visible;
-              opacity: .8;
-              .beg-bal{
-                  position: absolute;
-                  top: 0px;
-                  width: 100%;
-                  visibility: visible;
-              }
-              .end-bal{
-                 position: absolute;
-                 bottom: 0px;
-                 width: 100%;
-              }
-              span{
-                  font-size: 11px;
-                  color: #00B0FF;
-                  text-align: center;
-              }
-              .expense-box{
-                  position: absolute;
-                  top: 15px;
-                  left: 0px;
-                  width: 49%;
-                  height: 67%;
-                  color: red;
-                  text-align: center;
-              }
-              .income-box{
-                  position: absolute;
-                  top: 15px;
-                  right: 0px;
-                  width: 49%;
-                  height: 67%;
-                  color: #00E676;
-                  text-align: center;
-              }
-              .transactions{
-                  font-size: 10px;
-                  visibility: visible;
-              }
-          }
-          .button-box{
-            visibility: visible;
-            height: auto;
-            .expense{
-              visibility: visible;
-            }
-            .income{
-              visibility: visible;
-            }
           }
         }
         .num-container{
@@ -309,14 +194,6 @@
             .num-date{
               font-size: 10px;
             }
-            .shade-content{
-                span{
-                    text-align: left;
-                }
-                .transactions{
-                    visibility: hidden;
-                }
-            }
           }
           .num-container{
             width: 10px;
@@ -330,21 +207,9 @@
           .shade{
             .num-date{
             }
-            .shade-content{
-                top: 20%;
-                height: 75%;
-                span{
-                    font-size: 9px;
-                }
-                .transactions{
-                    font-size: 8px;
-                }
-            }
           }
         }
       }
-    }
-    .button{
     }
   }
 }
@@ -363,14 +228,6 @@
                     top: 5px;
                     font-size: 8px;
                 }
-                .shade-content{
-                    span{
-                        font-size: 9px;
-                    }
-                }
-                .button-box{
-                    display: none;
-                }
             }
             .num-container{
                 width: 5px;
@@ -384,20 +241,6 @@
           .shade{
             .num-date{
             }
-            .shade-content{
-                height: 75%;
-                top: 25%;
-                span{
-                    font-size: 9px;
-                    text-align: center;
-                }
-                .beg-bal{
-                    visibility: hidden;
-                }
-                .transactions{
-                    visibility: hidden;
-                }
-            }
           }
         }
       }
@@ -410,67 +253,6 @@
               text-align: center;
               margin: 5px;
               text-decoration: underline;
-          }
-          .button-box{
-            position: relative;
-            top: 25px;
-            width: 100%;
-            visibility: visible;
-            // height: 0px;
-            // border-top: 1px solid white;
-            .expense{
-              position: absolute;
-              bottom: 5px;
-              left: 5px;
-              color: #F44336;
-              font-size: 40px;
-            }
-            .income{
-              position: absolute;
-              bottom: 5px;
-              right: 5px;
-              color: #00E676;
-              font-size: 40px;
-            }
-          }
-          .shade-content{
-              .beg-bal{
-
-              }
-              .expense-box{
-                  position: absolute;
-                  left: 0px;
-              }
-              .income-box{
-                  position: absolute;
-                  right: 0px;
-              }
-              .end-bal{
-                  position: absolute;
-                  bottom: 10px;
-              }
-              span{
-                text-align: center;
-                width: 100%;
-                display: block;
-              }
-              .transactions{
-                  width: 50%;
-                  height: 40%;
-                  text-align: center;
-                  .exp-button{
-                      color: red;
-                  }
-                  .inc-button{
-                      color: #00E676;
-                  }
-                  button{
-                      background: transparent;
-                      border: none;
-                      border-radius: 5px;
-                      text-decoration: underline;
-                  }
-              }
           }
       }
     }
