@@ -130,6 +130,20 @@
               }
               .transactions{
                   visibility: hidden;
+                  .exp-button{
+                      color: red;
+                  }
+                  .inc-button{
+                      color: #00E676;
+                  }
+                  button{
+                      background: transparent;
+                      border: none;
+                      border-radius: 5px;
+                      padding: 0px;
+                      font-size: 9px;
+                      text-decoration: underline;
+                  }
               }
           }
           .button-box{
@@ -183,7 +197,7 @@
           }
           .shade-content{
               width: 100%;
-              height: 65%;
+              height: 75%;
               position: relative;
               top: 15%;
               visibility: visible;
@@ -257,7 +271,7 @@
   .prev{
     position: fixed;
     top: 50%;
-    font-size: 50px;
+    font-size: 30px;
     background: transparent;
     border: none;
     opacity: .3;
@@ -268,7 +282,7 @@
     position: fixed;
     top: 50%;
     right: 0px;
-    font-size: 50px;
+    font-size: 30px;
     background: transparent;
     border: none;
     opacity: .3;
@@ -318,7 +332,7 @@
             }
             .shade-content{
                 top: 20%;
-                height: 55%;
+                height: 75%;
                 span{
                     font-size: 9px;
                 }
@@ -331,8 +345,6 @@
       }
     }
     .button{
-        position: fixed;
-        top: 35%;
     }
   }
 }
@@ -397,6 +409,7 @@
               display: block;
               text-align: center;
               margin: 5px;
+              text-decoration: underline;
           }
           .button-box{
             position: relative;
@@ -445,9 +458,26 @@
                   width: 50%;
                   height: 40%;
                   text-align: center;
+                  .exp-button{
+                      color: red;
+                  }
+                  .inc-button{
+                      color: #00E676;
+                  }
+                  button{
+                      background: transparent;
+                      border: none;
+                      border-radius: 5px;
+                      text-decoration: underline;
+                  }
               }
           }
       }
+    }
+    .button{
+        position: fixed;
+        top: 35%;
+        font-size: 35px;
     }
   }
 }
