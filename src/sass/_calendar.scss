@@ -109,6 +109,29 @@
             top: 10px;
             // transition: visibility .3s ease-in-out;
           }
+          .shade-content{
+              width: 100%;
+              height: 65%;
+              opacity: .8;
+              span{
+                  width: 100%;
+                  font-size: 12px;
+                  color: #00B0FF;
+                  display: block;
+                  text-align: center;
+              }
+              .beg-bal{
+                  visibility: hidden;
+              }
+              .end-bal{
+                  position: absolute;
+                  bottom: 10%;
+                  text-align: center;
+              }
+              .transactions{
+                  visibility: hidden;
+              }
+          }
           .button-box{
             position: absolute;
             bottom: 0px;
@@ -157,6 +180,52 @@
           .num-date{
             visibility: visible;
             transition: visibility .5s ease-in-out;
+          }
+          .shade-content{
+              width: 100%;
+              height: 65%;
+              position: relative;
+              top: 15%;
+              visibility: visible;
+              opacity: .8;
+              .beg-bal{
+                  position: absolute;
+                  top: 0px;
+                  width: 100%;
+                  visibility: visible;
+              }
+              .end-bal{
+                 position: absolute;
+                 bottom: 0px;
+                 width: 100%;
+              }
+              span{
+                  font-size: 11px;
+                  color: #00B0FF;
+                  text-align: center;
+              }
+              .expense-box{
+                  position: absolute;
+                  top: 15px;
+                  left: 0px;
+                  width: 49%;
+                  height: 67%;
+                  color: red;
+                  text-align: center;
+              }
+              .income-box{
+                  position: absolute;
+                  top: 15px;
+                  right: 0px;
+                  width: 49%;
+                  height: 67%;
+                  color: #00E676;
+                  text-align: center;
+              }
+              .transactions{
+                  font-size: 10px;
+                  visibility: visible;
+              }
           }
           .button-box{
             visibility: visible;
@@ -226,12 +295,36 @@
             .num-date{
               font-size: 10px;
             }
+            .shade-content{
+                span{
+                    text-align: left;
+                }
+                .transactions{
+                    visibility: hidden;
+                }
+            }
           }
           .num-container{
             width: 10px;
             height: 10px;
             .num{
               font-size: 10px;
+            }
+          }
+        }
+        .num-box:hover{
+          .shade{
+            .num-date{
+            }
+            .shade-content{
+                top: 20%;
+                height: 55%;
+                span{
+                    font-size: 9px;
+                }
+                .transactions{
+                    font-size: 8px;
+                }
             }
           }
         }
@@ -244,7 +337,7 @@
   }
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
   .calendar-page{
     .button{
     }
@@ -258,6 +351,11 @@
                     top: 5px;
                     font-size: 8px;
                 }
+                .shade-content{
+                    span{
+                        font-size: 9px;
+                    }
+                }
                 .button-box{
                     display: none;
                 }
@@ -270,10 +368,30 @@
                 }
             }
         }
+        .num-box:hover{
+          .shade{
+            .num-date{
+            }
+            .shade-content{
+                height: 75%;
+                top: 25%;
+                span{
+                    font-size: 9px;
+                    text-align: center;
+                }
+                .beg-bal{
+                    visibility: hidden;
+                }
+                .transactions{
+                    visibility: hidden;
+                }
+            }
+          }
+        }
       }
       .cur_trans_box{
           display: block;
-          height: 100px;
+          height: auto;
           width: 100%;
           .trans_act{
               display: block;
@@ -301,6 +419,33 @@
               color: #00E676;
               font-size: 40px;
             }
+          }
+          .shade-content{
+              .beg-bal{
+
+              }
+              .expense-box{
+                  position: absolute;
+                  left: 0px;
+              }
+              .income-box{
+                  position: absolute;
+                  right: 0px;
+              }
+              .end-bal{
+                  position: absolute;
+                  bottom: 10px;
+              }
+              span{
+                text-align: center;
+                width: 100%;
+                display: block;
+              }
+              .transactions{
+                  width: 50%;
+                  height: 40%;
+                  text-align: center;
+              }
           }
       }
     }
