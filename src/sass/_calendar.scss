@@ -156,7 +156,7 @@
   .prev{
     position: fixed;
     top: 50%;
-    font-size: 30px;
+    font-size: 50px;
     background: transparent;
     border: none;
     opacity: .25;
@@ -167,7 +167,7 @@
     position: fixed;
     top: 50%;
     right: 0px;
-    font-size: 30px;
+    font-size: 50px;
     background: transparent;
     border: none;
     opacity: .25;
@@ -277,14 +277,14 @@
           .trans_date{
               display: block;
               text-align: center;
-              margin: 5px;
-              text-decoration: underline;
+              padding: 5px;
+              background: #00E676;
           }
           .balance{
               width: 100%;
               display: block;
               text-align: center;
-              background: lightgray;
+              background: #00B0FF;
               padding: 5px 0;
           }
           .beg_bal{
@@ -293,18 +293,16 @@
           .transactions_data{
               text-align: center;
               width: 100%;
-              height: 100px;
           }
           .end_bal{
-              position: absolute;
-              bottom: 0px;
+
           }
       }
     }
     .button{
         position: fixed;
         top: 30%;
-        font-size: 30px;
+        font-size: 50px;
     }
   }
 }
