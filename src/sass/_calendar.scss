@@ -75,7 +75,7 @@
     }
   }
   .calendar-container{
-    height: 100%;
+    // height: 100%;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -195,11 +195,12 @@
       }
   }
   .income-button{
-      right: 10px;
+      right: 0px;
+      margin-right: 10px;
       color: #00E676;
   }
   .expense-button{
-      left: 10px;
+      margin-left: 10px;
       color: red;
   }
   .transaction-button:hover{
@@ -272,7 +273,6 @@
       }
       .cur_trans_box{
           display: block;
-          height: auto;
           width: 100%;
           .trans_date{
               display: block;
@@ -285,6 +285,7 @@
               display: block;
               text-align: center;
               background: lightgray;
+              padding: 5px 0;
           }
           .beg_bal{
 
@@ -292,9 +293,11 @@
           .transactions_data{
               text-align: center;
               width: 100%;
+              height: 100px;
           }
           .end_bal{
-
+              position: absolute;
+              bottom: 0px;
           }
       }
     }
