@@ -105,13 +105,13 @@
             color: #00E676;
             font-size: 12px;
             position: absolute;
-            right: 10px;
+            left: 10px;
             top: 10px;
             // transition: visibility .3s ease-in-out;
           }
         }
         .num-container{
-          float: right;
+          float: left;
           border-radius: 100%;
           margin: 5px;
           width: 15px;
@@ -159,7 +159,7 @@
     font-size: 30px;
     background: transparent;
     border: none;
-    opacity: .3;
+    opacity: .25;
     z-index: 2;
     transition: all .2s ease-in-out;
   }
@@ -170,7 +170,7 @@
     font-size: 30px;
     background: transparent;
     border: none;
-    opacity: .3;
+    opacity: .25;
     z-index: 2;
     transition: all .2s ease-in-out;
   }
@@ -178,6 +178,32 @@
     color: #00B0FF;
     opacity: 10;
     transition: all .2s ease-in-out;
+  }
+  .transaction-button{
+      position: fixed;
+      bottom: 5px;
+      font-size: 40px;
+      z-index: 2;
+      border: none;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 40px;
+      span{
+          font-size: 10px;
+      }
+  }
+  .income-button{
+      right: 10px;
+      color: #00E676;
+  }
+  .expense-button{
+      left: 10px;
+      color: red;
+  }
+  .transaction-button:hover{
+      opacity: .5;
   }
 }
 
@@ -258,8 +284,8 @@
     }
     .button{
         position: fixed;
-        top: 35%;
-        font-size: 35px;
+        top: 30%;
+        font-size: 30px;
     }
   }
 }
