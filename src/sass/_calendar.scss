@@ -105,7 +105,7 @@
             color: #00E676;
             font-size: 12px;
             position: absolute;
-            left: 10px;
+            left: 5px;
             top: 10px;
             // transition: visibility .3s ease-in-out;
           }
@@ -210,7 +210,7 @@
 @media screen and (max-width: 600px){
   .calendar-page{
     .button{
-      font-size: 45px;
+      font-size: 30px;
     }
     .calendar-container{
       .days{
@@ -274,11 +274,27 @@
           display: block;
           height: auto;
           width: 100%;
-          .trans_act{
+          .trans_date{
               display: block;
               text-align: center;
               margin: 5px;
               text-decoration: underline;
+          }
+          .balance{
+              width: 100%;
+              display: block;
+              text-align: center;
+              background: lightgray;
+          }
+          .beg_bal{
+
+          }
+          .transactions_data{
+              text-align: center;
+              width: 100%;
+          }
+          .end_bal{
+
           }
       }
     }

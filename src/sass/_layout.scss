@@ -73,10 +73,29 @@ $hamburger-hover-transition-timing-function: linear !default;
 }
 
 
+@media screen and (max-width: 500px){
+  .container{
+    .navbar{
+      .nav-button{
+          .hamburger{
+            .hamburger-label{
+              visibility: hidden;
+            }
+          }
+      }
+    }
+  }
+}
+
 @media screen and (max-height: 500px){
   .container{
     .navbar{
       .nav-button{
+          .hamburger{
+            .hamburger-label{
+              visibility: hidden;
+            }
+          }
         .links{
           a{
             padding: 10px;
