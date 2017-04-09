@@ -146,20 +146,20 @@
         transition: background-color .2s ease-in-out;
       }
     }
-    .loading_spinner{
-      margin: 0px;
-      position: fixed;
-      top: 60px;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      img{
-        height: 100px;
+  }
+  .loading_spinner{
+    position: absolute;
+    top: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .8);
+    z-index: 5;
+    img{
         width: 100px;
-      }
     }
   }
 }

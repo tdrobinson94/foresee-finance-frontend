@@ -5,6 +5,7 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
   let vm = this;
   vm.login = login;
   vm.loadingIndicator = false;
+  // vm.duration = duration;
 
   function login(user){
     vm.loadingIndicator = true;
@@ -21,6 +22,7 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
       vm.user = {};
     })
   }
+
 }
 
 
