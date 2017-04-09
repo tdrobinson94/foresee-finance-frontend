@@ -6,10 +6,12 @@ import 'angular-cookies';
 
 //import config and constant
 import {config} from './utilities/config';
+import { serverConstant } from './utilities/constant';
+import { run } from './utilities/run';
 
 //import services
 import {CalendarService} from './services/calendar.service';
-
+import { UserService } from './services/user.service';
 
 //import controllers
 import {CalendarController} from './controllers/calendar.controller';
@@ -21,7 +23,10 @@ import { SignUpController } from './controllers/signup.controller';
 angular
   .module('app', ['ui.router', 'ngMaterial', 'ngCookies'])
   .config(config)
+  .constant('SERVER', serverConstant)
+  .run(run)
   .service('CalendarService', CalendarService)
+  .service('UserService', UserService)
   .controller('CalendarController', CalendarController)
   .controller('HomeController', HomeController)
   .controller('LayoutController', LayoutController)
