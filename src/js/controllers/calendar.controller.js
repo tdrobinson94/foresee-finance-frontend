@@ -60,10 +60,10 @@ $('.month-selector, .year-selector').on('change', function(event){
     _.range(1, 43).forEach(function(dayIndex, i) {
       let day = $(days[startOfMonth + dayIndex - 1]);
       if (clock.getDate() === dayIndex && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()) {
-       day.find('.num').parent().addClass("day_background_color");
+       day.find('.num-container').parent().addClass("day_background_color");
        day.find('.num').parent().removeClass("dead_month_color");
      } else {
-       day.find('.num').parent().removeClass("day_background_color");
+       day.find('.num-container').parent().removeClass("day_background_color");
        day.find('.num').parent().removeClass("dead_month_color");
      }
      if(dayIndex > monthDays){
@@ -110,8 +110,8 @@ $('.month-selector, .year-selector').on('change', function(event){
      }
     })
     function scrollDay(){
-      if($('.num-container').hasClass('day_background_color') === true){
-        $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 500);
+      if($('.num-box').hasClass('day_background_color') === true){
+        $('body').animate({scrollTop: $('.day_background_color').offset().top - 90}, 500);
       } else{
         $('body').animate({scrollTop: '0px'}, 500);
       }
@@ -143,7 +143,7 @@ $('.month-selector, .year-selector').on('change', function(event){
         }
 
         day.find('.num').parent().addClass("dead_month_color");
-        day.find('.num').parent().removeClass("day_background_color");
+        day.find('.num-container').parent().removeClass("day_background_color");
       }
     })
   }
@@ -167,8 +167,8 @@ function prev(){
     }
   }
   function scrollDay(){
-    if($('.num-container').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 500);
+    if($('.num-box').hasClass('day_background_color') === true){
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 90}, 500);
     } else{
       $('body').animate({scrollTop: '0px'}, 500);
     }
@@ -179,7 +179,7 @@ function prev(){
 function current(){
   $(document).find('#month').val(month).change()
   $(document).find('#year').val(year).change()
-  $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 500);
+  $('body').animate({scrollTop: $('.day_background_color').offset().top - 90}, 500);
 }
 
 function next(){
@@ -195,8 +195,8 @@ function next(){
     }
   }
   function scrollDay(){
-    if($('.num-container').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 85}, 500);
+    if($('.num-box').hasClass('day_background_color') === true){
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 90}, 500);
     } else{
       $('body').animate({scrollTop: '0px'}, 500);
     }
