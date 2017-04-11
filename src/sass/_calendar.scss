@@ -57,23 +57,50 @@
       }
     }
   }
-  .day-of-week{
-    width: 100%;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    .week-day{
-      display: inline-block;
-      width: 14.28%;
-      border-left: 1px solid #455A64;
-      border-right: 1px solid #455A64;
-      span{
-        font-size: 13px;
-        padding-left: 5px;
-        color: #37474F;
+  .calendar-controls{
+      display: flex;
+      justify-content: space-around;
+      .prev{
+
       }
-    }
+      .next{
+        // right: 0px;
+      }
+      .button{
+        //   position: fixed;
+        //   top: 50%;
+        //   font-size: 50px;
+          font-weight: bold;
+          background: transparent;
+          border: none;
+          opacity: .25;
+          z-index: 2;
+          transition: all .2s ease-in-out;
+          font-size: 20px;
+      }
+      .button:hover{
+        color: #00B0FF;
+        opacity: 10;
+        transition: all .2s ease-in-out;
+      }
   }
+  // .day-of-week{
+  //   width: 100%;
+  //   height: 30px;
+  //   display: flex;
+  //   align-items: center;
+  //   .week-day{
+  //     display: inline-block;
+  //     width: 14.28%;
+  //     border-left: 1px solid #455A64;
+  //     border-right: 1px solid #455A64;
+  //     span{
+  //       font-size: 13px;
+  //       padding-left: 5px;
+  //       color: #37474F;
+  //     }
+  //   }
+  // }
   .calendar-container{
     // height: 100%;
     width: 100%;
@@ -101,22 +128,22 @@
         position: relative;
         margin: 5px;
         box-shadow: 1px 1px 10px lightgray;
-        .shade{
-          width: 100%;
-          height: 0px;
-          background: rgba(0, 0, 0, 0.3);
-          transition: all  .5s ease-in-out;
-          // overflow-y: scroll;
-          .num-date{
-            visibility: hidden;
-            color: #00E676;
-            font-size: 12px;
-            position: absolute;
-            left: 5px;
-            top: 10px;
-            // transition: visibility .3s ease-in-out;
-          }
-        }
+        // .shade{
+        //   width: 100%;
+        //   height: 0px;
+        //   background: rgba(0, 0, 0, 0.3);
+        //   transition: all  .5s ease-in-out;
+        //   // overflow-y: scroll;
+        //   .num-date{
+        //     visibility: hidden;
+        //     color: #00E676;
+        //     font-size: 12px;
+        //     position: absolute;
+        //     left: 5px;
+        //     top: 10px;
+        //     // transition: visibility .3s ease-in-out;
+        //   }
+        // }
         .num-container{
           float: left;
           border-radius: 100%;
@@ -168,28 +195,6 @@
   }
   .dead_month_color{
     opacity: .3;
-  }
-  .prev{
-
-  }
-  .next{
-    right: 0px;
-  }
-  .button{
-      position: fixed;
-      top: 50%;
-      font-size: 50px;
-      font-weight: bold;
-      background: transparent;
-      border: none;
-      opacity: .25;
-      z-index: 2;
-      transition: all .2s ease-in-out;
-  }
-  .button:hover{
-    color: #00B0FF;
-    opacity: 10;
-    transition: all .2s ease-in-out;
   }
   .transaction-button{
       position: fixed;
@@ -346,11 +351,6 @@
       //
     //       }
     //   }
-    }
-    .button{
-        position: fixed;
-        top: 40%;
-        font-size: 60px;
     }
   }
 }
