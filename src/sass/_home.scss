@@ -78,7 +78,7 @@
         padding: 10px 20px;
         border: none;
         // outline: none;
-        border-radius: 30px;
+        border-radius: 5px;
         transition: all .2s ease-in-out;
         font-weight: normal;
       }
@@ -94,8 +94,8 @@
       .log-in{
         font-size: 15px;
         border: none;
-        border-radius: 30px;
-        padding: 5px 10px;
+        border-radius: 5px;
+        padding: 10px 20px;
         font-weight: normal;
         transition: all .2s ease-in-out;
         // outline: none;
@@ -191,7 +191,7 @@
         font-size: 21px;
         .sign-up{
           font-size: 12px;
-          padding: 5px 10px;
+        //   padding: 5px 10px;
         }
         .log-in{
           font-size: 12px;

@@ -9,6 +9,7 @@ function CalendarController($scope){
   vm.next = next;
   vm.prev = prev;
   vm.current = current;
+  // vm.dayClick = dayClick;
 
   let clock = new Date();
   let month = clock.getMonth();
@@ -203,6 +204,30 @@ function next(){
   }
   window.setTimeout(scrollDay, 250);
 }
+
+$('.days').click(function( event ) {
+  var target = $( event.target );
+  console.log(target[0]);
+  if (target.is(".num-box")) {
+    $('.num-box').removeClass('selected-day');
+    target.toggleClass('selected-day');
+  }
+});
+
+$('#day-input').on('change', function(){
+    console.log($('#day-input').val());
+    // console.log($('.num')[$('#day-input').val() - 1]);
+    var i = 0;
+    for (i = 0; i <= 43; i++){
+        var element = $('.num')[i];
+        console.log(element);
+        // if (!$('.num').hasClass('dead_month_color')){
+        //     console.log($('.num')[i])
+        // }
+    }
+})
+
+
 
 }
 

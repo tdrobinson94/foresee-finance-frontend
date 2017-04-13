@@ -78,7 +78,8 @@
       padding: 30px 10px;
       border: 1px solid lightgray;
       border-radius: 3px;
-      box-shadow: 1px 1px 10px lightgray;
+      box-shadow: 1px 1px 10px gray;
+      border-radius: 15px;
       div{
         margin-bottom: 10px;
       }
@@ -113,7 +114,7 @@
       padding: 30px 10px;
       border: 1px solid lightgray;
       border-radius: 3px;
-      box-shadow: 1px 1px 10px lightgray;
+      box-shadow: 1px 1px 10px gray;
       width: 60%;
       text-align: center;
       margin: 30px auto;
@@ -134,7 +135,7 @@
         border: 1px solid lightgray;
       }
       .log-in{
-        padding: 10px 15px;
+        padding: 5px 15px;
         background-color: #00B0FF;
         border: none;
         border-radius: 3px;
@@ -157,10 +158,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     background: rgba(0, 0, 0, .8);
     z-index: 5;
     img{
         width: 100px;
+    }
+    span {
+        color: white;
+        font-size: 30px;
+        margin-left: 10px;
     }
   }
 }

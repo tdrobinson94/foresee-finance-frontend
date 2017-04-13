@@ -30,6 +30,7 @@ $hamburger-hover-transition-timing-function: linear !default;
         display: flex;
         align-items: center;
         .hamburger-label{
+          display: inline;
           margin-left: 5px;
           color: white;
           z-index: 2;
@@ -50,6 +51,7 @@ $hamburger-hover-transition-timing-function: linear !default;
         height: 100%;
         a{
         //   width: 100%;
+          border-radius:5px;
           padding: 20px;
           color: #00E676;
           display: block;
@@ -81,7 +83,7 @@ $hamburger-hover-transition-timing-function: linear !default;
       .nav-button{
           .hamburger{
             .hamburger-label{
-              visibility: hidden;
+              display: none;
             }
           }
       }

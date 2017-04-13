@@ -2,6 +2,7 @@
   <div class="month">
     <form class="select-form">
       <div class="date-selectors">
+        <input type="number" min="1" max="31" placeholder="day" class="selector" id="day-input"/>
         <select name="select" class="month-selector selector" id="month">
         </select>
         <select name="select" class="year-selector selector" id="year">
@@ -24,65 +25,65 @@
     </div> -->
   </div>
   <div class="calendar-container">
-    <div class="days" ng-app="app" ng-controller="CalendarController">
-      <div id="num-box" class="num-box" data="" ng-click="showAdvanced($event)">
+    <div class="days">
+      <div id="num-box" class="num-box" data="" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Sunday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Monday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Tuesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Wednesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Thursday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Friday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Saturday
@@ -90,64 +91,64 @@
       </div>
     </div>
     <div class="days">
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Sunday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Monday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Tuesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Wednesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Thursday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Friday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Saturday
@@ -155,64 +156,64 @@
       </div>
     </div>
     <div class="days">
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Sunday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Monday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Tuesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Wednesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Thursday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
           <div class="num-container"><span class="num"></span></div>
           <div class="weekday">
               Friday
           </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Saturday
@@ -220,64 +221,64 @@
       </div>
     </div>
     <div class="days">
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Sunday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Monday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Tuesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Wednesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Thursday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Friday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Saturday
@@ -285,64 +286,64 @@
       </div>
     </div>
     <div class="days">
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Sunday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Monday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Tuesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Wednesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Thursday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Friday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Saturday
@@ -350,64 +351,64 @@
       </div>
     </div>
     <div class="days">
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Sunday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Monday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Tuesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Wednesday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Thursday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Friday
         </div>
       </div>
-      <div id="num-box" class="num-box" ng-click="showAdvanced($event)">
+      <div id="num-box" class="num-box" ng-click="">
         <!-- <div class="shade">
-          <span class="num-date"></span>
         </div> -->
+        <span class="num-date"></span>
         <div class="num-container"><span class="num"></span></div>
         <div class="weekday">
             Saturday
