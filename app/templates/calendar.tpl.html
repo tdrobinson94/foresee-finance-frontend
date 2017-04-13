@@ -2,7 +2,6 @@
   <div class="month">
     <form class="select-form">
       <div class="date-selectors">
-        <input type="number" min="1" max="31" placeholder="day" class="selector" id="day-input"/>
         <select name="select" class="month-selector selector" id="month">
         </select>
         <select name="select" class="year-selector selector" id="year">
@@ -426,4 +425,7 @@
   </div>
   <button class="income-button transaction-button fontawesome-plus-sign"><span>Income</span></button>
   <button class="expense-button transaction-button fontawesome-minus-sign"><span>Expense</span></button>
+  <div class="top-box">
+      <button class="top transaction-button fontawesome-chevron-up" ng-click="vm.goToTop()"></button>
+  </div>
 </div>

@@ -26,7 +26,7 @@
         // width: 315px;
         display: block;
         input{
-          width: 50px !important;
+          width: 200px !important;
         }
         .selector{
         //   height: 40px;
@@ -133,22 +133,6 @@
         position: relative;
         margin: 5px;
         box-shadow: 1px 1px 10px gray;
-        // .shade{
-        //   width: 100%;
-        //   height: 0px;
-        //   background: rgba(0, 0, 0, 0.3);
-        //   transition: all  .5s ease-in-out;
-        //   // overflow-y: scroll;
-        //   .num-date{
-        //     visibility: hidden;
-        //     color: #00E676;
-        //     font-size: 12px;
-        //     position: absolute;
-        //     left: 5px;
-        //     top: 10px;
-        //     // transition: visibility .3s ease-in-out;
-        //   }
-        // }
         .num-date{
             display: none;
         }
@@ -179,22 +163,6 @@
             font-size: 22px;
         }
       }
-    //   .num-box:target{
-    //       border: 1px solid #00B0FF;
-    //   }
-    //   .num-box:hover{
-    //     transition: all .5s ease-in-out;
-    //     .shade{
-    //       height: 100%;
-    //       .num-date{
-    //         visibility: visible;
-    //         transition: visibility .5s ease-in-out;
-    //       }
-    //     }
-    //     .num-container{
-    //       display: none;
-    //     }
-    //   }
     }
     .cur_trans_box{
         display: none;
@@ -210,12 +178,13 @@
   .selected-day {
       background: rgba(0, 0, 0, .1) !important;
       border: 2px solid #00b0ff;
+      transition: all .5s ease-in-out;
   }
   .transaction-button{
       position: fixed;
       bottom: 5px;
       font-size: 50px;
-      z-index: 2;
+      z-index: 3;
       border: none;
       background: transparent;
       display: flex;
@@ -238,15 +207,23 @@
   .transaction-button:hover{
       opacity: .5;
   }
-  .day-input-box{
-      position: absolute;
-      top: 0;
+  .top-box {
+      width: 100%;
+      position: fixed;
+      border: 5px;
       z-index: 2;
-      form{
-          input{
-
-          }
-      }
+      display: flex;
+      justify-content: center;
+  }
+  .top {
+      font-size: 40px;
+      opacity: .25;
+      transition: all .2s ease-in-out;
+  }
+  .top:hover {
+      color: #00B0FF;
+      opacity: 10;
+      transition: all .2s ease-in-out;
   }
 }
 
