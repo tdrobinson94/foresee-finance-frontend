@@ -168,7 +168,7 @@
         }
         .transaction-button{
             position: absolute;
-            bottom: 5px;
+            bottom: 10px;
             font-size: 35px;
             border: none;
             background: transparent;
@@ -180,7 +180,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            // display: none;
+            visibility: hidden;
         }
         .income-button{
             right: 0px;
@@ -213,9 +213,7 @@
       transition: all .5s ease-in-out;
   }
   .show{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      visibility: visible !important;
   }
   .top-box {
       width: 100%;
