@@ -213,7 +213,6 @@ function next(){
 
 $('.days').click(function( event ) {
   var target = $( event.target );
-  console.log(target.children()[0]);
   if (target.is(".num-box")) {
     $('.transaction-button').removeClass('show');
     $('.num-box').removeClass('selected-day');
@@ -226,6 +225,14 @@ $('.days').click(function( event ) {
 function goToTop(){
     $('body').animate({scrollTop: 0}, 500);
 }
+
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+       $('.top-box').addClass('showTopButton');
+   } else {
+       $('.top-box').removeClass('showTopButton');
+   }
+});
 
 }
 
