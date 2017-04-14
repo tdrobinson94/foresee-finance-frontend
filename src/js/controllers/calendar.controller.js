@@ -113,9 +113,9 @@ $('.month-selector, .year-selector').on('change', function(event){
     })
     function scrollDay(){
       if($('.num-box').hasClass('day_background_color') === true){
-        $('body').animate({scrollTop: $('.day_background_color').offset().top - 90}, 500);
+        $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
       } else{
-        $('body').animate({scrollTop: $('.selected-day').offset().top - 90}, 500);
+        $('body').animate({scrollTop: 0}, 500);
       }
     }
     window.setTimeout(scrollDay, 250);
@@ -157,6 +157,7 @@ $('.month-selector, .year-selector').on('change', function(event){
 $('.month-selector').change();
 
 function prev(){
+  $('.num-box').removeClass('selected-day');
   if($(document).find('#year').val() <= (year - 5)){
     $(document).find('#year').val(year - 5).change()
     $(document).find('#month').val(0).change()
@@ -170,9 +171,9 @@ function prev(){
   }
   function scrollDay(){
     if($('.num-box').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 90}, 500);
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
     } else{
-      $('body').animate({scrollTop: $('.selected-day').offset().top - 90}, 500);
+      $('body').animate({scrollTop: 0}, 500);
     }
   }
   window.setTimeout(scrollDay, 250);
@@ -182,10 +183,11 @@ function current(){
   $('.num-box').removeClass('selected-day');
   $(document).find('#month').val(month).change()
   $(document).find('#year').val(year).change()
-  $('body').animate({scrollTop: $('.day_background_color').offset().top - 90}, 500);
+  $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
 }
 
 function next(){
+  $('.num-box').removeClass('selected-day');
   if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
     $(document).find('#year').val(year + 5).change()
     $(document).find('#month').val(11).change()
@@ -199,11 +201,12 @@ function next(){
   }
   function scrollDay(){
     if($('.num-box').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 90}, 500);
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
     } else{
-      $('body').animate({scrollTop: $('.selected-day').offset().top - 90}, 500);
+      $('body').animate({scrollTop: 0}, 500);
     }
   }
+
   window.setTimeout(scrollDay, 250);
 }
 
@@ -213,28 +216,13 @@ $('.days').click(function( event ) {
   if (target.is(".num-box")) {
     $('.num-box').removeClass('selected-day');
     target.toggleClass('selected-day');
-    $('body').animate({scrollTop: $('.selected-day').offset().top - 90}, 500);
+    $('body').animate({scrollTop: $('.selected-day').offset().top - 170}, 500);
   }
 });
-
-$('#day-input').on('change', function(){
-    console.log($('#day-input').val());
-    // console.log($('.num')[$('#day-input').val() - 1]);
-    var i = 0;
-    for (i = 0; i <= 43; i++){
-        var element = $('.num')[i];
-        console.log(element);
-        // if (!$('.num').hasClass('dead_month_color')){
-        //     console.log($('.num')[i])
-        // }
-    }
-})
 
 function goToTop(){
     $('body').animate({scrollTop: 0}, 500);
 }
-
-
 
 }
 

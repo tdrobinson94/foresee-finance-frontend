@@ -1,4 +1,4 @@
-<div class="calendar-page">
+<div id="calendar-page" class="calendar-page">
   <div class="month">
     <form class="select-form">
       <div class="date-selectors">
@@ -414,18 +414,10 @@
         </div>
       </div>
     </div>
-    <!-- <div class="cur_trans_box">
-        <span class="trans_date">Transaction for (Date)</span>
-        <span class="beg_bal balance">Starting Balance: (Beg)</span>
-        <div class="transactions_data">
-
-        </div>
-        <span class="end_bal balance">Ending Balance: (End)</span>
-    </div> -->
   </div>
-  <button class="income-button transaction-button fontawesome-plus-sign"><span>Income</span></button>
-  <button class="expense-button transaction-button fontawesome-minus-sign"><span>Expense</span></button>
+  <button class="income-button transaction-button entypo-plus"></button>
+  <button class="expense-button transaction-button entypo-minus"></button>
   <div class="top-box">
-      <button class="top transaction-button fontawesome-chevron-up" ng-click="vm.goToTop()"></button>
+      <button class="top fontawesome-chevron-up" ng-click="vm.goToTop()"></button>
   </div>
 </div>

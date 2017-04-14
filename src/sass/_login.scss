@@ -158,17 +158,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-wrap: wrap;
     background: rgba(0, 0, 0, .8);
     z-index: 5;
-    img{
-        width: 100px;
-    }
-    span {
-        color: white;
-        font-size: 30px;
-        margin-left: 10px;
-    }
+    color: white;
+    font-size: 25px;
+    // img{
+    //     width: 100px;
+    // }
   }
 }
 
