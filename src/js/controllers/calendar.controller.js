@@ -159,6 +159,7 @@ $('.month-selector').change();
 
 function prev(){
   $('.num-box').removeClass('selected-day');
+  $('.transaction-button').removeClass('show');
   if($(document).find('#year').val() <= (year - 5)){
     $(document).find('#year').val(year - 5).change()
     $(document).find('#month').val(0).change()
@@ -182,6 +183,7 @@ function prev(){
 
 function current(){
   $('.num-box').removeClass('selected-day');
+  $('.transaction-button').removeClass('show');
   $(document).find('#month').val(month).change()
   $(document).find('#year').val(year).change()
   $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
@@ -189,6 +191,7 @@ function current(){
 
 function next(){
   $('.num-box').removeClass('selected-day');
+  $('.transaction-button').removeClass('show');
   if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
     $(document).find('#year').val(year + 5).change()
     $(document).find('#month').val(11).change()
