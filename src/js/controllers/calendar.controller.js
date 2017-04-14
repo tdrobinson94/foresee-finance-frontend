@@ -216,6 +216,7 @@ $('.days').click(function( event ) {
   if (target.is(".num-box")) {
     $('.num-box').removeClass('selected-day');
     target.toggleClass('selected-day');
+    // $('.transaction-button').addClass('show');
     $('body').animate({scrollTop: $('.selected-day').offset().top - 170}, 500);
   }
 });
