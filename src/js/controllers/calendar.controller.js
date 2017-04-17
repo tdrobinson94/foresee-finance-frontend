@@ -203,6 +203,7 @@ function next(){
       $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
     }
   }
+
   function scrollDay(){
     if($('.num-box').hasClass('day_background_color') === true){
       $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
@@ -236,6 +237,28 @@ $(window).scroll(function() {
        $('.top-box').removeClass('showTopButton');
    }
 });
+
+$('.fab-button').click(function(){
+    $('.income-button').toggleClass('show-income-button');
+    $('.expense-button').toggleClass('show-expense-button');
+})
+
+$('.income-button').click(function(){
+    $('.income-form').addClass('show');
+    $('.income-button').toggleClass('show-income-button');
+    $('.expense-button').toggleClass('show-expense-button');
+})
+
+$('.expense-button').click(function(){
+    $('.expense-form').addClass('show');
+    $('.income-button').toggleClass('show-income-button');
+    $('.expense-button').toggleClass('show-expense-button');
+})
+
+$('.close').click(function(){
+    $('.income-form').removeClass('show');
+    $('.expense-form').removeClass('show');
+})
 
 }
 
