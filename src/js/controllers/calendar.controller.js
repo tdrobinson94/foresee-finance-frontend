@@ -79,14 +79,14 @@ $('.month-selector, .year-selector').on('change', function(event){
        if(nextMonth < 10){
          let newMonth = nextMonth
          if ((dayIndex - monthDays) < 10){
-           let newDayIndex = '0' + (dayIndex - monthDays)
+           let newDayIndex = (dayIndex - monthDays)
            day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + newDayIndex).parent().addClass("dead_month_color");
          } else {
            day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().addClass("dead_month_color");
          }
        } else {
          if ((dayIndex - monthDays) < 10){
-           let newDayIndex = '0' + (dayIndex - monthDays)
+           let newDayIndex = (dayIndex - monthDays)
            day.find('.num-date').html(MONTHS[nextMonth - 1].name + ' ' + newDayIndex).parent().addClass("dead_month_color");
          } else {
            day.find('.num-date').html(MONTHS[nextMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().addClass("dead_month_color");
@@ -98,14 +98,14 @@ $('.month-selector, .year-selector').on('change', function(event){
        if(thisMonth < 10){
          let newMonth = thisMonth
          if(dayIndex < 10){
-           let newDays = '0' + dayIndex
+           let newDays = dayIndex
            day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + newDays);
          } else{
            day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (dayIndex));
          }
        } else {
          if(dayIndex < 10){
-           let newDays = '0' + dayIndex
+           let newDays = dayIndex
            day.find('.num-date').html(MONTHS[thisMonth - 1].name + ' ' + newDays);
          } else{
            day.find('.num-date').html(MONTHS[thisMonth - 1].name + ' ' + (dayIndex));
