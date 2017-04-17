@@ -15,6 +15,7 @@ function CalendarController($scope){
   let month = clock.getMonth();
   let year = clock.getFullYear();
 
+  console.log(MONTHS[1].name)
 
   $(document).find('#month').html(`
     <option value="${month}" selected>${MONTHS[month].name}</option>
@@ -64,10 +65,10 @@ $('.month-selector, .year-selector').on('change', function(event){
        day.find('.num-container').parent().addClass("day_background_color");
        day.find('.num-container').parent().addClass("selected-day");
        day.find('.transaction-button').addClass('show');
-       day.find('.num').parent().removeClass("dead_month_color");
+       day.find('.num-date').parent().removeClass("dead_month_color");
      } else {
        day.find('.num-container').parent().removeClass("day_background_color");
-       day.find('.num').parent().removeClass("dead_month_color");
+       day.find('.num-date').parent().removeClass("dead_month_color");
      }
      if(dayIndex > monthDays){
        day.find('.num').html(dayIndex - monthDays).parent().addClass("dead_month_color");
@@ -76,38 +77,38 @@ $('.month-selector, .year-selector').on('change', function(event){
          currentYear = Number(currentYear) + 1;
        }
        if(nextMonth < 10){
-         let newMonth = '0' + nextMonth
+         let newMonth = nextMonth
          if ((dayIndex - monthDays) < 10){
            let newDayIndex = '0' + (dayIndex - monthDays)
-           day.find('.num-date').html(newMonth + '/' + newDayIndex);
+           day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + newDayIndex).parent().addClass("dead_month_color");
          } else {
-           day.find('.num-date').html(newMonth + '/' + (dayIndex - monthDays));
+           day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().addClass("dead_month_color");
          }
        } else {
          if ((dayIndex - monthDays) < 10){
            let newDayIndex = '0' + (dayIndex - monthDays)
-           day.find('.num-date').html(nextMonth + '/' + newDayIndex);
+           day.find('.num-date').html(MONTHS[nextMonth - 1].name + ' ' + newDayIndex).parent().addClass("dead_month_color");
          } else {
-           day.find('.num-date').html(nextMonth + '/' + (dayIndex - monthDays));
+           day.find('.num-date').html(MONTHS[nextMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().addClass("dead_month_color");
          }
        }
      } else {
        day.find('.num').html(dayIndex);
        let thisMonth = (Number(currentMonth) + 1);
        if(thisMonth < 10){
-         let newMonth = '0' + thisMonth
+         let newMonth = thisMonth
          if(dayIndex < 10){
            let newDays = '0' + dayIndex
-           day.find('.num-date').html(newMonth + '/' + newDays)
+           day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + newDays);
          } else{
-           day.find('.num-date').html(newMonth + '/' + (dayIndex));
+           day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (dayIndex));
          }
        } else {
          if(dayIndex < 10){
            let newDays = '0' + dayIndex
-           day.find('.num-date').html(thisMonth + '/' + newDays)
+           day.find('.num-date').html(MONTHS[thisMonth - 1].name + ' ' + newDays);
          } else{
-           day.find('.num-date').html(thisMonth + '/' + (dayIndex));
+           day.find('.num-date').html(MONTHS[thisMonth - 1].name + ' ' + (dayIndex));
          }
        }
      }
@@ -139,13 +140,13 @@ $('.month-selector, .year-selector').on('change', function(event){
           currentYear = Number(currentYear) - 1;
         }
         if(prevMonth < 10){
-          let newMonth = '0' + prevMonth
-          day.find('.num-date').html(newMonth + '/' + (prevDays[dayIndex]));
+          let newMonth = prevMonth
+          day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (prevDays[dayIndex]));
         } else {
-          day.find('.num-date').html(prevMonth + '/' + (prevDays[dayIndex]));
+          day.find('.num-date').html(MONTHS[prevMonth - 1].name + ' ' + (prevDays[dayIndex]));
         }
 
-        day.find('.num').parent().addClass("dead_month_color");
+        day.find('.num-date').parent().addClass("dead_month_color");
         day.find('.num-container').parent().removeClass("day_background_color");
       }
     })

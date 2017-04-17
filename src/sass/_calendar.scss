@@ -143,9 +143,6 @@
         position: relative;
         margin: 5px;
         box-shadow: 1px 1px 10px gray;
-        .num-date{
-            display: none;
-        }
         .num-container{
           float: left;
           border-radius: 100%;
@@ -157,8 +154,9 @@
           align-items: center;
           padding: 5px;
           transition: background-color .2s ease-in-out;
+          display: none;
           .num{
-            font-size: 20px;
+            font-size: 30px;
             border-radius: 100%;
             color: #00B0FF;
           }
@@ -166,11 +164,18 @@
         .weekday{
             position: absolute;
             top: 0;
-            width: 100%;
-            text-align: center;
+            // width: 100%;
+            // text-align: center;
+            margin-left: 10px;
             color: #37474F;
             padding: 5px 0;
-            font-size: 22px;
+            font-size: 25px;
+            display: inline-block;
+            // background: rgba(0, 0, 0, 0.2);
+            // border-radius: 15px 15px 0 0;
+            .num-date{
+                color: #00b0ff;
+            }
         }
       }
     }
@@ -183,7 +188,7 @@
     //color: white;
   }
   .dead_month_color{
-    opacity: .4;
+    opacity: .2;
   }
   .selected-day {
       background: rgba(0, 0, 0, .1) !important;
@@ -213,7 +218,7 @@
       position: fixed;
       bottom: 0;
       right: 0;
-      margin: 0 20px 5px 0;
+      margin: 0 10px 5px 0;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -221,7 +226,7 @@
       .transaction-button{
           position: absolute;
           bottom: 0;
-          font-size: 35px;
+          font-size: 30px;
           border: none;
           background: transparent;
           width: 60px;
@@ -241,12 +246,14 @@
           width: 50px;
           height: 50px;
           transition: all .2s ease-out;
+          font-size: 35px;
       }
       .expense-button{
           background: red;
           width: 50px;
           height: 50px;
           transition: all .2s ease-out;
+          font-size: 35px;
       }
       .transaction-button:active{
           box-shadow: 1px 1px 10px lightgray;
