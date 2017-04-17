@@ -171,10 +171,10 @@
             padding: 5px 0;
             font-size: 25px;
             display: inline-block;
-            // background: rgba(0, 0, 0, 0.2);
-            // border-radius: 15px 15px 0 0;
+            color: #455A64;
             .num-date{
                 color: #00b0ff;
+                font-size: 22px;
             }
         }
       }
@@ -188,7 +188,7 @@
     //color: white;
   }
   .dead_month_color{
-    opacity: .2;
+    opacity: .3;
   }
   .selected-day {
       background: rgba(0, 0, 0, .1) !important;
