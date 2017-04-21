@@ -15,7 +15,6 @@ function CalendarController($scope){
   let month = clock.getMonth();
   let year = clock.getFullYear();
 
-  console.log(MONTHS[1].name)
 
   $(document).find('#month').html(`
     <option value="${month}" selected>${MONTHS[month].name}</option>
@@ -63,13 +62,16 @@ $('.month-selector, .year-selector').on('change', function(event){
       let day = $(days[startOfMonth + dayIndex - 1]);
       if (clock.getDate() === dayIndex && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()) {
        day.find('.num-container').parent().addClass("day_background_color");
+       day.find('.weekday').children().addClass('current-day');
        day.find('.num-container').parent().addClass("selected-day");
        day.find('.transaction-button').addClass('show');
        day.find('.num-date').parent().removeClass("dead_month_color");
      } else {
        day.find('.num-container').parent().removeClass("day_background_color");
+       day.find('.weekday').children().removeClass('current-day');
        day.find('.num-date').parent().removeClass("dead_month_color");
      }
+     day.find('.num-date').html(MONTHS[month].name + ' 1');
      if(dayIndex > monthDays){
        day.find('.num').html(dayIndex - monthDays).parent().addClass("dead_month_color");
        if(nextMonth == 13){
@@ -112,12 +114,17 @@ $('.month-selector, .year-selector').on('change', function(event){
          }
        }
      }
+     if (day.find('.num-date').html() === MONTHS[$('#month').val()].name + ' 1'){
+         day.find('.num-date').addClass('first-day');
+     } else {
+         day.find('.num-date').removeClass('first-day');
+     }
     })
     function scrollDay(){
       if($('.num-box').hasClass('day_background_color') === true){
         $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
-      } else{
-        $('body').animate({scrollTop: 0}, 500);
+      } else if ($('.num-date').hasClass('first-day') === true){
+          $('body').animate({scrollTop: $('.first-day').offset().top - 170}, 500);
       }
     }
     window.setTimeout(scrollDay, 250);
@@ -160,6 +167,7 @@ $('.month-selector').change();
 
 function prev(){
   $('.num-box').removeClass('selected-day');
+  $('.num-date').removeClass('first-day');
   $('.transaction-button').removeClass('show');
   if($(document).find('#year').val() <= (year - 5)){
     $(document).find('#year').val(year - 5).change()
@@ -175,8 +183,8 @@ function prev(){
   function scrollDay(){
     if($('.num-box').hasClass('day_background_color') === true){
       $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
-    } else{
-      $('body').animate({scrollTop: 0}, 500);
+    } else if ($('.num-date').hasClass('first-day') === true){
+        $('body').animate({scrollTop: $('.first-day').offset().top - 170}, 500);
     }
   }
   window.setTimeout(scrollDay, 250);
@@ -184,6 +192,7 @@ function prev(){
 
 function current(){
   $('.num-box').removeClass('selected-day');
+  $('.num-date').removeClass('first-day');
   $('.transaction-button').removeClass('show');
   $(document).find('#month').val(month).change()
   $(document).find('#year').val(year).change()
@@ -192,6 +201,7 @@ function current(){
 
 function next(){
   $('.num-box').removeClass('selected-day');
+  $('.num-date').removeClass('first-day');
   $('.transaction-button').removeClass('show');
   if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
     $(document).find('#year').val(year + 5).change()
@@ -208,8 +218,8 @@ function next(){
   function scrollDay(){
     if($('.num-box').hasClass('day_background_color') === true){
       $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
-    } else{
-      $('body').animate({scrollTop: 0}, 500);
+    } else if ($('.num-date').hasClass('first-day') === true){
+        $('body').animate({scrollTop: $('.first-day').offset().top - 170}, 500);
     }
   }
 
