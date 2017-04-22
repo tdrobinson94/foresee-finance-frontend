@@ -121,9 +121,9 @@ $('.month-selector, .year-selector').on('change', function(event){
      }
      $('.goTo').on('change', function(event){
          event.preventDefault();
-         day.find('.num').parent().parent().removeClass('goToDay');
+         day.find('.num').parent().parent().removeClass('goToDay selected-day');
          if ($('.goTo').val() === day.find('.num').html()){
-             day.find('.num').parent().parent().addClass('goToDay');
+             day.find('.num').parent().parent().addClass('goToDay selected-day');
          }
      })
     })
@@ -252,7 +252,7 @@ $('.goTo').on('change', function(event){
     event.preventDefault();
     if ($('.num-box').hasClass('goToDay')){
         $('body').animate({scrollTop: $('.goToDay').offset().top - 170}, 500);
-        $('.goTo').val('');
+        // $('.goTo').val('');
     }
 })
 
