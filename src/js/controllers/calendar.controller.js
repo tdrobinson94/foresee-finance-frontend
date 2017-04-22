@@ -252,7 +252,7 @@ $('.goTo').on('change', function(event){
     event.preventDefault();
     if ($('.num-box').hasClass('goToDay')){
         $('body').animate({scrollTop: $('.goToDay').offset().top - 170}, 500);
-        // $('.goTo').val('');
+        $('.goTo').val('');
     }
 })
 
