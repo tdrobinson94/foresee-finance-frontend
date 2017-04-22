@@ -49,6 +49,7 @@ function CalendarController($scope){
 //Needs to be refactored
 $('.month-selector, .year-selector').on('change', function(event){
   event.preventDefault();
+  $('.num-date').removeClass('first-day');
   let renderMonth = function () {
     MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28;
     let currentMonth = $(document).find('#month').val();
@@ -71,7 +72,6 @@ $('.month-selector, .year-selector').on('change', function(event){
        day.find('.weekday').children().removeClass('current-day');
        day.find('.num-date').parent().removeClass("dead_month_color");
      }
-     day.find('.num-date').html(MONTHS[month].name + ' 1');
      if(dayIndex > monthDays){
        day.find('.num').html(dayIndex - monthDays).parent().addClass("dead_month_color");
        if(nextMonth == 13){
@@ -115,19 +115,12 @@ $('.month-selector, .year-selector').on('change', function(event){
        }
      }
      if (day.find('.num-date').html() === MONTHS[$('#month').val()].name + ' 1'){
+         console.log(day.find('.num-date'));
          day.find('.num-date').addClass('first-day');
      } else {
          day.find('.num-date').removeClass('first-day');
      }
     })
-    function scrollDay(){
-      if($('.num-box').hasClass('day_background_color') === true){
-        $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
-      } else if ($('.num-date').hasClass('first-day') === true){
-          $('body').animate({scrollTop: $('.first-day').offset().top - 170}, 500);
-      }
-    }
-    window.setTimeout(scrollDay, 250);
   };
   function renderPrevMonthDays(){
     MONTHS[1].days = Number($(document).find('#year').val()) % 4 == 0 ? 29 : 28
@@ -158,6 +151,14 @@ $('.month-selector, .year-selector').on('change', function(event){
       }
     })
   }
+  function scrollDay(){
+    if($('.num-box').hasClass('day_background_color') === true){
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
+    } else if ($('.num-date').hasClass('first-day') === true){
+        $('body').animate({scrollTop: $('.first-day').offset().top - 170}, 500);
+    }
+  }
+  window.setTimeout(scrollDay, 150);
 
   renderMonth();
   renderPrevMonthDays();
@@ -187,7 +188,7 @@ function prev(){
         $('body').animate({scrollTop: $('.first-day').offset().top - 170}, 500);
     }
   }
-  window.setTimeout(scrollDay, 250);
+  window.setTimeout(scrollDay, 150);
 }
 
 function current(){
@@ -223,7 +224,7 @@ function next(){
     }
   }
 
-  window.setTimeout(scrollDay, 250);
+  window.setTimeout(scrollDay, 150);
 }
 
 $('.days').click(function( event ) {
