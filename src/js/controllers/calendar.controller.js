@@ -115,11 +115,17 @@ $('.month-selector, .year-selector').on('change', function(event){
        }
      }
      if (day.find('.num-date').html() === MONTHS[$('#month').val()].name + ' 1'){
-         console.log(day.find('.num-date'));
          day.find('.num-date').addClass('first-day');
      } else {
          day.find('.num-date').removeClass('first-day');
      }
+     $('.goTo').on('change', function(event){
+         event.preventDefault();
+         day.find('.num').parent().parent().removeClass('goToDay');
+         if ($('.goTo').val() === day.find('.num').html()){
+             day.find('.num').parent().parent().addClass('goToDay');
+         }
+     })
     })
   };
   function renderPrevMonthDays(){
@@ -241,6 +247,14 @@ $('.days').click(function( event ) {
 function goToTop(){
     $('body').animate({scrollTop: 0}, 500);
 }
+
+$('.goTo').on('change', function(event){
+    event.preventDefault();
+    if ($('.num-box').hasClass('goToDay')){
+        $('body').animate({scrollTop: $('.goToDay').offset().top - 170}, 500);
+        $('.goTo').val('');
+    }
+})
 
 $(window).scroll(function() {
    if($(window).scrollTop() + $(window).height() == $(document).height()) {

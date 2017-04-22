@@ -53,6 +53,14 @@
           width: 90px;
         }
       }
+      .settings {
+          position: absolute;
+          right: 10px;
+          background: transparent;
+          border: none;
+          color: white;
+          font-size: 20px;
+      }
       .account_selector{
         // height: 45px;
         width: 200px;
@@ -182,7 +190,7 @@
                 border-bottom: 2px solid #00b0ff;
             }
             .first-day{
-                
+
             }
         }
       }
@@ -197,6 +205,9 @@
   }
   .dead_month_color{
     opacity: .3;
+  }
+  .goToDay{
+
   }
   .selected-day {
       background: rgba(0, 0, 0, .1) !important;
@@ -220,6 +231,26 @@
   @keyframes bounce{
     50% {transform: translateY(-10px);}
     50% {transition: translateY(2px);}
+  }
+  .goToBox{
+      position: fixed;
+      bottom: 5px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span{
+          margin-right: 5px;
+      }
+      .goTo {
+          background: rgba(0, 0, 0, .5);
+          border: none;
+          width: 30px !important;
+          color: white;
+          padding: 5px;
+          border-radius: 5px;
+      }
+      
   }
   .fab-box{
       z-index: 3;
@@ -425,6 +456,15 @@
 
 @media screen and (max-width: 500px){
   .calendar-page{
+      .month{
+          .select-form{
+              .settings{
+                  span{
+                      display: none;
+                  }
+              }
+          }
+      }
     .button{
     }
     .calendar-container{
