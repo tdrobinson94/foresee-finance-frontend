@@ -216,7 +216,6 @@
                 border-radius: 0 0 12px 12px;
             }
             .transaction-activity{
-                height: 43%;
                 span{
                     display: block;
                     width: 100%;
@@ -240,6 +239,7 @@
                 }
             }
             .transaction-activity:nth-child(2){
+                height: 33%;
                 .activity-content{
                     color: #00e676;
                 }
@@ -249,6 +249,7 @@
                 }
             }
             .transaction-activity:nth-child(3){
+                height: 53%;
                 .activity-content{
                     color: red;
                 }
