@@ -121,9 +121,9 @@ $('.month-selector, .year-selector').on('change', function(event){
      }
      $('.goTo').on('change', function(event){
          event.preventDefault();
-         day.find('.num').parent().parent().removeClass('goToDay');
+         day.find('.num').parent().parent().removeClass('goToDay selected-day');
          if ($('.goTo').val() === day.find('.num').html()){
-             day.find('.num').parent().parent().addClass('goToDay');
+             day.find('.num').parent().parent().addClass('goToDay selected-day');
          }
      })
     })
@@ -285,6 +285,21 @@ $('.close').click(function(){
     $('.income-form').removeClass('show');
     $('.expense-form').removeClass('show');
 })
+
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '37') {
+       prev();
+    }
+    else if (e.keyCode == '39') {
+       next();
+    }
+
+}
 
 }
 
