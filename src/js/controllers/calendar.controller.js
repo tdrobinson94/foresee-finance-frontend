@@ -242,6 +242,24 @@ $('.days').click(function( event ) {
     target.addClass('selected-day');
     target.find('.transaction-button').addClass('show');
     $('body, html').animate({scrollTop: $('.selected-day').offset().top - 170}, 500);
+  } else if (target.is(".weekday")){
+    $('.transaction-button').removeClass('show');
+    $('.num-box').removeClass('selected-day');
+    target.parent().addClass('selected-day');
+    target.parent().find('.transaction-button').addClass('show');
+    $('body, html').animate({scrollTop: $('.selected-day').offset().top - 170}, 500);
+} else if (target.is(".num-date, .balance, .transaction-activity")){
+      $('.transaction-button').removeClass('show');
+      $('.num-box').removeClass('selected-day');
+      target.parent().parent().addClass('selected-day');
+      target.parent().parent().find('.transaction-button').addClass('show');
+      $('body, html').animate({scrollTop: $('.selected-day').offset().top - 170}, 500);
+  } else if (target.is(".activity-content")){
+      $('.transaction-button').removeClass('show');
+      $('.num-box').removeClass('selected-day');
+      target.parent().parent().parent().addClass('selected-day');
+      target.parent().parent().parent().find('.transaction-button').addClass('show');
+      $('body, html').animate({scrollTop: $('.selected-day').offset().top - 170}, 500);
   }
 });
 
