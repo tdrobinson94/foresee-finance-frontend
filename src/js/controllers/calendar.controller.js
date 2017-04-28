@@ -160,9 +160,9 @@ $('.month-selector, .year-selector').on('change', function(event){
   }
   function scrollDay(){
     if($('.num-box').hasClass('day_background_color') === true){
-      $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
+      $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 150}, 500);
     } else if ($('.num-date').hasClass('first-day') === true){
-        $('body, html').animate({scrollTop: $('.first-day').offset().top - 170}, 500);
+        $('body, html').animate({scrollTop: $('.first-day').offset().top - 150}, 500);
     }
   }
   window.setTimeout(scrollDay, 150);
@@ -190,9 +190,10 @@ function prev(){
   }
   function scrollDay(){
     if($('.num-box').hasClass('day_background_color') === true){
-      $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
+      $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 150}, 500);
     } else if ($('.num-date').hasClass('first-day') === true){
-        $('body, html').animate({scrollTop: $('.first-day').offset().top - 170}, 500);
+        $('.first-day').parent().parent().addClass('selected-day');
+        $('body, html').animate({scrollTop: $('.first-day').offset().top - 150}, 500);
     }
   }
   window.setTimeout(scrollDay, 150);
@@ -204,7 +205,7 @@ function current(){
   $('.transaction-button').removeClass('show');
   $(document).find('#month').val(month).change()
   $(document).find('#year').val(year).change()
-  $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
+  $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 150}, 500);
 }
 
 function next(){
@@ -225,9 +226,10 @@ function next(){
 
   function scrollDay(){
     if($('.num-box').hasClass('day_background_color') === true){
-      $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 170}, 500);
+      $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 150}, 500);
     } else if ($('.num-date').hasClass('first-day') === true){
-        $('body, html').animate({scrollTop: $('.first-day').offset().top - 170}, 500);
+        $('.first-day').parent().parent().addClass('selected-day');
+        $('body, html').animate({scrollTop: $('.first-day').offset().top - 150}, 500);
     }
   }
 
@@ -241,25 +243,25 @@ $('.days').click(function( event ) {
     $('.num-box').removeClass('selected-day');
     target.addClass('selected-day');
     target.find('.transaction-button').addClass('show');
-    $('body, html').animate({scrollTop: $('.selected-day').offset().top - 170}, 500);
+    $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
   } else if (target.is(".weekday")){
     $('.transaction-button').removeClass('show');
     $('.num-box').removeClass('selected-day');
     target.parent().addClass('selected-day');
     target.parent().find('.transaction-button').addClass('show');
-    $('body, html').animate({scrollTop: $('.selected-day').offset().top - 170}, 500);
+    $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
 } else if (target.is(".num-date, .balance, .transaction-activity")){
       $('.transaction-button').removeClass('show');
       $('.num-box').removeClass('selected-day');
       target.parent().parent().addClass('selected-day');
       target.parent().parent().find('.transaction-button').addClass('show');
-      $('body, html').animate({scrollTop: $('.selected-day').offset().top - 170}, 500);
-  } else if (target.is(".activity-content")){
+      $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+  } else if (target.is(".activity-content, .income, .expense")){
       $('.transaction-button').removeClass('show');
       $('.num-box').removeClass('selected-day');
       target.parent().parent().parent().addClass('selected-day');
       target.parent().parent().parent().find('.transaction-button').addClass('show');
-      $('body, html').animate({scrollTop: $('.selected-day').offset().top - 170}, 500);
+      $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
   }
 });
 
@@ -270,8 +272,10 @@ function goToTop(){
 $('.goTo').on('change', function(event){
     event.preventDefault();
     var target = $(event.target);
+    $('.num-box').removeClass('selected-day');
     if ($('.num-box').hasClass('goToDay')){
-        $('body, html').animate({scrollTop: $('.goToDay').offset().top - 170}, 500);
+        $('.goToDay').addClass('selected-day');
+        $('body, html').animate({scrollTop: $('.goToDay').offset().top - 150}, 500);
         $('.goTo').val('');
     }
 })
@@ -301,7 +305,7 @@ $('.expense-button').click(function(){
     $('.expense-button').toggleClass('show-expense-button');
 })
 
-$('.income-form, expense-form').click(function( event ) {
+$('.income-form, .expense-form').click(function( event ) {
   var target = $( event.target );
   if (target.is(".income-form, .expense-form")) {
       $('.income-form').removeClass('show');
@@ -312,6 +316,11 @@ $('.income-form, expense-form').click(function( event ) {
       $('.income-form').removeClass('show');
       $('.expense-form').removeClass('show');
   }
+});
+
+$(window).on("swipeleft",function(){
+  prev();
+  console.log('swiped left');
 });
 
 document.onkeydown = checkKey;
