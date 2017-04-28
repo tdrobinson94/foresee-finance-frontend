@@ -4,6 +4,7 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
 
   let vm = this;
   vm.login = login;
+  vm.loading = loading;
   vm.loadingIndicator = false;
   // vm.duration = duration;
 
@@ -21,6 +22,9 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
       }
       vm.user = {};
     })
+  }
+  function loading(){
+      window.setTimeout(login, 7000);
   }
 
 }

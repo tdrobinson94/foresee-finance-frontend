@@ -31,6 +31,7 @@ function LayoutController($state, $rootScope, UserService){
       $('.hamburger').toggleClass('is-active');
       $('.links').toggleClass('display');
       $('.container').toggleClass('push');
+      $('body').toggleClass('no-scroll');
     });
   };
 
@@ -38,6 +39,7 @@ function LayoutController($state, $rootScope, UserService){
     $('.hamburger').toggleClass('is-active');
     $('.links').toggleClass('display');
     $('.container').toggleClass('push');
+    $('body').toggleClass('no-scroll');
   })
 
   $('.links').height($(window).height());
