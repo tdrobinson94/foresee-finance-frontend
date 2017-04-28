@@ -39,6 +39,8 @@ function LayoutController($state, $rootScope, UserService){
     $('.links').toggleClass('display');
     $('.container').toggleClass('push');
   })
+
+  $('.links').height($(window).height());
 }
 
 LayoutController.$inject = ['$state', '$rootScope', 'UserService'];
