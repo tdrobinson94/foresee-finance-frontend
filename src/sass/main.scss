@@ -12,10 +12,10 @@ body{
   width: 100%;
 }
 
-div, h1, h2, h3, span, a, ul, li, nav{
+div, h1, h2, h3, span, a, ul, li, nav, button{
     font-family: 'Cuprum', sans-serif;
 }
 
 .no-scroll{
-    overflow: hidden;
+    overflow-y: hidden;
 }
