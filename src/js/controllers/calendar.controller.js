@@ -272,8 +272,8 @@ function goToTop(){
 $('.goTo').on('change', function(event){
     event.preventDefault();
     var target = $(event.target);
-    $('.num-box').removeClass('selected-day');
     if ($('.num-box').hasClass('goToDay')){
+        $('.num-box').removeClass('selected-day');
         $('.goToDay').addClass('selected-day');
         $('body, html').animate({scrollTop: $('.goToDay').offset().top - 150}, 500);
         $('.goTo').val('');
@@ -295,12 +295,14 @@ $('.fab-button').click(function(){
 
 $('.income-button').click(function(){
     $('.income-form').addClass('show');
+    $('.income-categories').addClass('visible');
     $('.income-button').toggleClass('show-income-button');
     $('.expense-button').toggleClass('show-expense-button');
 })
 
 $('.expense-button').click(function(){
     $('.expense-form').addClass('show');
+    $('.expense-categories').addClass('visible');
     $('.income-button').toggleClass('show-income-button');
     $('.expense-button').toggleClass('show-expense-button');
 })
@@ -310,11 +312,15 @@ $('.income-form, .expense-form').click(function( event ) {
   if (target.is(".income-form, .expense-form")) {
       $('.income-form').removeClass('show');
       $('.expense-form').removeClass('show');
+      $('.income-categories').removeClass('visible');
+      $('.expense-categories').removeClass('visible');
   } else if (target.is(".card")){
 
   } else if (target.is(".close")){
       $('.income-form').removeClass('show');
       $('.expense-form').removeClass('show');
+      $('.income-categories').removeClass('visible');
+      $('.expense-categories').removeClass('visible');
   }
 });
 
@@ -322,6 +328,10 @@ $(window).on("swipeleft",function(){
   prev();
   console.log('swiped left');
 });
+
+$('.logo').click(function(){
+
+})
 
 document.onkeydown = checkKey;
 
@@ -332,8 +342,19 @@ function checkKey(e) {
        prev();
     } else if (e.keyCode == '39') {
        next();
-    }
+   }
 }
+
+$('.income-category, .expense-category').click(function(event){
+    var target = $(event.target);
+    $('.income-category, .expense-category').removeClass('clicked');
+    console.log('click');
+    if (target.is(".income-category, .expense-category")){
+        target.addClass('clicked');
+    } else if (target.is(".income-icon, .expense-icon")){
+        target.parent().addClass('clicked')
+    }
+});
 
 }
 

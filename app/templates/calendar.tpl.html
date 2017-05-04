@@ -4,9 +4,11 @@
       <div class="date-selectors">
         <select name="select" class="month-selector selector" id="month">
         </select>
+        <!-- <input class="goTo selector" type="number" min="1" max="31"/> -->
         <select name="select" class="year-selector selector" id="year">
         </select>
       </div>
+      <!-- <img class="logo" src="./images/parrot-personal-finance-logo.png"/> -->
       <!-- <button class="settings fontawesome-cog"><span> Settings</span></button>
       <ul class="settings-menu">
           <li>
@@ -1177,10 +1179,10 @@
       </div>
     </div>
   </div>
-  <div class="goToBox">
-      <span>Go to: </span>
-      <input class="goTo" placeholder="day"/>
-  </div>
+  <!-- <div class="goToBox">
+      <span>Go to day: </span>
+      <input class="goTo selector" placeholder="0"/>
+  </div> -->
   <div class="fab-box">
       <button class="expense-button transaction-button entypo-minus"></button>
       <button class="income-button transaction-button entypo-plus"></button>
@@ -1192,23 +1194,53 @@
           <h1>Add Income</h1>
           <p>Are you expecting to recieve income?</p>
           <form>
-              <select>
-                <option>Select Category</option>
-                <option value="Paycheck">Paycheck</option>
-                <option value="Predictable bonus">Predictable bonus</option>
-                <option value="Expense Reimbursement">Expense Reimbursements</option>
-                <option value="Investment">Investment (Rental income, Capital gains, etc.)</option>
-                <option value="Misc">Misc. (Lottery, Tax refunds, Purchase refunds)</option>
-              </select>
-              <select>
-                  <option>Once</option>
-                  <option>Daily</option>
-                  <option>Weekly</option>
-                  <option>Bi-Weekly</option>
-                  <option>Monthly</option>
-                  <option>Semi-Annual</option>
-                  <option>Annual</option>
-              </select>
+              <ul class="income-categories">
+                <li value="Misc">
+                    <button class="income-category" type="button">
+                        <img class="income-icon" src="./images/misc-income.png" />
+                    </button>
+                    <span>Income</span>
+                </li>
+                <li>
+                    <button class="income-category" type="button">
+                        <img class="income-icon" src="./images/paycheck.png" />
+                    </button>
+                    <span>Paycheck</span>
+                </li>
+                <li>
+                    <button class="income-category" type="button">
+                        <img class="income-icon" src="./images/bonus.png" />
+                    </button>
+                    <span>Bonus</span>
+                </li>
+                <li>
+                    <button class="income-category" type="button">
+                        <img class="income-icon" src="./images/reimbursement.png" />
+                    </button>
+                    <span>Reimbursement</span>
+                </li>
+                <li>
+                    <button class="income-category" type="button">
+                        <img class="income-icon" src="./images/investment.png" />
+                    </button>
+                    <span>Investment</span>
+                </li>
+                <li>
+                    <button class="income-category" type="button">
+                        <img class="income-icon" src="./images/gifts.png" />
+                    </button>
+                    <span>Gift</span>
+                </li>
+            </ul>
+              <ul class="checkbox">
+                  <li><input type="checkbox" value="Once" />Once</li>
+                  <li><input type="checkbox" value="Daily" />Daily</li>
+                  <li><input type="checkbox" value="Weekly" />Weekly</li>
+                  <li><input type="checkbox" value="Bi-weekly" />Bi-weekly</li>
+                  <li><input type="checkbox" value="Monthly" />Monthly</li>
+                  <li><input type="checkbox" value="Semi-annual" />Semi-annual</li>
+                  <li><input type="checkbox" value="Annual" />Annual</li>
+              </ul>
               <input type="date" />
               <input placeholder="$0.00"/>
               <button>Enter</button>
@@ -1221,40 +1253,77 @@
           <h1>Add Expense</h1>
           <p>Are you expecting any expense?</p>
           <form>
-              <select>
-                <option>Select Category</option>
-                <option value="Automobile">Automobile (Gas, Maintenance, Auto loan, etc.)</option>
-                <option value="Bank Charges">Bank Charges (Service fees, ATM fees, etc.)</option>
-                <option value="Charity">Charity</option>
-                <option value="Childcare">Childcare (Babysitting, Child support, etc.)</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Credit Card">Credit Card Fees</option>
-                <option value="Education">Education (Tuition, Books, Student loans, etc.)</option>
-                <option value="Events">Events (Moving, Wedding, etc.)</option>
-                <option value="Food">Food</option>
-                <option value="Gifts">Gifts (Birthday, Wedding, Holiday, etc.)</option>
-                <option value="Healthcare">Healthcare</option>
-                <option value="Household">Household (Rent, Furniture, Supplies, etc.)</option>
-                <option value="Insurance">Insurance</option>
-                <option value="Job Expenses">Job Expenses (Professional dues, Clothing, etc.)</option>
-                <option value="Leisure">Leisure (Books, Movies, Sporting events, etc.)</option>
-                <option value="Hobbies">Hobbies (Cultural events, Video games, etc.)</option>
-                <option value="Loans">Loans</option>
-                <option value="Pet Care">Pet Care</option>
-                <option value="Savings">Savings (Retirement, Reserve funds, etc.)</option>
-                <option value="Taxes">Taxes</option>
-                <option value="Utilities">Utilities (Water, Electricity, Phone, etc.)</option>
-                <option value="Vacation">Vacation</option>
-              </select>
-              <select>
-                  <option>Once</option>
-                  <option>Daily</option>
-                  <option>Weekly</option>
-                  <option>Bi-Weekly</option>
-                  <option>Monthly</option>
-                  <option>Semi-Annual</option>
-                  <option>Annual</option>
-              </select>
+              <ul class="expense-categories">
+                  <li>
+                      <button class="expense-category" type="button">
+                          <img class="expense-icon" src="./images/misc-income.png" />
+                      </button>
+                      <span>Expense</span>
+                  </li>
+                <li>
+                    <button class="expense-category" type="button">
+                        <img class="expense-icon" src="./images/clothing.png" />
+                    </button>
+                    <span>Clothing</span>
+                </li>
+                <li>
+                    <button class="expense-category" type="button">
+                        <img class="expense-icon" src="./images/education.png" />
+                    </button>
+                    <span>Education</span>
+                </li>
+                <li>
+                    <button class="expense-category" type="button">
+                        <img class="expense-icon" src="./images/entertainment.png" />
+                    </button>
+                    <span>Entertainment</span>
+                </li>
+                <li>
+                    <button class="expense-category" type="button">
+                        <img class="expense-icon" src="./images/food.png" />
+                    </button>
+                    <span>Food</span>
+                </li>
+                <li>
+                    <button class="expense-category" type="button">
+                        <img class="expense-icon" src="./images/grocery.png" />
+                    </button>
+                    <span>Grocery</span>
+                </li>
+                <li>
+                    <button class="expense-category" type="button">
+                        <img class="expense-icon" src="./images/healthcare.png" />
+                    </button>
+                    <span>Healthcare</span>
+                </li>
+                <li>
+                    <button class="expense-category" type="button">
+                        <img class="expense-icon" src="./images/home.png" />
+                    </button>
+                    <span>Household</span>
+                </li>
+                <li>
+                    <button class="expense-category" type="button">
+                        <img class="expense-icon" src="./images/insurance.png" />
+                    </button>
+                    <span>Insurance</span>
+                </li>
+                <li>
+                    <button class="expense-category" type="button">
+                        <img class="expense-icon" src="./images/loan.png" />
+                    </button>
+                    <span>Loan</span>
+                </li>
+            </ul>
+              <ul class="checkbox">
+                  <li><input type="checkbox" value="Once" />Once</li>
+                  <li><input type="checkbox" value="Daily" />Daily</li>
+                  <li><input type="checkbox" value="Weekly" />Weekly</li>
+                  <li><input type="checkbox" value="Bi-weekly" />Bi-weekly</li>
+                  <li><input type="checkbox" value="Monthly" />Monthly</li>
+                  <li><input type="checkbox" value="Semi-annual" />Semi-annual</li>
+                  <li><input type="checkbox" value="Annual" />Annual</li>
+              </ul>
               <input type="date" />
               <input placeholder="$0.00"/>
               <button>Enter</button>
