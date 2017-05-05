@@ -22,20 +22,6 @@
     top: 0px;
     z-index: 1;
     background-color: #00E676;
-    .logo{
-        width: 40px;
-        position: absolute;
-        right: 0;
-        margin-right: 10px;
-        opacity: .8;
-        animation-name: pulse;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-out;
-    }
-    @keyframes pulse{
-        50% {transform: scale(1.1,1.1)};
-    }
     .select-form{
       height: 50px;
       display: flex;
@@ -276,6 +262,9 @@
                 }
             }
         }
+        .date-value{
+            display: none;
+        }
       }
     }
     .cur_trans_box{
@@ -341,7 +330,7 @@
   .fab-box{
       z-index: 3;
       position: fixed;
-      bottom: 10px;
+      bottom: 5px;
       right: 10px;
       display: flex;
       justify-content: center;
@@ -432,6 +421,8 @@
           box-shadow: 1px 1px 10px black;
           background: white;
           width: 95%;
+          max-width: 1000px;
+          position: relative;
           border-radius: 15px;
           z-index: 4;
           ul{
@@ -459,11 +450,15 @@
                       height: 60px;
                       margin: 0;
                     //   box-shadow: 1px 1px 10px black;
-                    transition: all .5s ease-in-out;
+                    transition: visibility .1s ease-in-out;
                     outline: none;
                       img{
                           width: 100%;
                       }
+                  }
+                  button:hover{
+                      background: #00b0ff;
+                      transition: visibility .1s ease-in-out;
                   }
                   .expense-category{
                       background: red;
@@ -491,6 +486,9 @@
                   }
               }
           }
+        //   .value-amount:before{
+        //       content: '$ ';
+        //   }
       }
       select, input{
           width: 30%;
@@ -521,7 +519,7 @@
           margin: 0;
           border-radius: 0 15px 0 0 ;
           position: absolute;
-          right: 3%;
+          right: 1%;
           outline: 0;
       }
       .close:hover{

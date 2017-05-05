@@ -79,18 +79,25 @@ $('.month-selector, .year-selector').on('change', function(event){
          currentYear = Number(currentYear) + 1;
        }
        if(nextMonth < 10){
-         let newMonth = nextMonth
+         let newMonth = nextMonth;
+         let standardMonth = '0' + nextMonth;
          if ((dayIndex - monthDays) < 10){
-           let newDayIndex = (dayIndex - monthDays)
+           let newDayIndex = (dayIndex - monthDays);
+           let standardDayIndex = '0' + (dayIndex - monthDays);
+           day.find('.date-value').html(currentYear + '-' + standardMonth + '-' + standardDayIndex);
            day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + newDayIndex).parent().addClass("dead_month_color");
          } else {
+           day.find('.date-value').html(currentYear + '-' + standardMonth + '-' + (dayIndex - monthDays));
            day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().addClass("dead_month_color");
          }
        } else {
          if ((dayIndex - monthDays) < 10){
-           let newDayIndex = (dayIndex - monthDays)
+           let newDayIndex = (dayIndex - monthDays);
+           let standardDayIndex = '0' + (dayIndex - monthDays);
+           day.find('.date-value').html(currentYear + '-' + standardMonth + '-' + standardDayIndex);;
            day.find('.num-date').html(MONTHS[nextMonth - 1].name + ' ' + newDayIndex).parent().addClass("dead_month_color");
          } else {
+           day.find('.date-value').html(currentYear + '-' + standardMonth + '-' + (dayIndex - monthDays));
            day.find('.num-date').html(MONTHS[nextMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().addClass("dead_month_color");
          }
        }
@@ -99,17 +106,24 @@ $('.month-selector, .year-selector').on('change', function(event){
        let thisMonth = (Number(currentMonth) + 1);
        if(thisMonth < 10){
          let newMonth = thisMonth
+         let standardNewMonth = '0' + thisMonth;
          if(dayIndex < 10){
-           let newDays = dayIndex
+           let newDays = dayIndex;
+           let standardNewDays = '0' + dayIndex;
+           day.find('.date-value').html(currentYear + '-' + standardNewMonth + '-' + standardNewDays);
            day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + newDays);
          } else{
+           day.find('.date-value').html(currentYear + '-' + standardNewMonth + '-' + (dayIndex));
            day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (dayIndex));
          }
        } else {
          if(dayIndex < 10){
-           let newDays = dayIndex
+           let newDays = dayIndex;
+           let standardNewDays = '0' + dayIndex;
+           day.find('.date-value').html(currentYear + '-' + thisMonth + '-' + standardNewDays);
            day.find('.num-date').html(MONTHS[thisMonth - 1].name + ' ' + newDays);
          } else{
+           day.find('.date-value').html(currentYear + '-' + thisMonth + '-' + (dayIndex));
            day.find('.num-date').html(MONTHS[thisMonth - 1].name + ' ' + (dayIndex));
          }
        }
@@ -147,9 +161,12 @@ $('.month-selector, .year-selector').on('change', function(event){
           currentYear = Number(currentYear) - 1;
         }
         if(prevMonth < 10){
-          let newMonth = prevMonth
+          let newMonth = prevMonth;
+          let standardNewMonth = '0' + prevMonth;
+          day.find('.date-value').html(currentYear + '-' + standardNewMonth + '-' + (prevDays[dayIndex]));
           day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (prevDays[dayIndex]));
         } else {
+          day.find('.date-value').html(currentYear + '-' + prevMonth + '-' + (prevDays[dayIndex]));
           day.find('.num-date').html(MONTHS[prevMonth - 1].name + ' ' + (prevDays[dayIndex]));
         }
 
@@ -262,7 +279,7 @@ $('.days').click(function( event ) {
       target.parent().parent().parent().addClass('selected-day');
       target.parent().parent().parent().find('.transaction-button').addClass('show');
       $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
-  }
+  };
 });
 
 function goToTop(){
@@ -294,17 +311,27 @@ $('.fab-button').click(function(){
 })
 
 $('.income-button').click(function(){
+    $('.frequency').prop('checked', false);
+    $('.income-category, .expense-category').removeClass('clicked');
     $('.income-form').addClass('show');
     $('.income-categories').addClass('visible');
     $('.income-button').toggleClass('show-income-button');
     $('.expense-button').toggleClass('show-expense-button');
+    $('.income-category').first().addClass('clicked');
+    $('.date-input').val($('.selected-day').find('.date-value').html().slice(0,10));
+    $('.first-checkbox').prop('checked', true);
 })
 
 $('.expense-button').click(function(){
+    $('.frequency').prop('checked', false);
+    $('.income-category, .expense-category').removeClass('clicked');
     $('.expense-form').addClass('show');
     $('.expense-categories').addClass('visible');
     $('.income-button').toggleClass('show-income-button');
     $('.expense-button').toggleClass('show-expense-button');
+    $('.expense-category').first().addClass('clicked');
+    $('.date-input').val($('.selected-day').find('.date-value').html().slice(0,10));
+    $('.first-checkbox').prop('checked', true);
 })
 
 $('.income-form, .expense-form').click(function( event ) {
@@ -345,6 +372,9 @@ function checkKey(e) {
    }
 }
 
+$('.income-category').first().addClass('clicked');
+$('.expense-category').first().addClass('clicked');
+
 $('.income-category, .expense-category').click(function(event){
     var target = $(event.target);
     $('.income-category, .expense-category').removeClass('clicked');
@@ -354,6 +384,10 @@ $('.income-category, .expense-category').click(function(event){
     } else if (target.is(".income-icon, .expense-icon")){
         target.parent().addClass('clicked')
     }
+});
+
+$('.frequency').on('change', function() {
+    $('.frequency').not(this).prop('checked', false);
 });
 
 }
