@@ -9,7 +9,7 @@ function CalendarController($scope){
   vm.next = next;
   vm.prev = prev;
   vm.current = current;
-  vm.goToTop = goToTop;
+  // vm.goToTop = goToTop;
 
   let clock = new Date();
   let month = clock.getMonth();
@@ -91,6 +91,7 @@ $('.month-selector, .year-selector').on('change', function(event){
            day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().addClass("dead_month_color");
          }
        } else {
+           let standardMonth = '0' + nextMonth;
          if ((dayIndex - monthDays) < 10){
            let newDayIndex = (dayIndex - monthDays);
            let standardDayIndex = '0' + (dayIndex - monthDays);
@@ -282,20 +283,20 @@ $('.days').click(function( event ) {
   };
 });
 
-function goToTop(){
-    $('body, html').animate({scrollTop: 0}, 500);
-}
+// function goToTop(){
+//     $('body, html').animate({scrollTop: 0}, 500);
+// }
 
-$('.goTo').on('change', function(event){
-    event.preventDefault();
-    var target = $(event.target);
-    if ($('.num-box').hasClass('goToDay')){
-        $('.num-box').removeClass('selected-day');
-        $('.goToDay').addClass('selected-day');
-        $('body, html').animate({scrollTop: $('.goToDay').offset().top - 150}, 500);
-        $('.goTo').val('');
-    }
-})
+// $('.goTo').on('change', function(event){
+//     event.preventDefault();
+//     var target = $(event.target);
+//     if ($('.num-box').hasClass('goToDay')){
+//         $('.num-box').removeClass('selected-day');
+//         $('.goToDay').addClass('selected-day');
+//         $('body, html').animate({scrollTop: $('.goToDay').offset().top - 150}, 500);
+//         $('.goTo').val('');
+//     }
+// })
 
 $(window).scroll(function() {
    if($(window).scrollTop() + $(window).height() == $(document).height()) {
