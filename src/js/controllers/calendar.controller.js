@@ -5,17 +5,20 @@ import _ from 'lodash';
 
 function CalendarController($scope){
 
+//======== Establish scope for linking functions to html ======//
   let vm = this;
   vm.next = next;
   vm.prev = prev;
   vm.current = current;
+  vm.submitIncome = submitIncome;
+  vm.submitExpense = submitExpense;
   // vm.goToTop = goToTop;
 
   let clock = new Date();
   let month = clock.getMonth();
   let year = clock.getFullYear();
 
-
+//================ Adding month name to top of calendar dynamically ===============//
   $(document).find('#month').html(`
     <option value="${month}" selected>${MONTHS[month].name}</option>
     <option value="0">${MONTHS[0].name}</option>
@@ -32,6 +35,7 @@ function CalendarController($scope){
     <option value="11">${MONTHS[11].name}</option>
     `)
 
+//================ Adding year to top of calendar dynamically ===============//
   $(document).find('#year').html(`
     <option value="${year - 5}">${year - 5}</option>
     <option value="${year - 4}">${year - 4}</option>
@@ -46,10 +50,12 @@ function CalendarController($scope){
     <option value="${year + 5}">${year + 5}</option>
     `)
 
-//Needs to be refactored
+//========================================== Calendar Basics ===========================================//
 $('.month-selector, .year-selector').on('change', function(event){
   event.preventDefault();
   $('.num-date').removeClass('first-day');
+
+  //=================== Render Current month days as well as next month days ==================//
   let renderMonth = function () {
     MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28;
     let currentMonth = $(document).find('#month').val();
@@ -66,14 +72,14 @@ $('.month-selector, .year-selector').on('change', function(event){
        day.find('.weekday').children().addClass('current-day');
        day.find('.num-container').parent().addClass("selected-day");
        day.find('.transaction-button').addClass('show');
-       day.find('.num-date').parent().removeClass("dead_month_color");
+       day.find('.num-date').parent().parent().removeClass("dead_month_color");
      } else {
        day.find('.num-container').parent().removeClass("day_background_color");
        day.find('.weekday').children().removeClass('current-day');
-       day.find('.num-date').parent().removeClass("dead_month_color");
+       day.find('.num-date').parent().parent().removeClass("dead_month_color");
      }
      if(dayIndex > monthDays){
-       day.find('.num').html(dayIndex - monthDays).parent().addClass("dead_month_color");
+       day.find('.num').html(dayIndex - monthDays).parent().parent().addClass("dead_month_color");
        if(nextMonth == 13){
          nextMonth = 1;
          currentYear = Number(currentYear) + 1;
@@ -85,10 +91,10 @@ $('.month-selector, .year-selector').on('change', function(event){
            let newDayIndex = (dayIndex - monthDays);
            let standardDayIndex = '0' + (dayIndex - monthDays);
            day.find('.date-value').html(currentYear + '-' + standardMonth + '-' + standardDayIndex);
-           day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + newDayIndex).parent().addClass("dead_month_color");
+           day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + newDayIndex).parent().parent().addClass("dead_month_color");
          } else {
            day.find('.date-value').html(currentYear + '-' + standardMonth + '-' + (dayIndex - monthDays));
-           day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().addClass("dead_month_color");
+           day.find('.num-date').html(MONTHS[newMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().parent().addClass("dead_month_color");
          }
        } else {
            let standardMonth = '0' + nextMonth;
@@ -96,10 +102,10 @@ $('.month-selector, .year-selector').on('change', function(event){
            let newDayIndex = (dayIndex - monthDays);
            let standardDayIndex = '0' + (dayIndex - monthDays);
            day.find('.date-value').html(currentYear + '-' + standardMonth + '-' + standardDayIndex);;
-           day.find('.num-date').html(MONTHS[nextMonth - 1].name + ' ' + newDayIndex).parent().addClass("dead_month_color");
+           day.find('.num-date').html(MONTHS[nextMonth - 1].name + ' ' + newDayIndex).parent().parent().addClass("dead_month_color");
          } else {
            day.find('.date-value').html(currentYear + '-' + standardMonth + '-' + (dayIndex - monthDays));
-           day.find('.num-date').html(MONTHS[nextMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().addClass("dead_month_color");
+           day.find('.num-date').html(MONTHS[nextMonth - 1].name + ' ' + (dayIndex - monthDays)).parent().parent().addClass("dead_month_color");
          }
        }
      } else {
@@ -134,16 +140,18 @@ $('.month-selector, .year-selector').on('change', function(event){
      } else {
          day.find('.num-date').removeClass('first-day');
      }
-     $('.goTo').on('change', function(event){
-         event.preventDefault();
-         day.find('.num').parent().parent().removeClass('goToDay');
-         if ($('.goTo').val() === day.find('.num').html()) {
-             day.find('.num').parent().parent().addClass('goToDay');
-         }
-     })
+    //  $('.goTo').on('change', function(event){
+    //      event.preventDefault();
+    //      day.find('.num').parent().parent().removeClass('goToDay');
+    //      if ($('.goTo').val() === day.find('.num').html()) {
+    //          day.find('.num').parent().parent().addClass('goToDay');
+    //      }
+    //  })
 
     })
   };
+
+  //=================== Render Previous month days ==================//
   function renderPrevMonthDays(){
     MONTHS[1].days = Number($(document).find('#year').val()) % 4 == 0 ? 29 : 28
     let currentYear = $(document).find('#year').val();
@@ -171,7 +179,7 @@ $('.month-selector, .year-selector').on('change', function(event){
           day.find('.num-date').html(MONTHS[prevMonth - 1].name + ' ' + (prevDays[dayIndex]));
         }
 
-        day.find('.num-date').parent().addClass("dead_month_color");
+        day.find('.num-date').parent().parent().addClass("dead_month_color");
         day.find('.num-container').parent().removeClass("day_background_color");
       }
     })
@@ -180,6 +188,7 @@ $('.month-selector, .year-selector').on('change', function(event){
     if($('.num-box').hasClass('day_background_color') === true){
       $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 150}, 500);
     } else if ($('.num-date').hasClass('first-day') === true){
+        $('.first-day').parent().parent().addClass('selected-day');
         $('body, html').animate({scrollTop: $('.first-day').offset().top - 150}, 500);
     }
   }
@@ -191,6 +200,10 @@ $('.month-selector, .year-selector').on('change', function(event){
 })
 $('.month-selector').change();
 
+
+//============= Scroll Months functionality ==================//
+
+//===== Go to previous month =======//
 function prev(){
   $('.num-box').removeClass('selected-day');
   $('.num-date').removeClass('first-day');
@@ -217,6 +230,7 @@ function prev(){
   window.setTimeout(scrollDay, 150);
 }
 
+//===== Go to today's date =======//
 function current(){
   $('.num-box').removeClass('selected-day');
   $('.num-date').removeClass('first-day');
@@ -226,6 +240,7 @@ function current(){
   $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 150}, 500);
 }
 
+//===== Go to next month =======//
 function next(){
   $('.num-box').removeClass('selected-day');
   $('.num-date').removeClass('first-day');
@@ -250,12 +265,29 @@ function next(){
         $('body, html').animate({scrollTop: $('.first-day').offset().top - 150}, 500);
     }
   }
-
   window.setTimeout(scrollDay, 150);
 }
 
+//========= Arrow key navigation for calendar ===========//
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+    e = e || window.event;
+    var y = $(window).scrollTop();
+
+    if (e.keyCode == '37') {
+        //===== Go to previous month =======//
+       prev();
+    } else if (e.keyCode == '39') {
+        //===== Go to next month =======//
+       next();
+   }
+}
+
+//=============================== Select a calendar day =================================//
 $('.days').click(function( event ) {
   var target = $( event.target );
+  //===== If statements for which element is selected within the day =======//
   if (target.is(".num-box")) {
     $('.transaction-button').removeClass('show');
     $('.num-box').removeClass('selected-day');
@@ -283,6 +315,101 @@ $('.days').click(function( event ) {
   };
 });
 
+//======================== Transaction form popup windows ==========================//
+
+//=============== transaction button functionality =========================//
+$('.fab-button').click(function(){
+    $('.income-button').toggleClass('show-income-button');
+    $('.expense-button').toggleClass('show-expense-button');
+})
+//=========== income button =============//
+$('.income-button').click(function(){
+    $('.frequency').prop('checked', false);
+    $('.income-category, .expense-category').removeClass('clicked');
+    $('.income-form').addClass('show');
+    $('.income-categories').addClass('visible');
+    $('.income-button').toggleClass('show-income-button');
+    $('.expense-button').toggleClass('show-expense-button');
+    $('.income-category').first().addClass('clicked');
+    $('.date-input').val($('.selected-day').find('.date-value').html().slice(0,10));
+    $('.first-checkbox').prop('checked', true);
+})
+
+//=========== expense button =============//
+$('.expense-button').click(function(){
+    $('.frequency').prop('checked', false);
+    $('.income-category, .expense-category').removeClass('clicked');
+    $('.expense-form').addClass('show');
+    $('.expense-categories').addClass('visible');
+    $('.income-button').toggleClass('show-income-button');
+    $('.expense-button').toggleClass('show-expense-button');
+    $('.expense-category').first().addClass('clicked');
+    $('.date-input').val($('.selected-day').find('.date-value').html().slice(0,10));
+    $('.first-checkbox').prop('checked', true);
+})
+
+//============== Close the transaction form popup ================//
+$('.income-form, .expense-form').click(function( event ) {
+  var target = $( event.target );
+  if (target.is(".income-form, .expense-form")) {
+      //========= click outside of the card to close popup ========//
+      $('.income-form').removeClass('show');
+      $('.expense-form').removeClass('show');
+      $('.income-categories').removeClass('visible');
+      $('.expense-categories').removeClass('visible');
+  } else if (target.is(".card")){
+      //========== if click is inside the card nothing will happen ========//
+  } else if (target.is(".close")){
+      //====== click the X to close popup =======//
+      $('.income-form').removeClass('show');
+      $('.expense-form').removeClass('show');
+      $('.income-categories').removeClass('visible');
+      $('.expense-categories').removeClass('visible');
+  } else if(target.is(".submit-transaction")){
+      $('.income-form').removeClass('show');
+      $('.expense-form').removeClass('show');
+      $('.income-categories').removeClass('visible');
+      $('.expense-categories').removeClass('visible');
+  }
+});
+
+//========== Only select one transaction category at a time =========//
+$('.income-category, .expense-category').click(function(event){
+    var target = $(event.target);
+    $('.income-category, .expense-category').removeClass('clicked');
+    if (target.is(".income-category, .expense-category")){
+        target.addClass('clicked');
+    } else if (target.is(".income-icon, .expense-icon")){
+        target.parent().addClass('clicked')
+    }
+});
+
+//======== Only select one checkbox at a time ========//
+$('.frequency').on('change', function() {
+    $('.frequency').not(this).prop('checked', false);
+});
+
+
+
+function submitIncome (){
+    var entryDate = $(document).find('.date-value');
+    console.log($('.clicked').val());
+    if ($(document).find('.date-value').html().slice(0,10) == $('.date-input').val()){
+        entryDate.parent().find('.income-content').append(`<span class="transaction-income">${$('.income-amount').val()}</span>`);
+    }
+    $('.value-amount').val('');
+}
+
+function submitExpense (){
+    var entryDate = $(document).find('.date-value');
+    console.log($('.clicked').val());
+    if ($(document).find('.date-value').html().slice(0,10) == $('.date-input').val()){
+        entryDate.parent().find('.expense-content').append(`<span class="transaction-expense">${$('.expense-amount').val()}</span>`);
+    }
+    $('.value-amount').val('');
+}
+
+
 // function goToTop(){
 //     $('body, html').animate({scrollTop: 0}, 500);
 // }
@@ -298,98 +425,13 @@ $('.days').click(function( event ) {
 //     }
 // })
 
-$(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-       $('.top-box').addClass('showTopButton');
-   } else {
-       $('.top-box').removeClass('showTopButton');
-   }
-});
-
-$('.fab-button').click(function(){
-    $('.income-button').toggleClass('show-income-button');
-    $('.expense-button').toggleClass('show-expense-button');
-})
-
-$('.income-button').click(function(){
-    $('.frequency').prop('checked', false);
-    $('.income-category, .expense-category').removeClass('clicked');
-    $('.income-form').addClass('show');
-    $('.income-categories').addClass('visible');
-    $('.income-button').toggleClass('show-income-button');
-    $('.expense-button').toggleClass('show-expense-button');
-    $('.income-category').first().addClass('clicked');
-    $('.date-input').val($('.selected-day').find('.date-value').html().slice(0,10));
-    $('.first-checkbox').prop('checked', true);
-})
-
-$('.expense-button').click(function(){
-    $('.frequency').prop('checked', false);
-    $('.income-category, .expense-category').removeClass('clicked');
-    $('.expense-form').addClass('show');
-    $('.expense-categories').addClass('visible');
-    $('.income-button').toggleClass('show-income-button');
-    $('.expense-button').toggleClass('show-expense-button');
-    $('.expense-category').first().addClass('clicked');
-    $('.date-input').val($('.selected-day').find('.date-value').html().slice(0,10));
-    $('.first-checkbox').prop('checked', true);
-})
-
-$('.income-form, .expense-form').click(function( event ) {
-  var target = $( event.target );
-  if (target.is(".income-form, .expense-form")) {
-      $('.income-form').removeClass('show');
-      $('.expense-form').removeClass('show');
-      $('.income-categories').removeClass('visible');
-      $('.expense-categories').removeClass('visible');
-  } else if (target.is(".card")){
-
-  } else if (target.is(".close")){
-      $('.income-form').removeClass('show');
-      $('.expense-form').removeClass('show');
-      $('.income-categories').removeClass('visible');
-      $('.expense-categories').removeClass('visible');
-  }
-});
-
-$(window).on("swipeleft",function(){
-  prev();
-  console.log('swiped left');
-});
-
-$('.logo').click(function(){
-
-})
-
-document.onkeydown = checkKey;
-
-function checkKey(e) {
-    e = e || window.event;
-    var y = $(window).scrollTop();
-    if (e.keyCode == '37') {
-       prev();
-    } else if (e.keyCode == '39') {
-       next();
-   }
-}
-
-$('.income-category').first().addClass('clicked');
-$('.expense-category').first().addClass('clicked');
-
-$('.income-category, .expense-category').click(function(event){
-    var target = $(event.target);
-    $('.income-category, .expense-category').removeClass('clicked');
-    console.log('click');
-    if (target.is(".income-category, .expense-category")){
-        target.addClass('clicked');
-    } else if (target.is(".income-icon, .expense-icon")){
-        target.parent().addClass('clicked')
-    }
-});
-
-$('.frequency').on('change', function() {
-    $('.frequency').not(this).prop('checked', false);
-});
+// $(window).scroll(function() {
+//    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+//        $('.top-box').addClass('showTopButton');
+//    } else {
+//        $('.top-box').removeClass('showTopButton');
+//    }
+// });
 
 }
 
