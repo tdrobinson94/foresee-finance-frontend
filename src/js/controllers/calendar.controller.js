@@ -293,24 +293,35 @@ $('.days').click(function( event ) {
     $('.num-box').removeClass('selected-day');
     target.addClass('selected-day');
     target.find('.transaction-button').addClass('show');
+    console.log(target.find('.date-value').html());
     $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
   } else if (target.is(".weekday")){
     $('.transaction-button').removeClass('show');
     $('.num-box').removeClass('selected-day');
     target.parent().addClass('selected-day');
     target.parent().find('.transaction-button').addClass('show');
+    console.log(target.parent().find('.date-value').html());
     $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
 } else if (target.is(".num-date, .balance, .transaction-activity")){
       $('.transaction-button').removeClass('show');
       $('.num-box').removeClass('selected-day');
       target.parent().parent().addClass('selected-day');
       target.parent().parent().find('.transaction-button').addClass('show');
+      console.log(target.parent().parent().find('.date-value').html());
       $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
   } else if (target.is(".activity-content, .income, .expense")){
       $('.transaction-button').removeClass('show');
       $('.num-box').removeClass('selected-day');
       target.parent().parent().parent().addClass('selected-day');
       target.parent().parent().parent().find('.transaction-button').addClass('show');
+      console.log(target.parent().parent().parent().find('.date-value').html());
+      $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+  } else if (target.is(".transaction-income, .transaction-expense")){
+      $('.transaction-button').removeClass('show');
+      $('.num-box').removeClass('selected-day');
+      target.parent().parent().parent().parent().addClass('selected-day');
+      target.parent().parent().parent().parent().find('.transaction-button').addClass('show');
+      console.log(target.parent().parent().parent().parent().find('.date-value').html())
       $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
   };
 });
@@ -392,27 +403,71 @@ $('.frequency').on('change', function() {
 
 
 function submitIncome (){
-    var entryDate = $(document).find('.date-value');
+    MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28;
+    let currentMonth = $(document).find('#month').val();
+    let nextMonth = Number($(document).find('#month').val()) + 2;
+    let currentYear = $(document).find('#year').val();
+    let startOfMonth = new Date(currentYear, currentMonth , 1).getDay();
+    let monthDays = MONTHS[$(document).find('#month').val()].days;
+    let days = $(document).find('.days').children();
     console.log($('.clicked').val());
-    if ($(document).find('.date-value').html().slice(0,10) == $('.date-input').val()){
-        entryDate.parent().find('.income-content').append(`<span class="transaction-income">${$('.income-amount').val()}</span>`);
-    }
-    $('.value-amount').val('');
+
+        _.range(1, 43).forEach(function(dayIndex){
+            $('.date-value').removeClass('input_date');
+            let day = $(days[startOfMonth + dayIndex - 1]);
+            if (day.find('.date-value').html() === $('.date-input').val()){
+                day.find('.date-value').parent().addClass('input_date');
+                day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income">income</span>`);
+            }
+            $('.value-amount').val('');
+        })
+
+        _.range(0, startOfMonth).forEach(function(dayIndex){
+            $('.date-value').removeClass('input_date');
+            let day = $(days[dayIndex]);
+            if (day.find('.date-value').html() === $('.date-input').val()){
+                day.find('.date-value').parent().addClass('input_date');
+                day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income">income</span>`);
+            }
+            $('.value-amount').val('');
+        })
 }
 
 function submitExpense (){
-    var entryDate = $(document).find('.date-value');
+    MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28;
+    let currentMonth = $(document).find('#month').val();
+    let nextMonth = Number($(document).find('#month').val()) + 2;
+    let currentYear = $(document).find('#year').val();
+    let startOfMonth = new Date(currentYear, currentMonth , 1).getDay();
+    let monthDays = MONTHS[$(document).find('#month').val()].days;
+    let days = $(document).find('.days').children();
     console.log($('.clicked').val());
-    if ($(document).find('.date-value').html().slice(0,10) == $('.date-input').val()){
-        entryDate.parent().find('.expense-content').append(`<span class="transaction-expense">${$('.expense-amount').val()}</span>`);
-    }
-    $('.value-amount').val('');
+
+        _.range(1, 43).forEach(function(dayIndex){
+            $('.date-value').removeClass('input_date');
+            let day = $(days[startOfMonth + dayIndex - 1]);
+            if (day.find('.date-value').html() === $('.date-input').val()){
+                day.find('.date-value').parent().addClass('input_date');
+                day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense">expense</span>`);
+            }
+            $('.value-amount').val('');
+        })
+
+        _.range(0, startOfMonth).forEach(function(dayIndex){
+            $('.date-value').removeClass('input_date');
+            let day = $(days[dayIndex]);
+            if (day.find('.date-value').html() === $('.date-input').val()){
+                day.find('.date-value').parent().addClass('input_date');
+                day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense">expense</span>`);
+            }
+            $('.value-amount').val('');
+        })
 }
 
 
-// function goToTop(){
-//     $('body, html').animate({scrollTop: 0}, 500);
-// }
+
+
+
 
 // $('.goTo').on('change', function(event){
 //     event.preventDefault();

@@ -140,6 +140,7 @@
           text-align: center;
       }
       .num-box{
+        // float: left;
         box-sizing: border-box;
         width: 24%;
         height: 400px;
@@ -595,8 +596,11 @@
     .calendar-container{
       .days{
         // height: 115px;
+        // display: flex;
+        // justify-content: center;
         .num-box{
             width: 80%;
+            float: none;
         //   .shade{
         //     .num-date{
         //       font-size: 10px;
