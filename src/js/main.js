@@ -21,7 +21,7 @@ import { LoginController } from './controllers/login.controller';
 import { SignUpController } from './controllers/signup.controller';
 
 angular
-  .module('app', ['ui.router', 'ngMaterial', 'ngCookies'])
+  .module('app', [ 'ui.router', 'ngMaterial', 'ngCookies'])
   .config(config)
   // .constant('SERVER', serverConstant)
   // .run(run)
