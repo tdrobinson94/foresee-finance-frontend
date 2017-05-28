@@ -254,7 +254,7 @@
                         // text-align: center;
                     }
                     .transaction-income:hover, .transaction-expense:hover {
-                        
+
                     }
                 }
             }
@@ -625,6 +625,9 @@
 @media screen and (max-width: 500px){
   .calendar-page{
       .month{
+          .calendar-controls{
+            //   display: none;
+          }
           .select-form{
               .settings{
                   span{

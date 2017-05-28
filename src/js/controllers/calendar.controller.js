@@ -297,12 +297,11 @@ function handleTouchMove(evt) {
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {
             /* left swipe */
-            console.log('left');
-            prev();
+            next();
         } else {
             /* right swipe */
-            console.log('right');
-            next();
+            prev();
+
         }
     } else {
         if ( yDiff > 0 ) {
