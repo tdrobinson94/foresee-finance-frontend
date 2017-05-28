@@ -225,20 +225,14 @@
                     color: #37474F;
                 }
                 .income{
-                    // border-bottom: 1px solid #00e676;
-                    // visibility: hidden;
+                    border-bottom: 1px solid #00e676;
                     font-size: 14px;
                     color: #00e676;
-                    text-decoration: underline;
-                    text-decoration-color: #00e676;
                 }
                 .expense{
-                    // border-bottom: 1px solid red;
+                    border-bottom: 1px solid red;
                     font-size: 14px;
                     color: red;
-                    text-decoration: underline;
-                    text-decoration-color: red;
-                    // visibility: hidden;
                 }
                 .activity-content{
                     display: flex;
@@ -258,6 +252,9 @@
                         // float: left;
                         width: 33%;
                         // text-align: center;
+                    }
+                    .transaction-income:hover, .transaction-expense:hover {
+                        
                     }
                 }
             }
