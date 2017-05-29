@@ -386,18 +386,18 @@
                         }
                     }
                     .transaction-income{
-                        height: 40% !important;
+                        height: 44% !important;
                     }
                     .transaction-expense{
-                        height: 25% !important;
+                        height: 30% !important;
+                        .edit-transaction{
+                            top: 2px !important;
+                        }
                     }
                 }
             }
         }
       }
-    }
-    .cur_trans_box{
-        display: none;
     }
   }
   .day_background_color{

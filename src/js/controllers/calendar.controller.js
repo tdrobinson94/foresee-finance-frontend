@@ -581,6 +581,13 @@ $('.calendar-view').on('click', function(){
         $('.calendar-container').toggleClass('change-view');
         $('.calendar-container').toggleClass('active-view');
     }
+    function scrollDay(){
+        if ($('.num-box').hasClass('selected-day')){
+            console.log('change');
+            $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+        }
+    }
+    window.setTimeout(scrollDay, 500);
 })
 $(window).resize(function(){
     if ($(window).width() <= 780){
@@ -591,40 +598,16 @@ $(window).resize(function(){
         $('.calendar-container').removeClass('change-view');
         $('.calendar-container').removeClass('active-view');
     }
+
+    function scrollDay(){
+        if ($('.num-box').hasClass('selected-day')){
+            console.log('change');
+            $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+        }
+    }
+    window.setTimeout(scrollDay, 500);
 })
-// $(window).resize(function(){
-//     if ($(window).width >= 780 && $('.calendar-container').hasClass('active-view')){
-//         $('.calendar-container').addClass('change-view');
-//     } else{
-//         $('.calendar-container').removeClass('change-view active-view');
-//     }
-// })
 
-
-
-
-
-
-
-
-// $('.goTo').on('change', function(event){
-//     event.preventDefault();
-//     var target = $(event.target);
-//     if ($('.num-box').hasClass('goToDay')){
-//         $('.num-box').removeClass('selected-day');
-//         $('.goToDay').addClass('selected-day');
-//         $('body, html').animate({scrollTop: $('.goToDay').offset().top - 150}, 500);
-//         $('.goTo').val('');
-//     }
-// })
-
-// $(window).scroll(function() {
-//    if($(window).scrollTop() + $(window).height() == $(document).height()) {
-//        $('.top-box').addClass('showTopButton');
-//    } else {
-//        $('.top-box').removeClass('showTopButton');
-//    }
-// });
 
 }
 
