@@ -245,16 +245,59 @@
                     height: 90%;
                     margin: 0;
                     font-weight: 200;
-                    // overflow-y: scroll;
+                    overflow-y: auto;
                     .transaction-income, .transaction-expense {
                         background: none;
-                        display: inline;
-                        // float: left;
-                        width: 33%;
-                        // text-align: center;
+                        display: flex;
+                        align-items: center;
+                        width: 31%;
+                        height: 30%;
+                        // position: absolute;
+                        margin-left: 5px;
+                        overflow-x: hidden;
+                        position: relative;
+                        overflow-y: hidden;
+                        div {
+                            border-radius: 100%;
+                            display: flex;
+                            // justify-content: center;
+                            align-items: center;
+                            overflow: hidden;
+                            width: 22px;
+                            height: 22px;
+                            margin: 5px;
+                            padding: 2px;
+                          //   box-shadow: 1px 1px 10px black;
+                          transition: visibility .1s ease-in-out;
+                          outline: none;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .income-color {
+                            background: #00e676;
+                        }
+                        .expense-color {
+                            background: red;
+                        }
+                        .edit-transaction {
+                            color: #00b0ff;
+                            width: 25px;
+                            position: absolute;
+                            right: -155px;
+                            // visibility: hidden;
+                            transition: right .2s ease-in-out;
+                        }
+                        .edit-transaction:hover {
+                            opacity: .6;
+                        }
                     }
                     .transaction-income:hover, .transaction-expense:hover {
-
+                        .edit-transaction {
+                            // visibility: visible;
+                            right: 0px;
+                            transition: right .2s ease-in-out;
+                        }
                     }
                 }
             }

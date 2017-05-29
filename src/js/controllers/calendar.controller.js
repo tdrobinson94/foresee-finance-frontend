@@ -271,7 +271,7 @@ function next(){
   window.setTimeout(scrollDay, 150);
 }
 
-
+// ================ Swipe events ================ //
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 
@@ -462,9 +462,21 @@ function submitIncome (){
         _.range(1, 43).forEach(function(dayIndex){
             $('.date-value').removeClass('input_date');
             let day = $(days[startOfMonth + dayIndex - 1]);
-            if (day.find('.date-value').html() === $('.date-input').val()){
+            if (day.find('.date-value').html() === $('.income-date-input').val()){
                 day.find('.date-value').parent().addClass('input_date');
-                day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income">income</span>`);
+                if ($('.clicked').val() === 'Income'){
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/misc-income.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Paycheck') {
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/paycheck.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Bonus') {
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/bonus.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Reimbursement') {
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/reimbursement.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Investment') {
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/investment.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Gift') {
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/gifts.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                }
             }
             $('.value-amount').val('');
         })
@@ -472,9 +484,21 @@ function submitIncome (){
         _.range(0, startOfMonth).forEach(function(dayIndex){
             $('.date-value').removeClass('input_date');
             let day = $(days[dayIndex]);
-            if (day.find('.date-value').html() === $('.date-input').val()){
+            if (day.find('.date-value').html() === $('.income-date-input').val()){
                 day.find('.date-value').parent().addClass('input_date');
-                day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income">income</span>`);
+                if ($('.clicked').val() === 'Income'){
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/misc-income.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Paycheck') {
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/paycheck.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Bonus') {
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/bonus.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Reimbursement') {
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/reimbursement.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Investment') {
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/investment.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Gift') {
+                    day.find('.date-value').parent().find('.income-content').append(`<span class="transaction-income"><div class="income-color"><img class="income-icon" src="./images/gifts.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                }
             }
             $('.value-amount').val('');
         })
@@ -493,9 +517,29 @@ function submitExpense (){
         _.range(1, 43).forEach(function(dayIndex){
             $('.date-value').removeClass('input_date');
             let day = $(days[startOfMonth + dayIndex - 1]);
-            if (day.find('.date-value').html() === $('.date-input').val()){
+            if (day.find('.date-value').html() === $('.expense-date-input').val()){
                 day.find('.date-value').parent().addClass('input_date');
-                day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense">expense</span>`);
+                if ($('.clicked').val() === 'Expense'){
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/misc-income.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Clothing') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/clothing.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Education') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/education.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Entertainment') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/entertainment.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Food') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/food.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Grocery') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/grocery.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Healthcare') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/healthcare.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Household') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/home.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Insurance') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/insurance.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Loan') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/loan.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                }
             }
             $('.value-amount').val('');
         })
@@ -503,9 +547,29 @@ function submitExpense (){
         _.range(0, startOfMonth).forEach(function(dayIndex){
             $('.date-value').removeClass('input_date');
             let day = $(days[dayIndex]);
-            if (day.find('.date-value').html() === $('.date-input').val()){
+            if (day.find('.date-value').html() === $('.expense-date-input').val()){
                 day.find('.date-value').parent().addClass('input_date');
-                day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense">expense</span>`);
+                if ($('.clicked').val() === 'Expense'){
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/misc-income.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Clothing') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/clothing.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Education') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/education.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Entertainment') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/entertainment.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Food') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/food.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Grocery') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/grocery.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Healthcare') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/healthcare.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Household') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/home.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Insurance') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/insurance.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                } else if ($('.clicked').val() === 'Loan') {
+                    day.find('.date-value').parent().find('.expense-content').append(`<span class="transaction-expense"><div class="expense-color"><img class="expense-icon" src="./images/loan.png" /></div><span class="edit-transaction fontawesome-pencil"><span></span>`);
+                }
             }
             $('.value-amount').val('');
         })
