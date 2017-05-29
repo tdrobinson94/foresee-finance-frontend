@@ -576,6 +576,20 @@ function submitExpense (){
 }
 
 
+$('.calendar-view').on('click', function(){
+    if ($(window).width() >= 780){
+        $('.calendar-container').toggleClass('change-view');
+    }
+})
+$(window).resize(function(){
+    if ($(window).width() <= 780){
+        $('.calendar-container').removeClass('change-view')
+    }
+})
+
+
+
+
 
 
 
