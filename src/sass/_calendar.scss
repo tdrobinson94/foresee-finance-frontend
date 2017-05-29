@@ -235,12 +235,6 @@
                     color: red;
                 }
                 .activity-content{
-                    display: flex;
-                    justify-content: flex-start;
-                    flex-wrap: wrap;
-                    // column-count: 3;
-                    // column-gap: 40px;
-                    // display: table-cell;
                     width: 100%;
                     height: 90%;
                     margin: 0;
@@ -251,12 +245,13 @@
                         display: flex;
                         align-items: center;
                         width: 47%;
-                        height: 30%;
                         // position: absolute;
-                        margin-left: 5px;
+                        margin: 5px;
+                        margin-right: 0;
                         overflow-x: hidden;
                         position: relative;
                         overflow-y: hidden;
+                        float: left;
                         div {
                             border-radius: 100%;
                             display: flex;
@@ -280,23 +275,29 @@
                         .expense-color {
                             background: red;
                         }
-                        .edit-transaction {
-                            color: #00b0ff;
+                        .edit-transaction{
                             width: 25px;
                             position: absolute;
                             right: -155px;
-                            // visibility: hidden;
-                            transition: right .2s ease-in-out;
+                            color: #00b0ff;
+                            top: 5px;
+                            transition: all .4s ease-in-out;
                         }
-                        .edit-transaction:hover {
+                        .edit-transaction:hover{
                             opacity: .6;
+                            transition: all .4s ease-in-out;
                         }
                     }
+                    .transaction-income{
+                        height: 23%;
+                    }
+                    .transaction-expense{
+                        height: 15%;
+                    }
                     .transaction-income:hover, .transaction-expense:hover {
-                        .edit-transaction {
-                            // visibility: visible;
+                        .edit-transaction{
                             right: 0px;
-                            transition: right .4s ease-in-out;
+                            transition: right .2s ease-in-out;
                         }
                     }
                 }
