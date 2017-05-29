@@ -715,7 +715,7 @@
   }
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 780px){
   .calendar-page{
     .button{
       font-size: 30px;
@@ -757,6 +757,9 @@
           }
         }
       }
+    }
+    .calendar-style{
+        visibility: hidden;
     }
   }
 }

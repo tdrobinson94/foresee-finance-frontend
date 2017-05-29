@@ -336,39 +336,39 @@ $('.days').click(function( event ) {
   var target = $( event.target );
   //===== If statements for which element is selected within the day =======//
   if (target.is(".num-box")) {
+    //   $('.calendar-container').removeClass('change-view')
     $('.transaction-button').removeClass('show');
     $('.num-box').removeClass('selected-day');
     target.addClass('selected-day');
     target.find('.transaction-button').addClass('show');
-    console.log(target.find('.date-value').html());
     $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
   } else if (target.is(".weekday")){
+    //   $('.calendar-container').removeClass('change-view')
     $('.transaction-button').removeClass('show');
     $('.num-box').removeClass('selected-day');
     target.parent().addClass('selected-day');
     target.parent().find('.transaction-button').addClass('show');
-    console.log(target.parent().find('.date-value').html());
     $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
 } else if (target.is(".num-date, .balance, .transaction-activity")){
+    // $('.calendar-container').removeClass('change-view')
       $('.transaction-button').removeClass('show');
       $('.num-box').removeClass('selected-day');
       target.parent().parent().addClass('selected-day');
       target.parent().parent().find('.transaction-button').addClass('show');
-      console.log(target.parent().parent().find('.date-value').html());
       $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
   } else if (target.is(".activity-content, .income, .expense")){
+    //   $('.calendar-container').removeClass('change-view')
       $('.transaction-button').removeClass('show');
       $('.num-box').removeClass('selected-day');
       target.parent().parent().parent().addClass('selected-day');
       target.parent().parent().parent().find('.transaction-button').addClass('show');
-      console.log(target.parent().parent().parent().find('.date-value').html());
       $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
   } else if (target.is(".transaction-income, .transaction-expense")){
+    //   $('.calendar-container').removeClass('change-view')
       $('.transaction-button').removeClass('show');
       $('.num-box').removeClass('selected-day');
       target.parent().parent().parent().parent().addClass('selected-day');
       target.parent().parent().parent().parent().find('.transaction-button').addClass('show');
-      console.log(target.parent().parent().parent().parent().find('.date-value').html())
       $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
   };
 });
@@ -579,13 +579,26 @@ function submitExpense (){
 $('.calendar-view').on('click', function(){
     if ($(window).width() >= 780){
         $('.calendar-container').toggleClass('change-view');
+        $('.calendar-container').toggleClass('active-view');
     }
 })
 $(window).resize(function(){
     if ($(window).width() <= 780){
-        $('.calendar-container').removeClass('change-view')
+        $('.calendar-container').removeClass('change-view');
+    } else if ($(window).width() > 780 && $('.calendar-container').hasClass('active-view')){
+        $('.calendar-container').addClass('change-view');
+    } else {
+        $('.calendar-container').removeClass('change-view');
+        $('.calendar-container').removeClass('active-view');
     }
 })
+// $(window).resize(function(){
+//     if ($(window).width >= 780 && $('.calendar-container').hasClass('active-view')){
+//         $('.calendar-container').addClass('change-view');
+//     } else{
+//         $('.calendar-container').removeClass('change-view active-view');
+//     }
+// })
 
 
 
