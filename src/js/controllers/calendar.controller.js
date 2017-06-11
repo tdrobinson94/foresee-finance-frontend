@@ -415,6 +415,7 @@ $('.income-form, .expense-form').click(function( event ) {
       $('.expense-form').removeClass('show');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
+      $('body').removeClass('no-scroll');
   } else if (target.is(".card")){
       //========== if click is inside the card nothing will happen ========//
   } else if (target.is(".close")){
@@ -423,6 +424,7 @@ $('.income-form, .expense-form').click(function( event ) {
       $('.expense-form').removeClass('show');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
+      $('body').removeClass('no-scroll');
   } else if(target.is(".submit-transaction")){
       $('.income-form').removeClass('show');
       $('.expense-form').removeClass('show');
@@ -619,7 +621,9 @@ $(window).scroll(function() {
     window.setTimeout(scrollBottom, 500);
 });
 
-
+$('.transaction-button').click(function(){
+    $('body').addClass('no-scroll');
+})
 
 
 }
