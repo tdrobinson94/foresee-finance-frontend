@@ -34,11 +34,11 @@
         .selector{
         //   height: 40px;
         //   width: 145px;
-          margin-left: 5px;
+          margin-left: 10px;
           background-color: transparent;
           border: none;
           outline: none;
-          font-size: 45px;
+          font-size: 50px;
           color: white;
           transition: all .2s ease-in-out;
           -webkit-appearance: none;
@@ -153,6 +153,7 @@
         position: relative;
         margin: 5px;
         box-shadow: 1px 1px 10px gray;
+        transition: all .3s ease-in-out;
         .num-container{
           float: left;
           border-radius: 100%;
@@ -327,6 +328,10 @@
             display: none;
         }
       }
+      .num-box:hover{
+          border: 3px solid #00b0ff;
+          transition: all .3s ease-in-out;
+      }
     }
     .cur_trans_box{
         display: none;
@@ -413,7 +418,7 @@
   .selected-day {
       background: rgba(0, 0, 0, .1) !important;
       border: 3px solid #00b0ff;
-      transition: all .5s ease-in-out;
+      transition: all .3s ease-in-out;
   }
   .show-income-button{
       bottom: 70px !important;
@@ -465,6 +470,7 @@
       justify-content: center;
       flex-wrap: wrap;
       width: 60px;
+      transition: all .5s ease-in-out;
       .transaction-button{
           position: absolute;
           bottom: 0;
@@ -501,11 +507,15 @@
           box-shadow: 1px 1px 10px lightgray;
       }
   }
+  .hidden{
+      bottom: -2000px;
+      transition: all .5s ease-in-out;
+  }
   .calendar-style{
       position: fixed;
       top: 55px;
       right: 10px;
-      z-index: 4;
+      z-index: 2;
       button{
           background: transparent;
           border: none;
@@ -597,7 +607,7 @@
                       height: 60px;
                       margin: 0;
                     //   box-shadow: 1px 1px 10px black;
-                    transition: visibility .1s ease-in-out;
+                    transition: all .3s ease-in-out;
                     outline: none;
                       img{
                           width: 100%;
@@ -605,7 +615,7 @@
                   }
                   button:hover{
                       background: #00b0ff;
-                      transition: visibility .1s ease-in-out;
+                      transition: all .3s ease-in-out;
                   }
                   .expense-category{
                       background: red;
@@ -764,6 +774,17 @@
   }
 }
 
+@media screen and (max-width: 750px){
+  .calendar-page{
+    .income-form, .expense-form {
+        .card {
+            height: 80%;
+            overflow-y: auto;
+        }
+    }
+  }
+}
+
 @media screen and (max-width: 500px){
   .calendar-page{
       .month{
@@ -809,6 +830,11 @@
           }
         }
       }
+    }
+    .income-form, .expense-form {
+        .card {
+            height: 75%;
+        }
     }
   }
 }

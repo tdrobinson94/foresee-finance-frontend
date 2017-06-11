@@ -607,6 +607,19 @@ $(window).resize(function(){
     }
     window.setTimeout(scrollDay, 500);
 })
+console.log($('.num-box'));
+$(window).scroll(function() {
+    function scrollBottom(){
+        if ($(window).width() < 500 && $(window).scrollTop() + $(window).height() == $(document).height()){
+            $('.fab-box').addClass('hidden');
+        } else{
+            $('.fab-box').removeClass('hidden');
+        };
+    };
+    window.setTimeout(scrollBottom, 500);
+});
+
+
 
 
 }

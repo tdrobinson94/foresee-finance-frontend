@@ -1,18 +1,18 @@
 const MONTHS = [
 {
-  name: "January",
+  name: "Jan",
   days: 31
 },
 {
-  name: "February",
+  name: "Feb",
   days: 28
 },
 {
-  name: "March",
+  name: "Mar",
   days: 31
 },
 {
-  name: "April",
+  name: "Apr",
   days: 30
 },
 {
@@ -20,31 +20,31 @@ const MONTHS = [
   days: 31
 },
 {
-  name: "June",
+  name: "Jun",
   days: 30
 },
 {
-  name: "July",
+  name: "Jul",
   days: 31
 },
 {
-  name: "August",
+  name: "Aug",
   days: 31
 },
 {
-  name: "September",
+  name: "Sept",
   days: 30
 },
 {
-  name: "October",
+  name: "Oct",
   days: 31
 },
 {
-  name: "November",
+  name: "Nov",
   days: 30
 },
 {
-  name: "December",
+  name: "Dec",
   days: 31
 }
 ];
