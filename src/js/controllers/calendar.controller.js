@@ -193,7 +193,7 @@ $('.month-selector, .year-selector').on('change', function(event){
         $('body, html').animate({scrollTop: $('.first-day').offset().top - 150}, 500);
     }
   }
-  window.setTimeout(scrollDay, 150);
+  window.setTimeout(scrollDay, 50);
 
   renderMonth();
   renderPrevMonthDays();
@@ -229,7 +229,7 @@ function prev(){
     }
   }
   // console.log('left');
-  window.setTimeout(scrollDay, 150);
+  window.setTimeout(scrollDay, 50);
 }
 
 //===== Go to today's date =======//
@@ -268,7 +268,7 @@ function next(){
     }
   }
   // console.log('right');
-  window.setTimeout(scrollDay, 150);
+  window.setTimeout(scrollDay, 50);
 }
 
 // ================ Swipe events ================ //
@@ -430,8 +430,14 @@ $('.income-form, .expense-form').click(function( event ) {
       $('.expense-form').removeClass('show');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
+      $('body').removeClass('no-scroll');
   }
 });
+
+$('.income-button, .expense-button').click(function(){
+    $('body').addClass('no-scroll');
+    $('.card').animate({scrollTop: 0}, 500);
+})
 
 //========== Only select one transaction category at a time =========//
 $('.income-category, .expense-category').click(function(event){
@@ -607,23 +613,19 @@ $(window).resize(function(){
             $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
         }
     }
-    window.setTimeout(scrollDay, 500);
+    window.setTimeout(scrollDay, 50);
 })
-console.log($('.num-box'));
-$(window).scroll(function() {
-    function scrollBottom(){
-        if ($(window).width() < 500 && $(window).scrollTop() + $(window).height() == $(document).height()){
-            $('.fab-box').addClass('hidden');
-        } else{
-            $('.fab-box').removeClass('hidden');
-        };
-    };
-    window.setTimeout(scrollBottom, 500);
-});
 
-$('.transaction-button').click(function(){
-    $('body').addClass('no-scroll');
-})
+// $(window).scroll(function() {
+//     function scrollBottom(){
+//         if ($(window).width() < 500 && $(window).scrollTop() + $(window).height() == $(document).height()){
+//             $('.fab-box').addClass('hidden');
+//         } else{
+//             $('.fab-box').removeClass('hidden');
+//         };
+//     };
+//     window.setTimeout(scrollBottom, 500);
+// });
 
 
 }

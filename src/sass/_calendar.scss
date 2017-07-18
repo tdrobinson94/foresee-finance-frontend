@@ -38,7 +38,7 @@
           background-color: transparent;
           border: none;
           outline: none;
-          font-size: 50px;
+          font-size: 45px;
           color: white;
           transition: all .2s ease-in-out;
           -webkit-appearance: none;
@@ -329,8 +329,15 @@
         }
       }
       .num-box:hover{
-          border: 3px solid #00b0ff;
-          transition: all .3s ease-in-out;
+        //   border: 3px solid #00b0ff;
+        //   transition: all .3s ease-in-out;
+          animation-name: bounce;
+          animation-duration: .5s;
+          animation-timing-function: ease-out;
+      }
+      @keyframes bounce{
+        50% {transform: translateY(-10px);}
+        // 50% {transition: translateY(2px);}
       }
     }
     .cur_trans_box{
@@ -404,6 +411,9 @@
         }
       }
     }
+    .days:last-child{
+        padding-bottom: 75px;
+    }
   }
   .day_background_color{
     border: 2px solid #00E676;
@@ -434,10 +444,10 @@
       animation-duration: .5s;
       animation-timing-function: ease-out;
   }
-  @keyframes bounce{
-    50% {transform: translateY(-10px);}
-    50% {transition: translateY(2px);}
-  }
+  // @keyframes bounce{
+  //   50% {transform: translateY(-10px);}
+  //   50% {transition: translateY(2px);}
+  // }
   .goToBox{
       position: fixed;
       bottom: 15px;
@@ -578,6 +588,7 @@
           box-shadow: 1px 1px 10px black;
           background: white;
           width: 95%;
+          overflow-y: auto;
           max-width: 1000px;
           position: relative;
           border-radius: 15px;
@@ -725,6 +736,23 @@
   }
 }
 
+@media screen and (min-width: 1600px){
+    .calendar-page{
+        .change-view{
+          .days{
+            .num-box{
+              width: 13% !important;
+              height: 175px !important;
+              .num-container{
+                .num{
+                }
+              }
+          }
+        }
+      }
+    }
+}
+
 @media screen and (max-width: 780px){
   .calendar-page{
     .button{
@@ -830,11 +858,77 @@
           }
         }
       }
+      .days:last-child{
+          padding-bottom: 45px;
+      }
     }
     .income-form, .expense-form {
         .card {
             height: 75%;
         }
+    }
+  }
+}
+
+@media screen and (max-width: 320px){
+  .calendar-page{
+      .month{
+          .calendar-controls{
+            //   display: none;
+          }
+          .select-form{
+              .settings{
+                  span{
+                      display: none;
+                  }
+              }
+          }
+      }
+    .button{
+    }
+    .calendar-container{
+      .days{
+        //   height: 50px;
+        .num-box{
+            height: 275px;
+            .weekday{
+                padding: 0;
+                font-size: 20px;
+                .num-date{
+                    font-size: 20px;
+                }
+            }
+            .num-container{
+                // width: 5px;
+                // height: 5px;
+                .num{
+                    // font-size: 20px;
+                }
+            }
+            .main-info{
+                .transaction-activity{
+                    .activity-content{
+                        .transaction-income, .transaction-expense{
+                            width: 31%;
+                            div{
+                                height: 12px;
+                                width: 12px;
+                            }
+                            .edit-transaction{
+                                top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .num-box:hover{
+          .shade{
+            .num-date{
+            }
+          }
+        }
+      }
     }
   }
 }
