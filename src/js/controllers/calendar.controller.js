@@ -21,7 +21,7 @@ function CalendarController($scope){
 
 
   $(window).bind("mousewheel", function() {
-    $("html, body").stop();
+    $("html, body").stop(true, false);
    });
 
 //================ Adding month name to top of calendar dynamically ===============//
