@@ -24,21 +24,6 @@ function CalendarController($scope){
     $("html, body").stop(true, false);
    });
 
-
-   $(document).ready(function () {
-        $(".button").on("click", function() {
-            $(this).attr("disabled", "disabled");
-            doWork(); //this method contains your logic
-        });
-    });
-
-    function doWork() {
-        // alert("doing work");
-        //actually this function will do something and when processing is done the button is enabled by removing the 'disabled' attribute
-        //I use setTimeout so you can see the button can only be clicked once, and can't be clicked again while work is being done
-        setTimeout('$(".button").removeAttr("disabled")', 1500);
-    }
-
 //================ Adding month name to top of calendar dynamically ===============//
   $(document).find('#month').html(`
     <option value="${month}" selected>${MONTHS[month].name}</option>
@@ -262,16 +247,6 @@ function prev(){
       $(document).find('#month').val(Number($(document).find('#month').val()) - 1).change();
     }
   }
-  function scrollDay(){
-    if($('.num-box').hasClass('day_background_color') === true){
-      $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 150}, 500);
-    } else if ($('.num-date').hasClass('first-day') === true){
-        $('.first-day').parent().parent().addClass('selected-day');
-        $('body, html').animate({scrollTop: $('.first-day').offset().top - 150}, 500);
-    }
-  }
-  // console.log('left');
-  window.setTimeout(scrollDay, .5);
 }
 
 //===== Go to today's date =======//
@@ -300,17 +275,6 @@ function next(){
       $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
     }
   }
-
-  function scrollDay(){
-    if($('.num-box').hasClass('day_background_color') === true){
-      $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 150}, 500);
-    } else if ($('.num-date').hasClass('first-day') === true){
-        $('.first-day').parent().parent().addClass('selected-day');
-        $('body, html').animate({scrollTop: $('.first-day').offset().top - 150}, 500);
-    }
-  }
-  // console.log('right');
-  window.setTimeout(scrollDay, .5);
 }
 
 
