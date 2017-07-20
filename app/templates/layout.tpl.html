@@ -2,12 +2,12 @@
   <div class="nav-button">
     <div class="links">
       <a class="link" href="/#/home">Home</a>
-      <a class="link calendar_link" href="/#/calendar">Calendar</a>
-      <a class="link" href="">Account/Profile</a>
+      <a class="link calendar_link" href="/#/calendar" ng-show="vm.loggedIn">Calendar</a>
+      <a class="link" href="" ng-show="vm.loggedIn">Account/Profile</a>
       <a class="link" href="">Contact/FAQ</a>
-      <!-- <a href="" class="login link logout" ng-click="vm.logOut()"> Logout</a> -->
-      <a class="link login loginButton" href="/#/login">Login</a>
-      <a class="link" href="/#/signup">Signup</a>
+      <a href="" class="login link logout" ng-click="vm.logOut()" ng-show="vm.loggedIn"> Logout</a>
+      <a class="link login loginButton" href="/#/login" ng-hide="vm.loggedIn">Login</a>
+      <a class="link" href="/#/signup" ng-hide="vm.loggedIn">Signup</a>
     </div>
     <button class="hamburger hamburger--spin" type="button">
       <span class="hamburger-box">

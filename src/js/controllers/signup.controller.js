@@ -11,7 +11,7 @@ function SignUpController($http, SERVER, $state, UserService) {
         UserService.signup(user).then(function(res){
           console.log(res);
           // Refactor this code using try and catch
-          // vm.user = {};
+          vm.user = {};
           if (res.status === 201){
             $state.go('root.login');
           }else {

@@ -19,6 +19,11 @@ function CalendarController($scope){
   let year = clock.getFullYear();
   //var hammertime = new Hammer(myElement, myOptions);
 
+
+  $(window).bind("mousewheel", function() {
+    $("html, body").stop();
+   });
+
 //================ Adding month name to top of calendar dynamically ===============//
   $(document).find('#month').html(`
     <option value="${month}" selected>${MONTHS[month].name}</option>
@@ -193,13 +198,35 @@ $('.month-selector, .year-selector').on('change', function(event){
         $('body, html').animate({scrollTop: $('.first-day').offset().top - 150}, 500);
     }
   }
-  window.setTimeout(scrollDay, 50);
+  // scrollDay();
+  window.setTimeout(scrollDay, .5);
 
   renderMonth();
   renderPrevMonthDays();
 
 })
 $('.month-selector').change();
+
+$(window).resize(function(){
+    if ($(window).width() <= 780){
+        $('.calendar-container').removeClass('change-view');
+    } else if ($(window).width() > 780 && $('.calendar-container').hasClass('active-view')){
+        $('.calendar-container').addClass('change-view');
+    } else {
+        $('.calendar-container').removeClass('change-view');
+        $('.calendar-container').removeClass('active-view');
+    }
+
+    function scrollDay(){
+        if ($('.num-box').hasClass('selected-day')){
+            console.log('change');
+            $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+        }
+    }
+    window.setTimeout(scrollDay, .5);
+})
+
+
 
 
 //============= Scroll Months functionality ==================//
@@ -229,7 +256,7 @@ function prev(){
     }
   }
   // console.log('left');
-  window.setTimeout(scrollDay, 50);
+  window.setTimeout(scrollDay, .5);
 }
 
 //===== Go to today's date =======//
@@ -268,8 +295,12 @@ function next(){
     }
   }
   // console.log('right');
-  window.setTimeout(scrollDay, 50);
+  window.setTimeout(scrollDay, .5);
 }
+
+
+
+
 
 // ================ Swipe events ================ //
 document.addEventListener('touchstart', handleTouchStart, false);
@@ -582,39 +613,6 @@ function submitExpense (){
             $('.value-amount').val('');
         })
 }
-
-
-$('.calendar-view').on('click', function(){
-    if ($(window).width() >= 780){
-        $('.calendar-container').toggleClass('change-view');
-        $('.calendar-container').toggleClass('active-view');
-    }
-    function scrollDay(){
-        if ($('.num-box').hasClass('selected-day')){
-            console.log('change');
-            $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
-        }
-    }
-    window.setTimeout(scrollDay, 500);
-})
-$(window).resize(function(){
-    if ($(window).width() <= 780){
-        $('.calendar-container').removeClass('change-view');
-    } else if ($(window).width() > 780 && $('.calendar-container').hasClass('active-view')){
-        $('.calendar-container').addClass('change-view');
-    } else {
-        $('.calendar-container').removeClass('change-view');
-        $('.calendar-container').removeClass('active-view');
-    }
-
-    function scrollDay(){
-        if ($('.num-box').hasClass('selected-day')){
-            console.log('change');
-            $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
-        }
-    }
-    window.setTimeout(scrollDay, 50);
-})
 
 // $(window).scroll(function() {
 //     function scrollBottom(){
