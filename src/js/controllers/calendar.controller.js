@@ -20,7 +20,7 @@ function CalendarController($scope){
   //var hammertime = new Hammer(myElement, myOptions);
 
 
-  $(window).bind("mousewheel", function() {
+  $(window).bind('mousewheel DOMMouseScroll touchmove', function() {
     $("html, body").stop(true, false);
    });
 
@@ -277,6 +277,20 @@ function next(){
   }
 }
 
+
+$('.calendar-view').on('click', function(){
+    if ($(window).width() >= 780){
+        $('.calendar-container').toggleClass('change-view');
+        $('.calendar-container').toggleClass('active-view');
+    }
+    function scrollDay(){
+        if ($('.num-box').hasClass('selected-day')){
+            console.log('change');
+            $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+        }
+    }
+    window.setTimeout(scrollDay, 500);
+})
 
 
 
