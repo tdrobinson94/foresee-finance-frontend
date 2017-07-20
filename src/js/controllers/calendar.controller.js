@@ -24,6 +24,21 @@ function CalendarController($scope){
     $("html, body").stop(true, false);
    });
 
+
+   $(document).ready(function () {
+        $(".button").on("click", function() {
+            $(this).attr("disabled", "disabled");
+            doWork(); //this method contains your logic
+        });
+    });
+
+    function doWork() {
+        // alert("doing work");
+        //actually this function will do something and when processing is done the button is enabled by removing the 'disabled' attribute
+        //I use setTimeout so you can see the button can only be clicked once, and can't be clicked again while work is being done
+        setTimeout('$(".button").removeAttr("disabled")', 1500);
+    }
+
 //================ Adding month name to top of calendar dynamically ===============//
   $(document).find('#month').html(`
     <option value="${month}" selected>${MONTHS[month].name}</option>
