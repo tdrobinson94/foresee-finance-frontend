@@ -25,6 +25,12 @@ function LayoutController($state, $rootScope, UserService){
 
   hamburgerHandler();
 
+  function preventMotion(event) {
+      window.scrollTo(0,0);
+      event.preventDefault();
+      event.stopPropagation();
+  }
+
 
   function hamburgerHandler() {
     $(".hamburger").on("click", () => {
@@ -41,6 +47,14 @@ function LayoutController($state, $rootScope, UserService){
     $('.container').toggleClass('push');
     $('body').toggleClass('no-scroll');
   })
+
+//   if($('.links').hasClass('display')){
+//     window.addEventListener("scroll", preventMotion, false);
+//     window.addEventListener("touchmove", preventMotion, false);
+// } else {
+//     window.addEventListener("scroll", true);
+//     window.addEventListener("touchmove", true);
+// }
 
   // $('.links').height($(window).height());
 }

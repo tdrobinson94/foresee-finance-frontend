@@ -409,6 +409,7 @@ $('.income-button').click(function(){
     $('.frequency').prop('checked', false);
     $('.income-category, .expense-category').removeClass('clicked');
     $('.income-form').addClass('show');
+    // $('.income-form').addClass('background');
     $('.income-categories').addClass('visible');
     $('.income-button').toggleClass('show-income-button');
     $('.expense-button').toggleClass('show-expense-button');
@@ -422,6 +423,7 @@ $('.expense-button').click(function(){
     $('.frequency').prop('checked', false);
     $('.income-category, .expense-category').removeClass('clicked');
     $('.expense-form').addClass('show');
+    // $('.expense-form').addClass('background');
     $('.expense-categories').addClass('visible');
     $('.income-button').toggleClass('show-income-button');
     $('.expense-button').toggleClass('show-expense-button');
@@ -437,6 +439,8 @@ $('.income-form, .expense-form').click(function( event ) {
       //========= click outside of the card to close popup ========//
       $('.income-form').removeClass('show');
       $('.expense-form').removeClass('show');
+    //   $('.income-form').removeClass('background');
+    //   $('.expense-form').removeClass('background');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
       $('body').removeClass('no-scroll');
@@ -446,12 +450,16 @@ $('.income-form, .expense-form').click(function( event ) {
       //====== click the X to close popup =======//
       $('.income-form').removeClass('show');
       $('.expense-form').removeClass('show');
+    //   $('.income-form').removeClass('background');
+    //   $('.expense-form').removeClass('background');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
       $('body').removeClass('no-scroll');
   } else if(target.is(".submit-transaction")){
       $('.income-form').removeClass('show');
       $('.expense-form').removeClass('show');
+    //   $('.income-form').removeClass('background');
+    //   $('.expense-form').removeClass('background');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
       $('body').removeClass('no-scroll');
