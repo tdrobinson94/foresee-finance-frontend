@@ -10,6 +10,7 @@ html{
 body{
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 div, h1, h2, h3, span, a, ul, li, nav, button{
@@ -19,5 +20,6 @@ div, h1, h2, h3, span, a, ul, li, nav, button{
 .no-scroll{
     overflow-y: hidden;
     height: 100%;
-    position: fixed;
+    overflow-x: hidden;
+    // position: fixed;
 }

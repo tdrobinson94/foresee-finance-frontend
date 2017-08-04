@@ -60,6 +60,7 @@ function CalendarController($scope){
 $('.month-selector, .year-selector').on('change', function(event){
   event.preventDefault();
   $('.num-date').removeClass('first-day');
+  $('.num-box').removeClass('selected-day');
 
   //=================== Render Current month days as well as next month days ==================//
   let renderMonth = function () {
@@ -247,6 +248,14 @@ function prev(){
       $(document).find('#month').val(Number($(document).find('#month').val()) - 1).change();
     }
   }
+
+  function scrollDay(){
+      if ($('.num-box').hasClass('selected-day')){
+          console.log('change');
+          $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+      }
+  }
+  window.setTimeout(scrollDay, 500);
 }
 
 //===== Go to today's date =======//
@@ -275,6 +284,14 @@ function next(){
       $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
     }
   }
+
+  function scrollDay(){
+      if ($('.num-box').hasClass('selected-day')){
+          console.log('change');
+          $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+      }
+  }
+  window.setTimeout(scrollDay, 500);
 }
 
 
@@ -443,7 +460,7 @@ $('.income-form, .expense-form').click(function( event ) {
     //   $('.expense-form').removeClass('background');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
-      $('body').removeClass('no-scroll');
+      //$('body').removeClass('no-scroll');
   } else if (target.is(".card")){
       //========== if click is inside the card nothing will happen ========//
   } else if (target.is(".close")){
@@ -454,7 +471,7 @@ $('.income-form, .expense-form').click(function( event ) {
     //   $('.expense-form').removeClass('background');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
-      $('body').removeClass('no-scroll');
+      //$('body').removeClass('no-scroll');
   } else if(target.is(".submit-transaction")){
       $('.income-form').removeClass('show');
       $('.expense-form').removeClass('show');
@@ -462,13 +479,13 @@ $('.income-form, .expense-form').click(function( event ) {
     //   $('.expense-form').removeClass('background');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
-      $('body').removeClass('no-scroll');
+      //$('body').removeClass('no-scroll');
   }
 });
 
 $('.income-button, .expense-button').click(function(){
-    $('body').addClass('no-scroll');
-    $('.card').animate({scrollTop: 0}, 500);
+    //$('body').addClass('no-scroll');
+    //$('.card').animate({scrollTop: 0}, 500);
 })
 
 //========== Only select one transaction category at a time =========//
