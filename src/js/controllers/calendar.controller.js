@@ -199,7 +199,6 @@ $('.month-selector, .year-selector').on('change', function(event){
         $('body, html').animate({scrollTop: $('.first-day').offset().top - 150}, 500);
     }
   }
-  // scrollDay();
   window.setTimeout(scrollDay, .5);
 
   renderMonth();
@@ -249,13 +248,13 @@ function prev(){
     }
   }
 
-  function scrollDay(){
-      if ($('.num-box').hasClass('selected-day')){
-          console.log('change');
-          $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
-      }
-  }
-  window.setTimeout(scrollDay, 500);
+  // function scrollDay(){
+  //     if ($('.num-box').hasClass('selected-day')){
+  //         console.log('change');
+  //         $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+  //     }
+  // }
+  // window.setTimeout(scrollDay, 500);
 }
 
 //===== Go to today's date =======//
@@ -265,7 +264,7 @@ function current(){
   $('.transaction-button').removeClass('show');
   $(document).find('#month').val(month).change()
   $(document).find('#year').val(year).change()
-  $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 150}, 500);
+  // $('body, html').animate({scrollTop: $('.day_background_color').offset().top - 150}, 500);
 }
 
 //===== Go to next month =======//
@@ -285,13 +284,13 @@ function next(){
     }
   }
 
-  function scrollDay(){
-      if ($('.num-box').hasClass('selected-day')){
-          console.log('change');
-          $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
-      }
-  }
-  window.setTimeout(scrollDay, 500);
+  // function scrollDay(){
+  //     if ($('.num-box').hasClass('selected-day')){
+  //         console.log('change');
+  //         $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+  //     }
+  // }
+  // window.setTimeout(scrollDay, 500);
 }
 
 
