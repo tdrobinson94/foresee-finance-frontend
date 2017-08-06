@@ -291,9 +291,17 @@
                     }
                     .transaction-income{
                         height: 23%;
+                        .entered-income {
+                            width: 50%;
+                            text-align: left;
+                        }
                     }
                     .transaction-expense{
                         height: 15%;
+                        .entered-expense {
+                            width: 50%;
+                            text-align: left;
+                        }
                     }
                     .transaction-income:hover, .transaction-expense:hover {
                         .edit-transaction{
