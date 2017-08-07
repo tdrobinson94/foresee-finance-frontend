@@ -31,6 +31,12 @@ function config($stateProvider, $urlRouterProvider){
   controller: 'SignUpController as vm'
   })
 
+  .state('root.profile', {
+      url: '/profile',
+      templateUrl: 'templates/profile.tpl.html',
+      controller: 'ProfileController as vm'
+  })
+
   $urlRouterProvider.otherwise('/home');
 }
 

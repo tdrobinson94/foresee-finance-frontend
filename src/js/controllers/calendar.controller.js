@@ -459,6 +459,13 @@ $('.income-form, .expense-form').click(function( event ) {
     //   $('.expense-form').removeClass('background');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
+      function scrollDay(){
+          if ($('.num-box').hasClass('selected-day')){
+              console.log('change');
+              $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+          }
+      }
+      window.setTimeout(scrollDay, 100);
       //$('body').removeClass('no-scroll');
   } else if (target.is(".card")){
       //========== if click is inside the card nothing will happen ========//
@@ -470,6 +477,13 @@ $('.income-form, .expense-form').click(function( event ) {
     //   $('.expense-form').removeClass('background');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
+      function scrollDay(){
+          if ($('.num-box').hasClass('selected-day')){
+              console.log('change');
+              $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+          }
+      }
+      window.setTimeout(scrollDay, 100);
       //$('body').removeClass('no-scroll');
   } else if(target.is(".submit-transaction")){
       $('.income-form').removeClass('show');
@@ -478,6 +492,13 @@ $('.income-form, .expense-form').click(function( event ) {
     //   $('.expense-form').removeClass('background');
       $('.income-categories').removeClass('visible');
       $('.expense-categories').removeClass('visible');
+      function scrollDay(){
+          if ($('.num-box').hasClass('selected-day')){
+              console.log('change');
+              $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+          }
+      }
+      window.setTimeout(scrollDay, 100);
       //$('body').removeClass('no-scroll');
   }
 });

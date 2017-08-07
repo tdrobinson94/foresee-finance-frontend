@@ -4,8 +4,6 @@
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
-@import url(http://weloveiconfonts.com/api/?family=entypo);
-
 /* entypo */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
@@ -259,8 +257,8 @@
                             // justify-content: center;
                             align-items: center;
                             overflow: hidden;
-                            width: 18px;
-                            height: 18px;
+                            width: 15px;
+                            height: 15px;
                             margin: 5px;
                             padding: 2px;
                           //   box-shadow: 1px 1px 10px black;
@@ -295,6 +293,10 @@
                             width: 50%;
                             text-align: left;
                         }
+                        // .entered-income:before{
+                        //     content: '+ ';
+                        //     color: #00e676;
+                        // }
                     }
                     .transaction-expense{
                         height: 15%;
@@ -302,6 +304,10 @@
                             width: 50%;
                             text-align: left;
                         }
+                        // .entered-expense:before{
+                        //     content: '- ';
+                        //     color: red;
+                        // }
                     }
                     .transaction-income:hover, .transaction-expense:hover {
                         .edit-transaction{
@@ -315,20 +321,12 @@
                 height: 33%;
                 .activity-content{
                     color: #00e676;
-                    .transaction-income:before{
-                        content: '+ ';
-                        color: #00e676;
-                    }
                 }
             }
             .transaction-activity:nth-child(3){
                 height: 53%;
                 .activity-content{
                     color: red;
-                    .transaction-expense:before{
-                        content: '- ';
-                        color: red;
-                    }
                 }
             }
         }

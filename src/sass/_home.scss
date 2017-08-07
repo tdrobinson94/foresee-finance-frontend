@@ -14,6 +14,7 @@
     .title{
       position: fixed;
       font-size: 40px;
+      top: 5px;
       font-style: italic;
       font-weight: bold;
       z-index: 0;
@@ -29,7 +30,7 @@
       display: flex;
       justify-content: center;
       position: fixed;
-      top: 50px;
+      top: 55px;
       letter-spacing: 5px;
       color: white;
     }

@@ -19,6 +19,7 @@ import {HomeController} from './controllers/home.controller';
 import {LayoutController} from './controllers/layout.controller';
 import { LoginController } from './controllers/login.controller';
 import { SignUpController } from './controllers/signup.controller';
+import { ProfileController } from './controllers/profile.controller';
 
 angular
   .module('app', [ 'ui.router', 'ngMaterial', 'ngCookies'])
@@ -32,5 +33,6 @@ angular
   .controller('LayoutController', LayoutController)
   .controller('LoginController', LoginController)
   .controller('SignUpController', SignUpController)
+  .controller('ProfileController', ProfileController)
 
 ;

@@ -1,0 +1,105 @@
+.profile-page {
+    background-color: #37474F;
+    width: 100%;
+    height: 100%;
+    .green-bar{
+      width: 100%;
+      height: 80px;
+      position: fixed;
+      top: 0px;
+      z-index: 1;
+      background-color: #00E676;
+      .title{
+        position: fixed;
+        font-size: 40px;
+        top: 5px;
+        font-style: italic;
+        font-weight: bold;
+        z-index: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        color: white;
+      }
+      .title2{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 55px;
+        letter-spacing: 5px;
+        color: white;
+      }
+      .logo-box{
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        height: 80px;
+        .logo{
+          height: 50px;
+          margin-right: 20px;
+          animation: mymove 5s infinite;
+        }
+        @keyframes mymove{
+          50% {transform: scale(1.2)}
+        }
+      }
+    }
+
+    .profile-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        top: 80px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .profile-card, .daily-updates-card, .data-analysis-card {
+            box-sizing: border-box;
+            width: 48%;
+            height: 400px;
+            //border: 1px solid #00B0FF;
+            border-radius: 15px;
+            background-color: white;
+            position: relative;
+            transition: all .5s ease-in-out;
+            outline: none;
+            position: relative;
+            margin: 5px;
+            box-shadow: 1px 1px 10px gray;
+            transition: all .3s ease-in-out;
+
+            @media screen and (max-width: 650px) {
+                width: 98%;
+            }
+
+            h2 {
+                text-align: center;
+                margin: 0;
+                padding: 10px 0;
+                //border-bottom: 1px solid #455A64;
+            }
+            .user-image {
+                margin: auto;
+                height: 150px;
+                width: 150px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100%;
+                    border: 1px solid #455A64;
+                }
+            }
+            h3 {
+                text-align: center;
+            }
+            .profile-content {
+            }
+        }
+    }
+}

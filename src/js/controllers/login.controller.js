@@ -14,7 +14,7 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
       if(res.status === 200){
         $cookies.put('access_token', res.data.access_token);
         $cookies.put('user_id', res.data.id)
-        $state.go('root.calendar');
+        $state.go('root.profile');
       } else if (res.status === 204) {
         $('.incorrectInput').html(`<span class="alert">Username or Password is incorrect! Try again, Please!</span>`)
         vm.loadingIndicator = false;
