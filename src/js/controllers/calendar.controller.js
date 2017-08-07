@@ -12,6 +12,12 @@ function CalendarController($scope){
   vm.current = current;
   vm.submitIncome = submitIncome;
   vm.submitExpense = submitExpense;
+  vm.scrollWeekOne = scrollWeekOne;
+  vm.scrollWeekTwo = scrollWeekTwo;
+  vm.scrollWeekThree = scrollWeekThree;
+  vm.scrollWeekFour = scrollWeekFour;
+  vm.scrollWeekFive = scrollWeekFive;
+  vm.scrollWeekSix = scrollWeekSix;
   // vm.goToTop = goToTop;
 
   let clock = new Date();
@@ -649,6 +655,67 @@ function submitExpense (){
             }
         })
 }
+
+
+function scrollWeekOne(){
+    $('.scroll-dots button').removeClass('selected-dot');
+    $('.dot-one').addClass('selected-dot');
+    $('body, html').animate({scrollTop: $('.days:nth-child(1)').offset().top - 150}, 500);
+}
+
+function scrollWeekTwo(){
+    $('.scroll-dots button').removeClass('selected-dot');
+    $('.dot-two').addClass('selected-dot');
+    $('body, html').animate({scrollTop: $('.days:nth-child(2)').offset().top - 150}, 500);
+}
+
+function scrollWeekThree(){
+    $('.scroll-dots button').removeClass('selected-dot');
+    $('.dot-three').addClass('selected-dot');
+    $('body, html').animate({scrollTop: $('.days:nth-child(3)').offset().top - 150}, 500);
+}
+
+function scrollWeekFour(){
+    $('.scroll-dots button').removeClass('selected-dot');
+    $('.dot-four').addClass('selected-dot');
+    $('body, html').animate({scrollTop: $('.days:nth-child(4)').offset().top - 150}, 500);
+}
+
+function scrollWeekFive(){
+    $('.scroll-dots button').removeClass('selected-dot');
+    $('.dot-five').addClass('selected-dot');
+    $('body, html').animate({scrollTop: $('.days:nth-child(5)').offset().top - 150}, 500);
+}
+
+function scrollWeekSix(){
+    $('.scroll-dots button').removeClass('selected-dot');
+    $('.dot-six').addClass('selected-dot');
+    $('body, html').animate({scrollTop: $('.days:nth-child(6)').offset().top - 150}, 500);
+}
+
+$(window).scroll(function(){
+    let scrollTop = $('body').scrollTop();
+    if (scrollTop < $('.days:nth-child(2)').position().top - 400){
+        $('.scroll-dots button').removeClass('selected-dot');
+        $('.dot-one').addClass('selected-dot');
+    } else if (scrollTop < $('.days:nth-child(3)').position().top - 400) {
+        $('.scroll-dots button').removeClass('selected-dot');
+        $('.dot-two').addClass('selected-dot');
+    } else if (scrollTop < $('.days:nth-child(4)').position().top - 400) {
+        $('.scroll-dots button').removeClass('selected-dot');
+        $('.dot-three').addClass('selected-dot');
+    } else if (scrollTop < $('.days:nth-child(5)').position().top - 400) {
+        $('.scroll-dots button').removeClass('selected-dot');
+        $('.dot-four').addClass('selected-dot');
+    } else if (scrollTop < $('.days:nth-child(6)').position().top - 400) {
+        $('.scroll-dots button').removeClass('selected-dot');
+        $('.dot-five').addClass('selected-dot');
+    } else if (scrollTop >= $('.days:nth-child(6)').position().top - 400) {
+        $('.scroll-dots button').removeClass('selected-dot');
+        $('.dot-six').addClass('selected-dot');
+    }
+
+})
 
 // $(window).scroll(function() {
 //     function scrollBottom(){
