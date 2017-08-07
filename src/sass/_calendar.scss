@@ -545,6 +545,10 @@
           justify-content: center;
           align-items: center;
           font-size: 8px;
+
+          @media screen and (max-width: 500px) {
+              display: none;
+          }
       }
       button:hover, .selected-dot {
           background: #00b0ff;
