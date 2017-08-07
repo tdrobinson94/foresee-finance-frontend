@@ -585,6 +585,14 @@ function submitIncome (){
                 }
             }
         })
+
+        function scrollDay(){
+            if ($('.num-box').hasClass('selected-day')){
+                console.log('change');
+                $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+            }
+        }
+        window.setTimeout(scrollDay, 100);
 }
 
 function submitExpense (){
@@ -654,6 +662,13 @@ function submitExpense (){
                 }
             }
         })
+        function scrollDay(){
+            if ($('.num-box').hasClass('selected-day')){
+                console.log('change');
+                $('body, html').animate({scrollTop: $('.selected-day').offset().top - 150}, 500);
+            }
+        }
+        window.setTimeout(scrollDay, 100);
 }
 
 

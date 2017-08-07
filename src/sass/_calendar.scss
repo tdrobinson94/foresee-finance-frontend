@@ -984,3 +984,43 @@
     }
   }
 }
+
+@media screen and (max-height: 414px){
+  .calendar-page{
+      .month{
+          .calendar-controls{
+            //   display: none;
+          }
+          .select-form{
+              .settings{
+                  span{
+                      display: none;
+                  }
+              }
+          }
+      }
+    .button{
+    }
+    .calendar-container{
+      .days{
+        //   height: 50px;
+        .num-box{
+            width: 48%;
+            height: 240px;
+            .weekday{
+                font-size: 18px;
+                padding: 1px 0;
+                .num-date {
+                    font-size: 17px;
+                }
+            }
+            .main-info {
+                .balance {
+                    font-size: 13px;
+                }
+            }
+        }
+      }
+    }
+  }
+}
