@@ -304,6 +304,7 @@ $('.calendar-view').on('click', function(){
     if ($(window).width() >= 780){
         $('.calendar-container').toggleClass('change-view');
         $('.calendar-container').toggleClass('active-view');
+        $('.scroll-dots').toggleClass('hide-dots');
     }
     function scrollDay(){
         if ($('.num-box').hasClass('selected-day')){

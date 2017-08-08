@@ -556,6 +556,9 @@
           transition: all .1s ease-out;
       }
   }
+  .hide-dots {
+      display: none;
+  }
   .hidden{
       bottom: -2000px;
       transition: all .5s ease-in-out;
