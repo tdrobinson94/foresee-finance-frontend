@@ -493,6 +493,7 @@
       .transaction-button{
           position: absolute;
           bottom: 0;
+          right: 0px;
           font-size: 30px;
           border: none;
           background: transparent;
@@ -514,6 +515,7 @@
           height: 50px;
           transition: all .2s ease-out;
           font-size: 35px;
+          right: 5px;
       }
       .expense-button{
           background: red;
@@ -521,6 +523,7 @@
           height: 50px;
           transition: all .2s ease-out;
           font-size: 35px;
+          right: 5px;
       }
       .transaction-button:active{
           box-shadow: 1px 1px 10px lightgray;
